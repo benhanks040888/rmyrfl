@@ -1,0 +1,44 @@
+doctype
+html(class="no-js", lang="en")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    block title
+      title Style Guide
+
+    link(rel='stylesheet', href='../assets/css/vendors/bootstrap/bootstrap.css')
+    link(rel='stylesheet', href='../assets/css/vendors/prism.css')
+    link(rel='stylesheet', href='../assets/css/docs.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,700')
+
+  body
+
+    header.docs-header
+      h1 Site Name
+      h2 Site Name style guide
+      p Managed by Hendra Susanto
+
+    .container.docs-container
+      section
+        h3 Colors
+        .module-wrapper
+          include modules/colors.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Typography
+        .module-wrapper
+          include modules/typography.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    include _includes/footer
+    include _includes/scripts

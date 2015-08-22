@@ -1,0 +1,26 @@
+// Colors
+$red: #dd3300;
+$dark-red: #a50f0f;
+$dark-gray: #444;
+$ultra-light-gray: #efefef;
+
+$blue: #124797;
+$white: #ffffff;
+
+//  Font Colors
+$base-font-color: $dark-gray;
+$accent-color: $red;
+$accent-color-hover: darken($accent-color, 10%);
+$accent-color-dark: darken($accent-color, 20%);
+$complement-color: $blue;
+$background-color: $white;
+
+// Font Family
+$lato: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$base-font-family: $lato;
+$header-font-family: $lato;
+
+// $base-font-size: 1.6em;
+$base-font-size: 16px;
+$base-line-height: $base-font-size * 1.5;

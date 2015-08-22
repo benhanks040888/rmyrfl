@@ -1,0 +1,31 @@
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+script.
+  window.jQuery || document.write('<script src="../assets/js/vendors/jquery-1.11.0.min.js"><\/script>')
+script(src='../assets/js/vendors/bootstrap.min.js')
+script(src='../assets/js/vendors/prism.js')
+script(src='../assets/js/site.min.js')
+
+script.
+  $(function() {
+    $('.docs-container').each(function() {
+      var $this = $(this);
+
+      var moduleHtml = $.trim($this.find('.module-wrapper').html());
+
+      $this.find('pre > code').text(moduleHtml).html();
+    });
+
+    $('.js-show-code').on('click', function(e) {
+      e.preventDefault();
+      
+      var $this = $(this),
+          codeContainer = $this.next('.code-container');
+
+      if (codeContainer.hasClass('hide')) {
+        $this.text('Hide Code');
+      } else {
+        $this.text('Show Code');
+      }
+      codeContainer.toggleClass('hide');
+    })
+  });

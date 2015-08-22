@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Style Guide</title>
+    <link rel="stylesheet" href="../assets/css/vendors/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/vendors/prism.css">
+    <link rel="stylesheet" href="../assets/css/docs.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700">
+  </head>
+  <body>
+    <header class="docs-header">
+      <h1>Site Name</h1>
+      <h2>Site Name style guide</h2>
+      <p>Managed by Hendra Susanto</p>
+    </header>
+    <div class="container docs-container">
+      <section>
+        <h3>Colors</h3>
+        <div class="module-wrapper"><div class="colors">
+  <div class="palette base"></div>
+  <div class="palette hover"></div>
+  <div class="palette dark"></div>
+  <div class="palette background"></div>
+  <div class="palette complement"></div>
+</div>
+        </div><a href="" class="show-code js-show-code">Show Code</a>
+        <div class="code-container hide">
+          <pre><code class="lang-markup"></code></pre>
+        </div>
+      </section>
+    </div>
+    <div class="container docs-container">
+      <section>
+        <h3>Typography</h3>
+        <div class="module-wrapper"><h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+<p>This is a normal paragraph. <a href="#">Links</a>, <strong>bold</strong>, <em>italic</em>, <u>underlined</u>, stuff. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quibusdam vel inventore deleniti consectetur dignissimos nemo incidunt repudiandae. Porro, dicta rerum distinctio consequatur et aut quaerat dolorem aliquam fuga reiciendis!</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, nihil debitis commodi pariatur totam cupiditate alias provident facere. Consequatur rerum nisi libero dolore suscipit maxime facilis dolores! Obcaecati, ex, optio!</p>
+
+<p>Unordered List</p>
+
+<ul>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+</ul>
+
+<p>Ordered List</p>
+
+<ol>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+</ol>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, veritatis, minus iure maxime quas autem facilis dolores omnis officia odio esse tempora est animi impedit optio aliquam suscipit porro recusandae!</p>
+  <footer><cite>Cite</cite></footer>
+</blockquote>
+        </div><a href="" class="show-code js-show-code">Show Code</a>
+        <div class="code-container hide">
+          <pre><code class="lang-markup"></code></pre>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <hr>
+        <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+      </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendors/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="../assets/js/vendors/bootstrap.min.js"></script>
+    <script src="../assets/js/vendors/prism.js"></script>
+    <script src="../assets/js/site.min.js"></script>
+    <script>
+      $(function() {
+        $('.docs-container').each(function() {
+          var $this = $(this);
+      
+          var moduleHtml = $.trim($this.find('.module-wrapper').html());
+      
+          $this.find('pre > code').text(moduleHtml).html();
+        });
+      
+        $('.js-show-code').on('click', function(e) {
+          e.preventDefault();
+          
+          var $this = $(this),
+              codeContainer = $this.next('.code-container');
+      
+          if (codeContainer.hasClass('hide')) {
+            $this.text('Hide Code');
+          } else {
+            $this.text('Show Code');
+          }
+          codeContainer.toggleClass('hide');
+        })
+      });
+    </script>
+  </body>
+</html>

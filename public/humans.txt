@@ -1,0 +1,14 @@
+/* MAIN */
+  Developer: Hendra Susanto, Ali Lim, Johnson Lin, Bagus Hutomo
+  Designer: Okky Fachruddin, Gery Irvandi
+  Project: Benny Krisman, Rossy Ananda
+  Account: Kanya Drestianti, Annisa Basuki
+  
+  Site: http://xmgravity.com
+
+/* SITE */
+  Last update: 01/04/2014
+  Standards: HTML5, CSS3
+  Components: jQuery
+  Frontend Framework: Twitter Bootstrap 3
+  Backend Framework: Laravel 4

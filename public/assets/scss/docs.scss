@@ -1,0 +1,122 @@
+@import "site";
+
+.docs-container > section > h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  color: $dark-gray;
+  text-transform: none;
+}
+
+.module-wrapper {
+  .container {
+    width: auto;
+  }
+}
+
+.docs-header {
+  padding: 4em 0;
+  background: #ededed;
+  text-align: center;
+  margin-bottom: 4em;
+
+  @include breakpoint(medium) {
+    padding: 9em 0;
+  }
+
+  h1 {
+    font-size: 1em;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 2em;
+    background: $accent-color;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 60%;
+    font-size: 2.5em;
+    margin: 0 auto 0.8em;
+  }
+
+  p {
+    display: inline-block;
+    border-top: 1px solid $accent-color;
+    padding-top: .5em;
+  }
+}
+
+.docs-container {
+  > section {
+    margin-bottom: 4em;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+}
+
+.show-code {
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.palette {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 2px solid #000;
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  
+  &:after {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  &.base {
+    background-color: $accent-color;
+
+    &:after {
+      content: '#{$accent-color}';
+    }
+  }
+
+  &.hover {
+    background-color: $accent-color-hover;
+
+    &:after {
+      content: '#{$accent-color-hover}';
+    }
+  }
+
+  &.dark {
+    background-color: $accent-color-dark;
+
+    &:after {
+      content: '#{$accent-color-dark}';
+    }
+  }
+
+  &.background {
+    background-color: $background-color;
+
+    &:after {
+      color: $base-font-color;
+      content: '#{$background-color}';
+    }
+  }
+
+  &.complement {
+    background-color: $complement-color;
+
+    &:after {
+      content: '#{$complement-color}';
+    }
+  }
+}
