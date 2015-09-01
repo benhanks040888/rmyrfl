@@ -11,9 +11,11 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
 		$this->call('SentrySeeder');
 		$this->command->info('Sentry tables seeded');
+		
+		$this->call('GeneralInfoSeeder');
+		$this->command->info('General Info table seeded');
 	}
 
 }

@@ -155,3 +155,11 @@ if ( ! function_exists('resizeSelf'))
     return $image;
   }
 }
+
+if ( ! function_exists('getLang'))
+{
+  function getLang()
+  {
+    return Cookie::get('romy_lang') ?: 'id';
+  }
+}

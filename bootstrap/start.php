@@ -29,7 +29,7 @@ $env = $app->detectEnvironment(array(
   'local' => array(
     'dev.*',   '*.dev',
     'local.*', '*.local',
-    'local*',
+    'local*','XMG*',
     'Hendra*'
   ),
 

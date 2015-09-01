@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ assets_url('admin/css/vendors/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ assets_url('admin/css/vendors/metisMenu.min.css') }}">
     <link rel="stylesheet" href="{{ assets_url('admin/css/vendors/datepicker3.css') }}">
+    <link rel="stylesheet" href="{{ assets_url('admin/css/vendors/jquery.dataTables.css') }}">
     <link rel="stylesheet" href="{{ assets_url('admin/css/vendors/sb-admin-2.css') }}">
     <link rel="stylesheet" href="{{ assets_url('admin/css/vendors/morris/morris-0.4.3.min.css') }}">
     <link rel="stylesheet" href="{{ assets_url('admin/font-awesome/css/font-awesome.min.css') }}">
@@ -42,8 +43,8 @@
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ str_replace('/', '\/', URL::to('admin/js/jquery-1.10.2.js')) }}"><\/script>')</script>
-
+    <script>window.jQuery || document.write('<script src="{{ str_replace('/', '\/', URL::to('assets/admin/js/vendors/jquery-1.11.0.min.js')) }}"><\/script>')</script>
+	<script>$.ajaxSetup({ headers: { 'X-CSRF-Token' : '{{ csrf_token() }}' } });</script>
     <script src="{{ assets_url('admin/js/vendors/bootstrap.min.js') }}"></script>
     <script src="{{ assets_url('admin/js/vendors/metisMenu.min.js') }}"></script>
 
@@ -51,7 +52,7 @@
     <script src="{{ assets_url('admin/js/vendors/morris.min.js') }}"></script>
 
     <script src="{{ assets_url('admin/js/vendors/bootstrap-datepicker.js') }}"></script>
-
+	<script src="{{ assets_url('admin/js/vendors/jquery.dataTables.min.js') }}"></script>
     <script src="{{ assets_url('admin/js/vendors/sb-admin-2.js') }}"></script>
 
     <script src="{{ assets_url('admin/js/admin.js') }}"></script>
