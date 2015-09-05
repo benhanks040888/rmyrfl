@@ -1,0 +1,39 @@
+.search-form {
+  display: inline-block;
+  min-width: 200px;
+  position: relative;
+  
+  .form-control {
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid $dark-gray;
+    box-shadow: none;
+    font-style: italic;
+    color: $dark-gray;
+  }
+  
+  button[type="submit"] {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transition: all ease .3s;
+      @include triangle(6px, $dark-gray, down-right);
+    }
+
+    &:hover {
+      &:before {
+        @include triangle(8px, $dark-gray, down-right);
+      }
+    }
+  }
+}

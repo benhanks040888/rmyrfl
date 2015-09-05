@@ -14,6 +14,9 @@
   @elseif $point == large {
     @media (min-width: 1200px) { @content; }
   }
+  @else if $point == mobile-only {
+    @media (max-width: 768px)  { @content; }
+  }
 }
 
 // vertical-center using table display method

@@ -1,8 +1,35 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-family;
-  color: $accent-color;
 }
 
 h1, h2, h3 {
   text-transform: uppercase;
+}
+
+.splash-tagline {
+  font-size: rem(30);
+  text-align: center;
+  text-transform: none;
+  background: #fff;
+  padding: 10px;
+  
+  @include breakpoint(medium) {
+    background: transparent;
+    padding: 0;
+  }
+
+  span {
+    line-height: 48px;
+    
+    @include breakpoint(medium) {
+      background: #fff;
+      display: inline-block;
+      margin: 4px 0;
+      padding: 0 10px;
+    }
+  }
+
+  strong {
+    color: $accent-color;
+  }
 }

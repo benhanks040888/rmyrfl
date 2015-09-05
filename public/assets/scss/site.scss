@@ -1,8 +1,14 @@
 @import "vendors/bourbon/bourbon";
 @import "vendors/fontawesome/font-awesome";
 
+@import "fonts";
+@import "utilities";
 @import "variables";
 @import "typography";
-@import "utilities";
 
 @import "base";
+
+@import "components/buttons";
+@import "components/form";
+@import "components/header";
+@import "components/footer";
