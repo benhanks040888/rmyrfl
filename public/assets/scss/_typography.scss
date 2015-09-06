@@ -25,6 +25,7 @@ h3 {
   text-transform: none;
   background: #fff;
   padding: 10px;
+  font-weight: normal;
   
   @include breakpoint(medium) {
     background: transparent;
