@@ -20,7 +20,7 @@
 }
 
 // vertical-center using table display method
-@mixin vcenter ($inner: ".vc-inner") {
+@mixin vcenter ($inner: ".vcenter") {
   display: table;
 
   & > #{$inner} {

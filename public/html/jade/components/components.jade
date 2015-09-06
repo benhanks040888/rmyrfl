@@ -9,7 +9,7 @@ html(class="no-js", lang="en")
     link(rel='stylesheet', href='../assets/css/vendors/bootstrap/bootstrap.css')
     link(rel='stylesheet', href='../assets/css/vendors/prism.css')
     link(rel='stylesheet', href='../assets/css/docs.css')
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,700')
+    //- link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,700')
 
   body
 
@@ -62,6 +62,27 @@ html(class="no-js", lang="en")
           pre
             code.lang-markup
 
+    .container.docs-container
+      section
+        h3 Clients & Testimonial
+        .module-wrapper
+          include modules/testimonial.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container-fluid.docs-container
+      section
+        h3 Header
+        .module-wrapper
+          include modules/header.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
 
     .container-fluid.docs-container
       section
