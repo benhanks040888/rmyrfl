@@ -25,7 +25,6 @@
 
 .testimonial-person {
   @include clearfix();
-  margin-bottom: 20px;
 
   .testimonial-person-image {
     border: 3px solid $accent-color;
@@ -70,4 +69,5 @@
 .testimonial-content {
   font-family: $georgia;
   font-style: italic;
+  margin-top: 20px;
 }

@@ -2577,9 +2577,6 @@ body {
   padding: 20px;
 }
 
-.testimonial-person {
-  margin-bottom: 20px;
-}
 .testimonial-person:after {
   content: "";
   display: table;
@@ -2627,6 +2624,7 @@ body {
 .testimonial-content {
   font-family: Georgia, serif;
   font-style: italic;
+  margin-top: 20px;
 }
 
 .footer-menu {
