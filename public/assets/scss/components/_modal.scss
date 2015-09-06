@@ -1,0 +1,35 @@
+.modal-promo {
+
+  .modal-header {
+    background: #f6f6f6;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  button.close {
+    text-transform: uppercase;
+    font-size: rem(14);
+    color: #bbb;
+    opacity: 1;
+    margin-top: 0;
+    
+    &:hover {
+      color: $dark-gray;
+    }
+    
+    span {
+      font-size: rem(22);
+      vertical-align: middle;
+    }
+  }
+
+  .modal-title {
+    text-transform: uppercase;
+    font-size: rem(14);
+    font-weight: 600;
+  }
+
+  .modal-body {
+    padding: 25px;
+  }
+}

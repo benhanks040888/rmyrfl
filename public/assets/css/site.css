@@ -2453,12 +2453,15 @@ body {
 .btn:active, .btn.active {
   box-shadow: none;
 }
+.btn:focus {
+  outline: none;
+}
 
 .btn-primary {
   border: none;
   background-color: #f5bf00;
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus {
   background-color: #ffd029;
 }
 
@@ -2468,7 +2471,9 @@ body {
   background: transparent;
   font-weight: 600;
 }
-.btn-outline:hover {
+.btn-outline:hover, .btn-outline:focus {
+  color: #fff;
+  background: #f5bf00;
   border-color: #f5bf00;
 }
 
@@ -2784,6 +2789,34 @@ select.form-control {
 .pagination > li.next > a:hover,
 .pagination > li.next > span:hover {
   color: #323232;
+}
+
+.modal-promo .modal-header {
+  background: #f6f6f6;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.modal-promo button.close {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: #bbb;
+  opacity: 1;
+  margin-top: 0;
+}
+.modal-promo button.close:hover {
+  color: #323232;
+}
+.modal-promo button.close span {
+  font-size: 1.375rem;
+  vertical-align: middle;
+}
+.modal-promo .modal-title {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.modal-promo .modal-body {
+  padding: 25px;
 }
 
 .footer-menu {

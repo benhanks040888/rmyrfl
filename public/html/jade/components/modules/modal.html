@@ -1,0 +1,41 @@
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#promoModal">
+  Launch promo modal
+</button>
+
+
+<div class="modal modal-promo fade" id="promoModal" tabindex="-1" role="dialog" aria-labelledby="promoModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span> Close</button>
+        <h4 class="modal-title" id="promoModalLabel">Promotion</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="product-image">
+              <img src="assets/images/product-image.jpg" alt="Product Image">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <p>Ingin mendapatkan buku <strong>&ldquo;Self Hypnosis Package untuk Menghentikan Kecanduan Merokok&rdquo;</strong> secara GRATIS?</p>
+
+            <p class="text-muted">Isi dulu nama & alamat email Anda:</p>
+
+            <form action="">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Nama" required>
+              </div>
+
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+              </div>
+
+              <input type="submit" value="Submit" class="btn btn-outline">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,13 +10,18 @@
   &.active {
     box-shadow: none;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-primary {
   border: none;
   background-color: $accent-color;
   
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $accent-color-lighter;
   }
 }
@@ -27,7 +32,10 @@
   background: transparent;
   font-weight: 600;
   
-  &:hover {
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: $accent-color;
     border-color: $accent-color;
   }
 }
