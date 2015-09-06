@@ -2816,6 +2816,89 @@ select.form-control {
   padding: 25px;
 }
 
+.header .btn-tab {
+  background: #d7d7d7;
+  color: #fff;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-right: 1px solid #fff;
+}
+.header .btn-tab:last-child {
+  border-right: none;
+}
+.header .btn-tab:hover, .header .btn-tab:active, .header .btn-tab.active {
+  color: #323232;
+  background: #fff;
+}
+
+.navbar {
+  border-radius: 0;
+  background: #f5f5f5;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 0;
+}
+
+.navbar-button {
+  float: right;
+  margin-right: 15px;
+}
+
+.navbar-nav > li > a.btn-outline {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 5px;
+}
+
+.nav > li > a:hover.btn-outline,
+.nav > li > a:focus.btn-outline {
+  background-color: #f5bf00;
+}
+
+.header-menu-other {
+  padding-left: 15px;
+  background: #f5f5f5;
+  line-height: 42px;
+}
+.header-menu-other .lang-selector {
+  margin-right: 25px;
+}
+
+.header-menu-other-links a {
+  color: #323232;
+  font-size: 0.8125rem;
+  margin-right: 30px;
+}
+.header-menu-other-links a:hover {
+  margin-right: 0;
+}
+
+.sub-navbar {
+  background: #fff;
+}
+
+.logo {
+  display: inline-block;
+  padding: 10px 30px;
+  float: left;
+}
+
+.sub-navbar-nav {
+  padding-left: 200px;
+}
+.sub-navbar-nav > li {
+  float: left;
+  width: 16.6667%;
+}
+.sub-navbar-nav > li > a {
+  color: #323232;
+  padding: 10px 10px 10px 0;
+}
+.sub-navbar-nav > li > a:hover, .sub-navbar-nav > li > a:focus {
+  background: transparent;
+  border-bottom: 5px solid #f5bf00;
+}
+
 .footer-menu {
   background: #f5f5f5;
 }
