@@ -2447,6 +2447,9 @@ body {
   line-height: 40px;
   min-width: 140px;
 }
+.btn:active, .btn.active {
+  box-shadow: none;
+}
 
 .btn-primary {
   border: none;
@@ -2467,6 +2470,26 @@ body {
 
 .btn-rounded {
   border-radius: 50px;
+}
+
+.nav-tabs > li > a {
+  border-radius: 0;
+}
+.nav-tabs > li > a.btn:hover, .nav-tabs > li > a.btn.focus {
+  background-color: #f5bf00;
+  border-color: #f5bf00;
+}
+
+.btn-tab {
+  min-width: 180px;
+  line-height: 50px;
+  background: #d0d0d0;
+  font-weight: 600;
+  color: #323232;
+  border-radius: 0;
+}
+.btn-tab:hover, .btn-tab:active, .btn-tab.active {
+  background: #f5bf00;
 }
 
 .btn-group .btn {
@@ -2548,6 +2571,10 @@ body {
 .form-control:focus {
   box-shadow: none;
   border-color: #aaa;
+}
+
+select.form-control {
+  height: 40px;
 }
 
 .client-thumbnail {
