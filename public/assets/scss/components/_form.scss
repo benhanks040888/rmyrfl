@@ -37,3 +37,19 @@
     }
   }
 }
+
+.form-control {
+  background: #f6f6f6;
+  border-color: #ccc;
+  font-size: rem(16);
+  color: $dark-gray;
+  box-shadow: none;
+  line-height: 40px;
+  height: auto;
+  padding: 0 20px;
+
+  &:focus {
+    box-shadow: none;
+    border-color: #aaa;
+  }
+}

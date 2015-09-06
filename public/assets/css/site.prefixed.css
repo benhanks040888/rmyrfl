@@ -2535,6 +2535,21 @@ body {
   border-left: 8px solid transparent;
 }
 
+.form-control {
+  background: #f6f6f6;
+  border-color: #ccc;
+  font-size: 1rem;
+  color: #323232;
+  box-shadow: none;
+  line-height: 40px;
+  height: auto;
+  padding: 0 20px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #aaa;
+}
+
 .client-thumbnail {
   width: 178px;
   height: 108px;
