@@ -23,6 +23,13 @@
   padding: 20px;
 }
 
+.testimonial-item-slider {
+  .testimonial-content {
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+}
+
 .testimonial-person {
   @include clearfix();
 
