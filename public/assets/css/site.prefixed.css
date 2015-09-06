@@ -2575,6 +2575,7 @@ body {
 
 select.form-control {
   height: 40px;
+  background: transparent;
 }
 
 .client-thumbnail {
