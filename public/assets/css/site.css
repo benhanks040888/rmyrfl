@@ -2740,6 +2740,52 @@ select.form-control {
   margin-left: 5px;
 }
 
+.pagination-wrapper {
+  border-top: 1px solid #ddd;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  padding: 0;
+  width: 33px;
+  height: 33px;
+  line-height: 33px;
+  border: 1px solid transparent;
+  color: #999;
+  margin: 0 3px;
+  border-radius: 2px;
+  text-align: center;
+}
+.pagination > li > a:hover, .pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus {
+  background: transparent;
+  color: #323232;
+  border-color: #c0c0c0;
+}
+.pagination .active > a, .pagination .active > a:hover, .pagination .active > a:focus,
+.pagination .active > span,
+.pagination .active > span:hover,
+.pagination .active > span:focus {
+  background: transparent;
+  color: #323232;
+  border-color: #c0c0c0;
+}
+.pagination > li.prev > a,
+.pagination > li.prev > span,
+.pagination > li.next > a,
+.pagination > li.next > span {
+  color: #999;
+  font-weight: bold;
+  border-radius: 0;
+}
+.pagination > li.prev > a:hover,
+.pagination > li.prev > span:hover,
+.pagination > li.next > a:hover,
+.pagination > li.next > span:hover {
+  color: #323232;
+}
+
 .footer-menu {
   background: #f5f5f5;
 }
