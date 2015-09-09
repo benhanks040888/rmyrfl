@@ -63,7 +63,7 @@
     font-size: rem(13);
     margin-right: 30px;
     
-    &:hover {
+    &:last-child {
       margin-right: 0;
     }
   }
@@ -96,5 +96,23 @@
         border-bottom: 5px solid $accent-color;
       }
     }
+  }
+}
+
+.simple-header {
+  background: #fff;
+  line-height: 84px;
+  position: relative;
+  
+  .logo {
+    float: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -96px;
+    padding-top: 0;
+  }
+
+  .lang-selector {
+    margin-right: 30px;
   }
 }

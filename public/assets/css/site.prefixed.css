@@ -2869,7 +2869,7 @@ select.form-control {
   font-size: 0.8125rem;
   margin-right: 30px;
 }
-.header-menu-other-links a:hover {
+.header-menu-other-links a:last-child {
   margin-right: 0;
 }
 
@@ -2897,6 +2897,22 @@ select.form-control {
 .sub-navbar-nav > li > a:hover, .sub-navbar-nav > li > a:focus {
   background: transparent;
   border-bottom: 5px solid #f5bf00;
+}
+
+.simple-header {
+  background: #fff;
+  line-height: 84px;
+  position: relative;
+}
+.simple-header .logo {
+  float: none;
+  position: absolute;
+  left: 50%;
+  margin-left: -96px;
+  padding-top: 0;
+}
+.simple-header .lang-selector {
+  margin-right: 30px;
 }
 
 .footer-menu {
