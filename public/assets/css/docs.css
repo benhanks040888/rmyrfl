@@ -2990,6 +2990,88 @@ select.form-control {
   font-size: 0.875rem;
 }
 
+.splash-col {
+  float: left;
+  width: 33.3333%;
+  min-height: 100%;
+  height: calc(100vh - 84px);
+  position: relative;
+}
+.splash-col:hover .splash-overlay {
+  opacity: .8;
+}
+.splash-col:hover .splash-text h1 {
+  color: #f5bf00;
+}
+.splash-col:hover .splash-text p,
+.splash-col:hover .splash-text span {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.splash-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity ease .8s;
+}
+
+.splash-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.splash-text {
+  position: relative;
+  z-index: 4;
+  display: table;
+  width: 100%;
+  height: 100%;
+  color: #323232;
+  text-align: center;
+  padding-top: 200px;
+}
+.splash-text > .vcenter {
+  display: table-cell;
+  vertical-align: middle;
+}
+.splash-text h1,
+.splash-text p,
+.splash-text span {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.splash-text h1 {
+  font-size: 1.25rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+.splash-text p,
+.splash-text span {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all ease .5s;
+}
+.splash-text span {
+  transition-delay: .3s;
+}
+
 .docs-container > section > h3 {
   border-bottom: 1px solid #ccc;
   padding-bottom: .5em;
