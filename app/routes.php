@@ -14,5 +14,9 @@ include('admin_routes.php');
 */
 
 Route::group(array('namespace' => 'App\Controllers'), function() {
-  Route::get('/', array('as' => 'home', 'uses' => 'HomeController@getIndex'));
+  Route::get('/{lang?}', array('as' => 'home', 'uses' => 'HomeController@getDefault'));
+  Route::group(array('prefix' => '{lang}'), function() {
+	Route::get('/home', array('as' => 'home', 'uses' => 'HomeController@getIndex'));
+  
+  });
 });

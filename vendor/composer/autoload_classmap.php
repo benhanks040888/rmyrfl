@@ -28,6 +28,7 @@ return array(
     'App\\Models\\Testimony' => $baseDir . '/app/models/Testimony.php',
     'App\\Models\\User' => $baseDir . '/app/models/User.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
+    'BaseSiteController' => $baseDir . '/app/controllers/BaseSiteController.php',
     'Cartalyst\\Sentry\\Groups\\GroupExistsException' => $vendorDir . '/cartalyst/sentry/src/Cartalyst/Sentry/Groups/Exceptions.php',
     'Cartalyst\\Sentry\\Groups\\GroupNotFoundException' => $vendorDir . '/cartalyst/sentry/src/Cartalyst/Sentry/Groups/Exceptions.php',
     'Cartalyst\\Sentry\\Groups\\NameRequiredException' => $vendorDir . '/cartalyst/sentry/src/Cartalyst/Sentry/Groups/Exceptions.php',
