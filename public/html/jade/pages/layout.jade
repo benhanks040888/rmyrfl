@@ -12,11 +12,9 @@ html(class="no-js", lang="en")
     //- only for development
     link(rel='stylesheet', href='../assets/css/vendors/bootstrap/bootstrap.min.css')
     link(rel='stylesheet', href='../assets/css/site.prefixed.min.css')
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:400,700')
 
   body(class='#{bodyClass}')
     
-    .container
-      block content
+    block content
 
     include _includes/scripts
