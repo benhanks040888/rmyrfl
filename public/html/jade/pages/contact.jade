@@ -1,0 +1,39 @@
+extends layout
+
+block vars
+  - var bodyClass = 'contact';
+
+block content
+  include ../components/modules/header.html
+
+  section.section.section-contact
+    .container
+      h1.section-heading Hubungi kami sekarang juga
+      .row
+        .col-sm-5.col-sm-offset-1.col-md-3.col-md-offset-2
+          p: img(src="../assets/images/logo-alt.png", alt="Romy Rafael hypnotheraphy")
+
+          h4.tt-normal Romy Rafael<br>Hypnotheraphy Center
+
+          p Phone: 0818 399124, 0819 32433457<br>Email: <a href="#">info@romyrafael.net</a>
+        .col-sm-5
+          form.
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nama Anda">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Telepon">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Alamat Lengkap">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Pesan"></textarea>
+            </div>
+            <input type="submit" class="btn btn-outline" value="Kirim">
+
+
+  include ../components/modules/footer.html
