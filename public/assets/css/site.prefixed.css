@@ -2914,6 +2914,9 @@ select.form-control {
 .simple-header .lang-selector {
   margin-right: 30px;
 }
+.simple-header .social-links a {
+  margin: 0 15px;
+}
 
 .footer-menu {
   background: #f5f5f5;
@@ -2950,6 +2953,7 @@ select.form-control {
   margin-right: 25px;
   color: #d3cbc0;
   font-size: 1.25rem;
+  transition: all ease .3s;
 }
 .social-links a:last-child {
   margin-right: 0;
@@ -2988,17 +2992,24 @@ select.form-control {
 }
 
 .splash-col {
-  float: left;
-  width: 33.3333%;
-  min-height: 100%;
-  height: calc(100vh - 84px);
+  display: block;
+  height: 400px;
   position: relative;
+}
+@media (min-width: 768px) {
+  .splash-col {
+    float: left;
+    width: 33.3333%;
+    height: 100vh;
+  }
 }
 .splash-col:hover .splash-overlay {
   opacity: .8;
 }
 .splash-col:hover .splash-text h1 {
-  color: #f5bf00;
+  color: #fff;
+  border-color: #f5bf00;
+  background: #f5bf00;
 }
 .splash-col:hover .splash-text p,
 .splash-col:hover .splash-text span {
@@ -3027,9 +3038,14 @@ select.form-control {
   z-index: 2;
   width: 100%;
   height: 100%;
-  background-position: top center;
+  background-position: 50% 30%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .splash-image {
+    background-position: top center;
+  }
 }
 
 .splash-text {
@@ -3040,24 +3056,46 @@ select.form-control {
   height: 100%;
   color: #323232;
   text-align: center;
-  padding-top: 200px;
+  padding-top: 100px;
 }
 .splash-text > .vcenter {
   display: table-cell;
   vertical-align: middle;
 }
+@media (min-width: 768px) {
+  .splash-text {
+    padding-top: 200px;
+  }
+}
 .splash-text h1,
 .splash-text p,
 .splash-text span {
-  max-width: 80%;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 768px) {
+  .splash-text h1,
+  .splash-text p,
+  .splash-text span {
+    max-width: 80%;
+  }
+}
 .splash-text h1 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: #fff;
+  border: 3px solid #fff;
+  border-radius: 50px;
   text-transform: uppercase;
   margin-top: 0;
+  line-height: 1.7;
+  display: inline-block;
+  padding: 0 30px;
+}
+@media (min-width: 768px) {
+  .splash-text h1 {
+    font-size: 1.25rem;
+  }
 }
 .splash-text p,
 .splash-text span {
@@ -3069,4 +3107,14 @@ select.form-control {
 }
 .splash-text span {
   transition-delay: .3s;
+}
+
+@media (min-width: 768px) {
+  .page--splash .simple-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
 }
