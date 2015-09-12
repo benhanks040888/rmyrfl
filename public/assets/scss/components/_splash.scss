@@ -1,3 +1,9 @@
+.splash-row {
+  @include breakpoint(small) {
+    height: 100vh;
+  }
+}
+
 .splash-col {
   display: block;
   height: 400px;
@@ -6,8 +12,7 @@
   @include breakpoint(small) {
     float: left;
     width: 33.3333%;
-    // height: auto;
-    height: 100vh;
+    height: 100%;
   }
   
   &:hover {

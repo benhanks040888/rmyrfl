@@ -4,4 +4,41 @@ block vars
   - var bodyClass = 'home';
 
 block content
-  h1 Home
+  include ../components/modules/header.html
+
+  section.slider
+    h1 Slider
+
+  section.section
+    h1.section-heading Apakah Anda mencari entertainer profesional yang dapat menyampaikan pesan dari produk dan jasa Anda?
+
+    .embed-responsive.embed-responsive-16by9.
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
+    
+    a.btn.btn-outline(href="#") Siapa yang kami layani
+
+  section.section.section-dark
+    h2.section-heading Cara Kerja Kami
+
+    p Turpis mattis elementum ultrices? Turpis porta tincidunt hac, vut, placerat augue platea elementum! Egestas, sagittis tristique. Sociis placerat? Nisi lundium egestas. Phasellus elementum sed, rhoncus rhoncus enim porttitor sed enim? Rhoncus turpis pid dis integer tristique, sociis in! Odio tincidunt porttitor hac, in, risus scelerisque, rhoncus pulvinar tortor penatibus dictumst?  Turpis mattis elementum ultrices? Turpis porta tincidunt hac, vut, placerat augue platea elementum! Egestas, sagittis tristique. Sociis placerat? Nisi lundium egestas. Phasellus elementum sed, rhoncus rhoncus enim porttitor sed enim? Rhoncus turpis pid dis integer tristique, sociis in! Odio tincidunt porttitor hac, in, risus scelerisque, rhoncus pulvinar tortor penatibus dictumst? 
+
+    a.btn.btn-outline(href="#") Lihat Layanan & Cara Kerja Kami
+
+  section.section.section-gray
+    h1.section-heading Sebagian dari Klien Kami
+
+    .clients-list.
+      <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+
+    
+    a.btn.btn-outline(href="#") Lihat Semua Klien dan Testimoni
+
+  section.section
+    h1.section-heading Saksikan juga acara LINTAS IMAJI di NET TV
+
+    .embed-responsive.embed-responsive-16by9.
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
+    
+    a.btn.btn-outline(href="#") Lihat semua episode
+
+  include ../components/modules/footer.html

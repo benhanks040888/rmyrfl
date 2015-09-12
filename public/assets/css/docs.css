@@ -2995,6 +2995,12 @@ select.form-control {
   font-size: 0.875rem;
 }
 
+@media (min-width: 768px) {
+  .splash-row {
+    height: 100vh;
+  }
+}
+
 .splash-col {
   display: block;
   height: 400px;
@@ -3004,7 +3010,7 @@ select.form-control {
   .splash-col {
     float: left;
     width: 33.3333%;
-    height: 100vh;
+    height: 100%;
   }
 }
 .splash-col:hover .splash-overlay {
