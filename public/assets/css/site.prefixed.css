@@ -2855,6 +2855,12 @@ select.form-control {
   min-height: 430px;
 }
 
+.section-about-cover {
+  background: url(../images/about-image.jpg) no-repeat top center;
+  background-size: cover;
+  min-height: 430px;
+}
+
 .header .btn-tab {
   background: #d7d7d7;
   color: #fff;
