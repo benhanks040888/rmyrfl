@@ -56,12 +56,16 @@
 }
 
 .btn-tab {
-  min-width: 180px;
+  min-width: 150px;
   line-height: 50px;
   background: #d0d0d0;
   font-weight: 600;
   color: $dark-gray;
   border-radius: 0;
+  
+  @include breakpoint(small) {
+    min-width: 180px;
+  }
   
   &:hover,
   &:active,

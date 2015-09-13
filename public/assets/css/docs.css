@@ -2434,6 +2434,10 @@ h3 {
   text-transform: none;
 }
 
+.tt-uppercase {
+  text-transform: uppercase;
+}
+
 html {
   font-size: 16px;
 }
@@ -2444,6 +2448,16 @@ body {
   color: #323232;
   line-height: 24px;
   -webkit-font-smoothing: antialiased;
+}
+
+.thumbnail {
+  border-radius: none;
+  border-color: #eee;
+}
+
+img.thumbnail {
+  display: inline-block;
+  margin-bottom: 0;
 }
 
 .btn {
@@ -2495,12 +2509,17 @@ body {
 }
 
 .btn-tab {
-  min-width: 180px;
+  min-width: 150px;
   line-height: 50px;
   background: #d0d0d0;
   font-weight: 600;
   color: #323232;
   border-radius: 0;
+}
+@media (min-width: 768px) {
+  .btn-tab {
+    min-width: 180px;
+  }
 }
 .btn-tab:hover, .btn-tab:active, .btn-tab.active {
   background: #f5bf00;
@@ -2698,8 +2717,47 @@ select.form-control {
   border-right: 3px solid #f80f00;
 }
 
+.product-nav {
+  position: relative;
+  margin-bottom: 20px;
+}
+.product-nav .nav-tabs {
+  border-color: #eee;
+}
+
+.product-sorter {
+  text-align: right;
+  line-height: 36px;
+  font-size: 0.875rem;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .product-sorter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+.product-sorter select {
+  font-size: 0.875rem;
+  height: 32px;
+  width: auto;
+  display: inline;
+}
+
+.products-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .product-item {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .product-image {
@@ -2748,6 +2806,10 @@ select.form-control {
 .product-price .new-price .label-discount {
   vertical-align: text-bottom;
   margin-left: 5px;
+}
+
+.secret-question-image {
+  margin: 20px 0;
 }
 
 .pagination-wrapper {
@@ -2840,6 +2902,10 @@ select.form-control {
   margin: 30px 0;
 }
 
+.section-light {
+  background: #fff;
+}
+
 .section-dark {
   background: #222;
   color: #fff;
@@ -2923,6 +2989,7 @@ select.form-control {
 
 .sub-navbar {
   background: #fff;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .logo {

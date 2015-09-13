@@ -9,3 +9,13 @@ body {
   line-height: $base-line-height;
   -webkit-font-smoothing: antialiased;
 }
+
+.thumbnail {
+  border-radius: none;
+  border-color: #eee;
+}
+
+img.thumbnail {
+  display: inline-block;
+  margin-bottom: 0;
+}
