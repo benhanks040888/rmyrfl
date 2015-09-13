@@ -7,9 +7,20 @@ $(function() {
   //   autoPlay: 5000
   // });
   
+  $('.js-popup-youtube').magnificPopup({
+    type: 'iframe',
+    fixedContentPos: false,
+    mainClass: 'mfp-fade',
+    // disableOn: 700,
+    // removalDelay: 160,
+    // preloader: false,
+
+  });
+
   $('.testimonial-slider').slick({
     fade: true
   });
+
   $('.js-clients-list').slick({
     dots: false,
     slidesToShow: 5,
