@@ -3215,6 +3215,9 @@ select.form-control {
 .testimonial-item {
   background: #f8f8f8;
   padding: 20px;
+  text-align: left;
+  min-height: 376px;
+  margin-bottom: 20px;
 }
 
 .testimonial-item-slider .testimonial-content {
