@@ -1,0 +1,7 @@
+.video-item {
+  margin-bottom: 20px;
+  
+  @include breakpoint(small) {
+    margin-bottom: 0;
+  }
+}

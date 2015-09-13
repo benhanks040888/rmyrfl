@@ -6,9 +6,7 @@ block vars
 block content
   include ../components/modules/header.html
 
-  section.section.section-slider
-    .container
-      h1 Slider
+  include ../components/modules/slider.html
 
   section.section.section-main
     .container
@@ -37,8 +35,25 @@ block content
       h1.section-heading Sebagian dari Klien Kami
 
       .section-content
-        .clients-list.
-          <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+        .clients-list.clients-slider.js-clients-list
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
+          .client-cell.
+            <div class="client-thumbnail"><img src="assets/images/client1.png" alt="Client Name"></div>
 
       a.btn.btn-outline(href="#") Lihat Semua Klien dan Testimoni
 
@@ -48,17 +63,17 @@ block content
 
       .section-content
         .row
-          .col-sm-3
-            .embed-responsive.embed-responsive-16by9.
+          .col-xs-6.col-sm-3
+            .video-item.embed-responsive.embed-responsive-16by9.
               <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
-          .col-sm-3
-            .embed-responsive.embed-responsive-16by9.
+          .col-xs-6.col-sm-3
+            .video-item.embed-responsive.embed-responsive-16by9.
               <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
-          .col-sm-3
-            .embed-responsive.embed-responsive-16by9.
+          .col-xs-6.col-sm-3
+            .video-item.embed-responsive.embed-responsive-16by9.
               <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
-          .col-sm-3
-            .embed-responsive.embed-responsive-16by9.
+          .col-xs-6.col-sm-3
+            .video-item.embed-responsive.embed-responsive-16by9.
               <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
       
       a.btn.btn-outline(href="#") Lihat semua episode

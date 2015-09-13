@@ -19,3 +19,17 @@ img.thumbnail {
   display: inline-block;
   margin-bottom: 0;
 }
+
+.container {
+  @include breakpoint(small) {
+    width: auto;
+  }
+
+  @include breakpoint(medium) {
+    width: 960px;
+  }
+
+  @include breakpoint(large) {
+    width: 1180px;
+  }
+}
