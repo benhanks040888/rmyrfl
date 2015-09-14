@@ -20,9 +20,12 @@
 .btn-primary {
   border: none;
   background-color: $accent-color;
+  color: $dark-gray;
+  font-weight: 600;
   
   &:hover,
   &:focus {
+    color: $dark-gray;
     background-color: $accent-color-lighter;
   }
 }
