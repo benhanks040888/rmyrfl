@@ -23,6 +23,10 @@
     padding-bottom: 0;
     border-bottom: none;
   }
+
+  > span {
+    margin-right: 5px;
+  }
   
   select {
     font-size: rem(14);

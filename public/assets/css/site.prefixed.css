@@ -2377,6 +2377,10 @@
   font-style: normal;
   font-weight: 700;
 }
+.breather {
+  margin: 1.5em 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -3082,9 +3086,9 @@ img.mfp-img {
 .btn-tab {
   min-width: 150px;
   line-height: 50px;
-  background: #d0d0d0;
+  background: #323232;
   font-weight: 600;
-  color: #323232;
+  color: #fff;
   border-radius: 0;
 }
 @media (min-width: 768px) {
@@ -3094,6 +3098,7 @@ img.mfp-img {
 }
 .btn-tab:hover, .btn-tab:active, .btn-tab.active {
   background: #f5bf00;
+  color: #323232;
 }
 
 .btn-group .btn {
@@ -3342,6 +3347,9 @@ select.form-control {
     padding-bottom: 0;
     border-bottom: none;
   }
+}
+.product-sorter > span {
+  margin-right: 5px;
 }
 .product-sorter select {
   font-size: 0.875rem;
@@ -3612,6 +3620,11 @@ select.form-control {
 .navbar-button {
   float: right;
   margin-right: 15px;
+  margin-top: 7px;
+}
+.navbar-button .btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .navbar-nav > li > a.btn-outline {
