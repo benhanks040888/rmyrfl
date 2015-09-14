@@ -3766,6 +3766,7 @@ select.form-control {
 @media (min-width: 768px) {
   .splash-row {
     height: 100vh;
+    padding-top: 85px;
   }
 }
 
@@ -3782,12 +3783,7 @@ select.form-control {
   }
 }
 .splash-col:hover .splash-overlay {
-  opacity: .8;
-}
-.splash-col:hover .splash-text h1 {
-  color: #fff;
-  border-color: #f5bf00;
-  background: #f5bf00;
+  opacity: 1;
 }
 .splash-col:hover .splash-text p,
 .splash-col:hover .splash-text span {
@@ -3803,7 +3799,7 @@ select.form-control {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: url("../images/pattern-overlay.png") repeat;
   z-index: 3;
   opacity: 0;
   transition: opacity ease .8s;
@@ -3832,7 +3828,7 @@ select.form-control {
   display: table;
   width: 100%;
   height: 100%;
-  color: #323232;
+  color: #fff;
   text-align: center;
   padding-top: 100px;
 }
@@ -3862,7 +3858,7 @@ select.form-control {
 .splash-text h1 {
   font-size: 1.125rem;
   color: #fff;
-  border: 3px solid #fff;
+  border: 1px solid #fff;
   border-radius: 50px;
   text-transform: uppercase;
   margin-top: 0;
