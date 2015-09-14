@@ -3234,11 +3234,10 @@ select.form-control {
   clear: both;
 }
 .testimonial-person .testimonial-person-image {
-  border: 3px solid #f5bf00;
-  border-radius: 50px;
+  border: 2px solid #fff;
   overflow: hidden;
-  width: 76px;
-  height: 76px;
+  width: 70px;
+  height: 70px;
   float: left;
   position: relative;
 }
@@ -3266,20 +3265,14 @@ select.form-control {
   font-size: 1rem;
   line-height: 1;
   margin: 0 0 .3em 0;
-  margin-bottom: .3em;
+  margin-bottom: 0.2em;
 }
 .testimonial-person .testimonial-person-job {
   border-radius: 15px;
   font-size: 0.875rem;
   font-weight: 600;
-  line-height: 2;
-  padding: 0 20px 0 30px;
-  margin: 0 0 0 -30px;
-}
-@media (min-width: 480px) {
-  .testimonial-person .testimonial-person-job {
-    background: #f5bf00;
-  }
+  line-height: 1.5;
+  margin: 0;
 }
 
 .testimonial-content {

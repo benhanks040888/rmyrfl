@@ -37,11 +37,11 @@
   @include clearfix();
 
   .testimonial-person-image {
-    border: 3px solid $accent-color;
-    border-radius: 50px;
+    border: 2px solid #fff;
+    // border-radius: 50px;
     overflow: hidden;
-    width: 76px;
-    height: 76px;
+    width: 70px;
+    height: 70px;
     float: left;
     position: relative;
 
@@ -67,20 +67,15 @@
     font-size: rem(16);
     line-height: 1;
     margin: 0 0 .3em 0;
-    margin-bottom: .3em;
+    margin-bottom: 0.2em;
     
   }
   .testimonial-person-job {
     border-radius: 15px;
     font-size: rem(14);
     font-weight: 600;
-    line-height: 2;
-    padding: 0 20px 0 30px;
-    margin: 0 0 0 -30px;
-    
-    @include breakpoint(extra-small) {
-      background: $accent-color;
-    }
+    line-height: 1.5;
+    margin: 0;
   }
 }
 
