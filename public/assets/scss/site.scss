@@ -1,8 +1,30 @@
 @import "vendors/bourbon/bourbon";
 @import "vendors/fontawesome/font-awesome";
 
+@import "fonts";
+@import "utilities";
 @import "variables";
 @import "typography";
-@import "utilities";
 
 @import "base";
+
+@import "components/magnific-popup";
+// @import "components/jquery.flickity";
+@import "components/slick";
+
+@import "components/buttons";
+@import "components/form";
+@import "components/testimonial";
+// @import "components/custom.flickity";
+@import "components/label";
+@import "components/product";
+@import "components/pagination";
+@import "components/modal";
+@import "components/video";
+@import "components/section";
+@import "components/header";
+@import "components/footer";
+@import "components/splash";
+@import "components/slick-custom";
+
+@import "pages/splash";

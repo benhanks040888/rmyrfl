@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  include ../components/modules/header.html
+
+  section.section.section-contact
+    .container
+      h1.section-heading.tt-normal UNTUK MEMBELI BUKU<br>"Self Hypnosis Untuk Menghentikan Kecanduan Merokok"<br>SILAHKAN ISI DATA BERIKUT INI:
+      .row
+        .col-sm-5.col-sm-offset-1.col-md-3.col-md-offset-2.
+          <div class="product-item">
+            <div class="product-image">
+              <img src="assets/images/product-image.jpg" alt="Product Image">
+            </div>
+            <h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
+            <div class="product-price">
+              <p class="old-price">Harga: Rp 160.000</p>
+              <p class="new-price">Promo: Rp 120.000 <span class="label-discount">17%</span></p>
+            </div>
+          </div>
+        .col-sm-5
+          form.
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nama Anda">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Telepon">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Alamat Lengkap">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Pesan"></textarea>
+            </div>
+            <p><small>*Order hanya akan diproses bila sudah transfer pembayaran. Tunggu konfirmasi dari kami untuk  mengetahui biaya kirimnya.</small></p>
+            <input type="submit" class="btn btn-outline" value="Kirim">
+
+
+  include ../components/modules/footer.html

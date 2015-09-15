@@ -1,25 +1,28 @@
 // Colors
 $red: #dd3300;
 $dark-red: #a50f0f;
-$dark-gray: #444;
+$dark-gray: #323232;
 $ultra-light-gray: #efefef;
 
-$blue: #124797;
+$yellow: #f5bf00;
 $white: #ffffff;
 
 //  Font Colors
 $base-font-color: $dark-gray;
-$accent-color: $red;
+$accent-color: $yellow;
+$accent-color-lighter: lighten($accent-color, 10%);
 $accent-color-hover: darken($accent-color, 10%);
 $accent-color-dark: darken($accent-color, 20%);
-$complement-color: $blue;
+$complement-color: $yellow;
 $background-color: $white;
 
 // Font Family
 $lato: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$proxima-nova: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$georgia: Georgia, serif;
 
-$base-font-family: $lato;
-$header-font-family: $lato;
+$base-font-family: $proxima-nova;
+$header-font-family: $proxima-nova;
 
 // $base-font-size: 1.6em;
 $base-font-size: 16px;

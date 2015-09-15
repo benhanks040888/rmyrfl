@@ -1,11 +1,35 @@
 html {
-  font-size: 100%;
+  font-size: $base-font-size;
 }
 
 body {
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: rem($base-font-size);
   color: $base-font-color;
   line-height: $base-line-height;
   -webkit-font-smoothing: antialiased;
+}
+
+.thumbnail {
+  border-radius: none;
+  border-color: #eee;
+}
+
+img.thumbnail {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.container {
+  @include breakpoint(small) {
+    width: auto;
+  }
+
+  @include breakpoint(medium) {
+    width: 960px;
+  }
+
+  @include breakpoint(large) {
+    width: 1180px;
+  }
 }

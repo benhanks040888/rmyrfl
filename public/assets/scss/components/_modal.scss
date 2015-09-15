@@ -1,0 +1,70 @@
+.modal-promo {
+
+  .modal-header {
+    background: #f6f6f6;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  button.close {
+    text-transform: uppercase;
+    font-size: rem(14);
+    color: #bbb;
+    opacity: 1;
+    margin-top: 0;
+    
+    &:hover {
+      color: $dark-gray;
+    }
+    
+    span {
+      font-size: rem(22);
+      vertical-align: middle;
+    }
+  }
+
+  .modal-title {
+    text-transform: uppercase;
+    font-size: rem(14);
+    font-weight: 600;
+  }
+
+  .modal-body {
+    padding: 25px;
+  }
+}
+
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}

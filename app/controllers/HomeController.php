@@ -12,7 +12,7 @@ class HomeController extends BaseSiteController {
 	
 	public function getIndex()
 	{
-		return View::make('hello');
+		return View::make('pages.splash');
 	}
 
 }

@@ -1,0 +1,30 @@
+.flickity-prev-next-button {
+  background: none;
+  
+  &:hover {
+    background: none;
+  }
+
+  &.next {
+    right: -20px;
+  }
+
+  &.previous {
+    left: -20px;
+  }
+
+  @include breakpoint(small) {
+    &.next {
+      right: -30px;
+    }
+
+    &.previous {
+      left: -30px;
+    }
+  }
+
+  .arrow {
+    fill: $accent-color;
+  }
+}
+

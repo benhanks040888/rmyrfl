@@ -1,0 +1,126 @@
+.header {
+  .btn-tab {
+    background: #d7d7d7;
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-right: 1px solid #fff;
+    
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      color: $dark-gray;
+      background: #fff;
+    }
+  }
+}
+
+.navbar {
+  border-radius: 0;
+  background: #f5f5f5;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 0;
+}
+
+.navbar-button {
+  float: right;
+  margin-right: 15px;
+}
+
+.navbar-nav > li > a {
+  &.btn-outline {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+  }
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  &.btn-outline {
+    background-color: $accent-color;
+  }
+}
+
+.header-menu-other {
+  padding-left: 15px;
+  background: #f5f5f5;
+  line-height: 42px;
+  
+  .lang-selector {
+    margin-right: 25px;
+  }
+}
+
+.header-menu-other-links {
+  a {
+    color: $dark-gray;
+    font-size: rem(13);
+    margin-right: 30px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+  
+.sub-navbar {
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.logo {
+  display: inline-block;
+  padding: 10px 30px;
+  float: left;
+}
+
+.sub-navbar-nav {
+  padding-left: 200px;
+  margin-bottom: -1px;
+
+  > li {
+    float: left;
+    width: 16.6667%;
+    
+    > a {
+      color: $dark-gray;
+      padding: 10px 10px 10px 0;
+      
+      &:hover,
+      &:focus {
+        background: transparent;
+        border-bottom: 5px solid $accent-color;
+      }
+    }
+  }
+}
+
+.simple-header {
+  background: #fff;
+  line-height: 84px;
+  position: relative;
+  
+  .logo {
+    float: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -96px;
+    padding-top: 0;
+  }
+
+  .lang-selector {
+    margin-right: 30px;
+  }
+
+  .social-links {
+    a {
+      margin: 0 15px;
+    }
+  }
+}

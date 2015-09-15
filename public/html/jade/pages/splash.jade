@@ -1,0 +1,57 @@
+doctype
+html(class="no-js", lang="en")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1.0')
+    block title
+      title Index
+
+    //- only for development
+    link(rel='stylesheet', href='../assets/css/vendors/bootstrap/bootstrap.min.css')
+    link(rel='stylesheet', href='../assets/css/site.prefixed.min.css')
+
+  body
+    .page--splash
+      include ../components/modules/header-simple.html
+
+      .clearfix.splash-row.
+        <a href="index.html" class="splash-col">
+          <div class="splash-overlay"></div>
+          <div class="splash-image" style="background-image:url(../assets/images/home/corporate-entertainer.jpg)"></div>
+          <div class="splash-text">
+            <div class="vcenter">
+              <h1>Corporate Entertainer</h1>
+              <p>Let me help you to create a show you never imagine before</p>
+
+              <span href="#" class="btn btn-outline">See More</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="index.html" class="splash-col">
+          <div class="splash-overlay"></div>
+          <div class="splash-image" style="background-image:url(../assets/images/home/corporate-speaker.jpg)"></div>
+          <div class="splash-text">
+            <div class="vcenter">
+              <h1>Corporate Speaker</h1>
+              <p>Let me help you to create a show you never imagine before</p>
+
+              <span href="#" class="btn btn-outline">See More</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="index.html" class="splash-col">
+          <div class="splash-overlay"></div>
+          <div class="splash-image" style="background-image:url(../assets/images/home/certified-therapist.jpg)"></div>
+          <div class="splash-text">
+            <div class="vcenter">
+              <h1>Certified Therapist</h1>
+              <p>Let me help you to create a show you never imagine before</p>
+
+              <span href="#" class="btn btn-outline">See More</span>
+            </div>
+          </div>
+        </a>
+
+    include _includes/scripts
