@@ -18,10 +18,18 @@
       </div>
       <div class="pull-right">
         <div class="btn-group lang-selector">
-          <a href="#" class="btn btn-default active"><img src="../assets/images/flags/id.png" alt="Indonesia"></a>
-          <a href="#" class="btn btn-default"><img src="../assets/images/flags/en.png" alt="English"></a>
+          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="../assets/images/flags/id.png" alt="Indonesia"> ID <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"><img src="../assets/images/flags/id.png" alt="Indonesia"> ID</a>
+            </li>
+            <li>
+              <a href="#"><img src="../assets/images/flags/en.png" alt="English"> EN</a>
+            </li>
+          </ul>
         </div>
-
         <form action="" class="search-form form-inline">
           <input class="form-control" type="text" name="q" placeholder="Search">
           <button type="submit"><i class="fa fa-search"></i></button>
@@ -38,7 +46,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-button">
-      <li><a href="contact.html" class="btn btn-outline">Kontak Kami</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Kontak Kami</a></li>
     </ul>
   </nav>
 
@@ -82,14 +90,16 @@
     </ul>
   </nav>
 </header>
-    <section class="section section-contact">
+    <section class="section section-contact section-light">
       <div class="container">
         <h1 class="section-heading">Hubungi kami sekarang juga</h1>
         <div class="row">
           <div class="col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2">
-            <p><img src="../assets/images/logo-alt.png" alt="Romy Rafael hypnotheraphy"></p>
-            <h4 class="tt-normal">Romy Rafael<br>Hypnotheraphy Center</h4>
-            <p>Phone: 0818 399124, 0819 32433457<br>Email: <a href="#">info@romyrafael.net</a></p>
+            <p><img src="../assets/images/logo-big.png" alt="Romy Rafael hypnotheraphy"></p>
+            <div class="breather">
+              <h4 class="tt-normal">Romy Rafael<br>Hypnotheraphy Center</h4>
+              <p>Phone: 0818 399124, 0819 32433457<br>Email: <a href="#">info@romyrafael.net</a></p>
+            </div>
           </div>
           <div class="col-sm-5">
             <form>
@@ -108,7 +118,7 @@
               <div class="form-group">
                 <textarea class="form-control" placeholder="Pesan"></textarea>
               </div>
-              <input type="submit" class="btn btn-outline" value="Kirim">
+              <input type="submit" class="btn btn-primary" value="Kirim">
               
               
             </form>

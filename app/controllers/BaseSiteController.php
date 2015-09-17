@@ -14,11 +14,14 @@ class BaseSiteController extends Controller {
     
 	$allowedLang = array('id','en');
 	$lang = Request::segment(1);
+	App::setLocale($lang);
 	if(!in_array($lang,$allowedLang)){
 		$queryToAdd = array('lang' => 'id');
-		if($lang == 'EN')
+		App::setLocale('id');
+		if($lang == 'EN'){
 			$queryToAdd = array('lang' => 'en');
-		
+			App::setLocale('en');
+		}
 		$currentQuery = Input::query();
 		$query = array_merge($queryToAdd, $currentQuery);
 		Redirect::route(Route::currentRouteName(), $query)->send();

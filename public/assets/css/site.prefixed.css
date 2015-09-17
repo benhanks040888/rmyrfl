@@ -2377,6 +2377,10 @@
   font-style: normal;
   font-weight: 700;
 }
+.breather {
+  margin: 1.5em 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -3047,8 +3051,11 @@ img.mfp-img {
 .btn-primary {
   border: none;
   background-color: #f5bf00;
+  color: #323232;
+  font-weight: 600;
 }
 .btn-primary:hover, .btn-primary:focus {
+  color: #323232;
   background-color: #ffd029;
 }
 
@@ -3079,9 +3086,9 @@ img.mfp-img {
 .btn-tab {
   min-width: 150px;
   line-height: 50px;
-  background: #d0d0d0;
+  background: #323232;
   font-weight: 600;
-  color: #323232;
+  color: #fff;
   border-radius: 0;
 }
 @media (min-width: 768px) {
@@ -3091,32 +3098,28 @@ img.mfp-img {
 }
 .btn-tab:hover, .btn-tab:active, .btn-tab.active {
   background: #f5bf00;
+  color: #323232;
 }
 
 .btn-group .btn {
   min-width: 0;
 }
+.btn-group.open .dropdown-toggle {
+  box-shadow: none;
+}
 
-.lang-selector .btn-default {
-  background: #ebebeb;
+.lang-selector img {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  vertical-align: text-bottom;
+  margin-right: 2px;
+}
+.lang-selector .dropdown-menu {
+  min-width: 0;
+}
+.lang-selector .btn {
+  background: none;
   line-height: 32px;
   padding: 0 7px;
-}
-.lang-selector .btn-default img {
-  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
-  /* Firefox 3.5+ */
-  filter: gray;
-  /* IE6-9 */
-  -webkit-filter: grayscale(100%);
-  /* Chrome 19+ & Safari 6+ */
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
-}
-.lang-selector .btn-default:hover, .lang-selector .btn-default:focus, .lang-selector .btn-default.focus, .lang-selector .btn-default:active, .lang-selector .btn-default.active {
-  background: #fff;
-}
-.lang-selector .btn-default:hover img, .lang-selector .btn-default:focus img, .lang-selector .btn-default.focus img, .lang-selector .btn-default:active img, .lang-selector .btn-default.active img {
-  filter: none;
-  -webkit-filter: grayscale(0%);
 }
 
 .search-form {
@@ -3217,11 +3220,10 @@ select.form-control {
   clear: both;
 }
 .testimonial-person .testimonial-person-image {
-  border: 3px solid #f5bf00;
-  border-radius: 50px;
+  border: 2px solid #fff;
   overflow: hidden;
-  width: 76px;
-  height: 76px;
+  width: 70px;
+  height: 70px;
   float: left;
   position: relative;
 }
@@ -3249,20 +3251,14 @@ select.form-control {
   font-size: 1rem;
   line-height: 1;
   margin: 0 0 .3em 0;
-  margin-bottom: .3em;
+  margin-bottom: 0.2em;
 }
 .testimonial-person .testimonial-person-job {
   border-radius: 15px;
   font-size: 0.875rem;
   font-weight: 600;
-  line-height: 2;
-  padding: 0 20px 0 30px;
-  margin: 0 0 0 -30px;
-}
-@media (min-width: 480px) {
-  .testimonial-person .testimonial-person-job {
-    background: #f5bf00;
-  }
+  line-height: 1.5;
+  margin: 0;
 }
 
 .testimonial-content {
@@ -3344,6 +3340,9 @@ select.form-control {
     padding-bottom: 0;
     border-bottom: none;
   }
+}
+.product-sorter > span {
+  margin-right: 5px;
 }
 .product-sorter select {
   font-size: 0.875rem;
@@ -3571,9 +3570,6 @@ select.form-control {
   background: #222;
   color: #fff;
 }
-.section-dark .btn {
-  color: #fff;
-}
 
 .section-gray {
   background: #f8f8f8;
@@ -3592,7 +3588,7 @@ select.form-control {
 }
 
 .header .btn-tab {
-  background: #d7d7d7;
+  background: #323232;
   color: #fff;
   padding-left: 30px;
   padding-right: 30px;
@@ -3603,20 +3599,25 @@ select.form-control {
 }
 .header .btn-tab:hover, .header .btn-tab:active, .header .btn-tab.active {
   color: #323232;
-  background: #fff;
+  background: #f5bf00;
 }
 
 .navbar {
   border-radius: 0;
   background: #f5f5f5;
   border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 5px solid #f5bf00;
   margin-bottom: 0;
 }
 
 .navbar-button {
   float: right;
   margin-right: 15px;
+  margin-top: 7px;
+}
+.navbar-button .btn {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .navbar-nav > li > a.btn-outline {
@@ -3771,6 +3772,7 @@ select.form-control {
 @media (min-width: 768px) {
   .splash-row {
     height: 100vh;
+    padding-top: 85px;
   }
 }
 
@@ -3787,12 +3789,7 @@ select.form-control {
   }
 }
 .splash-col:hover .splash-overlay {
-  opacity: .8;
-}
-.splash-col:hover .splash-text h1 {
-  color: #fff;
-  border-color: #f5bf00;
-  background: #f5bf00;
+  opacity: 1;
 }
 .splash-col:hover .splash-text p,
 .splash-col:hover .splash-text span {
@@ -3808,7 +3805,7 @@ select.form-control {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: url("../images/pattern-overlay.png") repeat;
   z-index: 3;
   opacity: 0;
   transition: opacity ease .8s;
@@ -3837,7 +3834,7 @@ select.form-control {
   display: table;
   width: 100%;
   height: 100%;
-  color: #323232;
+  color: #fff;
   text-align: center;
   padding-top: 100px;
 }
@@ -3867,7 +3864,7 @@ select.form-control {
 .splash-text h1 {
   font-size: 1.125rem;
   color: #fff;
-  border: 3px solid #fff;
+  border: 1px solid #fff;
   border-radius: 50px;
   text-transform: uppercase;
   margin-top: 0;

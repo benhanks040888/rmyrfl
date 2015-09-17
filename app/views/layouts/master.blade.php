@@ -3,7 +3,7 @@
   <head>
         @include('_partials.head')
   </head>
-  <body>
+  <body class="home">
 
     <div id="fb-root"></div>
 

@@ -24,7 +24,7 @@
 		  </div>
 		</header>
       <div class="clearfix splash-row">
-        <a href="index.html" class="splash-col">
+        <a href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="splash-col">
           <div class="splash-overlay"></div>
           <div class="splash-image" style="background-image:url({{assets_url('images/home/corporate-entertainer.jpg')}})"></div>
           <div class="splash-text">
@@ -32,7 +32,7 @@
               <h1>Corporate Entertainer</h1>
               <p>Let me help you to create a show you never imagine before</p>
         
-              <span href="#" class="btn btn-outline">See More</span>
+              <span href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="btn btn-outline">See More</span>
             </div>
           </div>
         </a>
