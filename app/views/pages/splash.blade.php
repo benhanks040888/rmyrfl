@@ -32,7 +32,7 @@
               <h1>Corporate Entertainer</h1>
               <p>Let me help you to create a show you never imagine before</p>
         
-              <span href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="btn btn-outline">See More</span>
+              <span href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="btn btn-primary">See More</span>
             </div>
           </div>
         </a>
@@ -45,7 +45,7 @@
               <h1>Corporate Speaker</h1>
               <p>Let me help you to create a show you never imagine before</p>
         
-              <span href="#" class="btn btn-outline">See More</span>
+              <span href="#" class="btn btn-primary">See More</span>
             </div>
           </div>
         </a>
@@ -58,7 +58,7 @@
               <h1>Certified Therapist</h1>
               <p>Let me help you to create a show you never imagine before</p>
         
-              <span href="#" class="btn btn-outline">See More</span>
+              <span href="#" class="btn btn-primary">See More</span>
             </div>
           </div>
         </a>
