@@ -205,7 +205,7 @@ class ProductController extends BaseController {
 				if($file->isValid()){
 					$extension = $file->getClientOriginalExtension();
 					$img = Image::make($file->getRealPath());
-					$img->resize(null, 520, function($constraint){
+					$img->resize(265, 240, function($constraint){
 						$constraint->aspectRatio();
 					});
 					$img->interlace();
@@ -214,7 +214,7 @@ class ProductController extends BaseController {
 					$img->save($fileName);
 					$product->image = $fileName;
 					
-					$img->resize(null,40, function($constraint){
+					$img->resize(265, 240, function($constraint){
 						$constraint->aspectRatio();
 					});
 					$img->interlace();
@@ -270,7 +270,7 @@ class ProductController extends BaseController {
 						}
 						$extension = $file->getClientOriginalExtension();
 						$img = Image::make($file->getRealPath());
-						$img->resize(null, 520, function($constraint){
+						$img->resize(265, 240, function($constraint){
 							$constraint->aspectRatio();
 						});
 						$img->interlace();
@@ -279,7 +279,7 @@ class ProductController extends BaseController {
 						$img->save($fileName);
 						$product->image = $fileName;
 						
-						$img->resize(null,40, function($constraint){
+						$img->resize(265, 240, function($constraint){
 							$constraint->aspectRatio();
 						});
 						$img->interlace();

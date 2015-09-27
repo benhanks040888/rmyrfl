@@ -16,15 +16,17 @@ class BaseSiteController extends Controller {
 	$lang = Request::segment(1);
 	App::setLocale($lang);
 	if(!in_array($lang,$allowedLang)){
-		$queryToAdd = array('lang' => 'id');
-		App::setLocale('id');
-		if($lang == 'EN'){
-			$queryToAdd = array('lang' => 'en');
+		if(strtolower($lang) == 'en'){
+			$lang = 'en';
 			App::setLocale('en');
 		}
-		$currentQuery = Input::query();
-		$query = array_merge($queryToAdd, $currentQuery);
-		Redirect::route(Route::currentRouteName(), $query)->send();
+		else{
+			$lang = 'id';
+			App::setLocale('id');
+		}
+		$segments = Request::segments();
+		$segments[0] = $lang;
+		Redirect::to(implode('/',$segments))->send();
 	}
     	
   }

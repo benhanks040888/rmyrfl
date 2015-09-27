@@ -3,134 +3,26 @@
 @section('content')
 <section class="section section-light">
   <div class="container">
-	<h1 class="section-heading">Produk Kami Yang Dapat Mengubah Hidup Anda</h1>
-	<div class="section-content">
-		<div class="product-nav">
-		  <ul class="nav nav-tabs">
-			<li><a href="#" class="btn btn-tab active">Buku & CD</a></li>
-			<li><a href="#" class="btn btn-tab">Secret Item</a></li>
-		  </ul>
-		  <div class="product-sorter">
-			<span class="tt-uppercase">Urut berdasarkan</span> 
-			<select class="form-control">
-			  <option value="">Pilih</option>
-			  <option value="">Harga Tinggi ke Rendah</option>
-			</select>
+	@include('_partials.product-header')
+	<div class="row products-list">
+		@if(count($products) == 0)
+			<p>No products available</p>
+		@endif
+		@foreach($products as $product)
+		<div class="col-sm-3">
+		  <div class="product-item">
+			<div class="product-image">
+			  <img src="{{URL::to($product->image)}}" alt="{{Request::segment(1)=='en'?$product->name_en:$product->name_id}}">
+			</div>
+			<h4 class="product-name">{{Request::segment(1)=='en'?$product->name_en:$product->name_id}}</h4>
+			<div class="product-price">
+			  <p class="old-price">@if($product->masked_price)Harga : Rp {{number_format ($product->masked_price)}} @endif</p>
+			  <p class="new-price">@if($product->masked_price)Promo @else Harga @endif: Rp {{number_format ($product->price)}} @if($product->masked_price)<span class="label-discount">{{$product->discount}}%</span>@endif</p>
+			</div>
+			<a href="{{URL::route('site.product.buy',array('lang'=> Request::segment(1),'slug'=>$product->slug))}}" class="btn btn-primary">Beli</a>
 		  </div>
 		</div>
-<div class="row products-list">
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image.jpg" alt="Product Image">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">Harga: Rp 160.000</p>
-		  <p class="new-price">Promo: Rp 120.000 <span class="label-discount">17%</span></p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image2.jpg" alt="Product Image 2">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">&nbsp;</p>
-		  <p class="new-price">Harga: Rp 120.000</p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image.jpg" alt="Product Image">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">Harga: Rp 160.000</p>
-		  <p class="new-price">Promo: Rp 120.000 <span class="label-discount">17%</span></p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image2.jpg" alt="Product Image 2">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">&nbsp;</p>
-		  <p class="new-price">Harga: Rp 120.000</p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image.jpg" alt="Product Image">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">Harga: Rp 160.000</p>
-		  <p class="new-price">Promo: Rp 120.000 <span class="label-discount">17%</span></p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image2.jpg" alt="Product Image 2">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">&nbsp;</p>
-		  <p class="new-price">Harga: Rp 120.000</p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image.jpg" alt="Product Image">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">Harga: Rp 160.000</p>
-		  <p class="new-price">Promo: Rp 120.000 <span class="label-discount">17%</span></p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
-	<div class="col-sm-3">
-	  <div class="product-item">
-		<div class="product-image">
-		  <img src="assets/images/product-image2.jpg" alt="Product Image 2">
-		</div>
-		<h4 class="product-name">Self Hypnosis Untuk Menghentikan Kecanduan Merokok</h4>
-		<div class="product-price">
-		  <p class="old-price">&nbsp;</p>
-		  <p class="new-price">Harga: Rp 120.000</p>
-		</div>
-		<a href="#" class="btn btn-primary">Beli</a>
-	  </div>
-	</div>
-
+		@endforeach
 	</div>
 	<div class="text-right pagination-wrapper">
 	<ul class="pagination">

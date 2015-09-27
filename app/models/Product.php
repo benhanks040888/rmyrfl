@@ -31,7 +31,19 @@ class Product extends \Eloquent {
 	protected $hidden = array(
 		
 	);
-
+	
+	protected $appends = array('discount');
+	
+	public function getDiscountAttribute()
+    {
+		if(!empty($this->attributes['masked_price'])){
+			$price = $this->attributes['price'];
+			$original = $this->attributes['masked_price'];
+			$discount = 100*($original-$price)/$original; 
+			return $discount;
+		}
+	}
+	
 	public function setSlugAttribute($value)
 	{
 		$slug = Str::slug($value);

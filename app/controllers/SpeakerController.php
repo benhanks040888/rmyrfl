@@ -7,39 +7,39 @@ use App\Models\Client;
 use App\Models\Testimony;
 use App\Models\Imaji;
 
-class EntertainerController extends BaseSiteController {
+class SpeakerController extends BaseSiteController {
 
 	public function getIndex($lang = 'id')
 	{
-		$work = GeneralInfo::Key('work-entertainer-summary')->first();
+		$work = GeneralInfo::Key('work-speaker-summary')->first();
 		$data['work'] = $work->value_id;
 		if($lang == 'en'){
 			$data['work'] = $work->value_en;
 		}
-		$data['clients'] = Client::Entertainer()->orderByRaw("RAND()")->take(4)->get();
+		$data['clients'] = Client::Speaker()->orderByRaw("RAND()")->take(4)->get();
 		
 		$testimony = Testimony::select('content_id as content','name','position','photo');
 		if($lang == 'en'){
 			$testimony = Testimony::select('content_en as content','name','position','photo');
 		}
-		$data['testimony'] = $testimony->Entertainer()->Featured()->orderByRaw("RAND()")->take(4)->get();
+		$data['testimony'] = $testimony->Speaker()->Featured()->orderByRaw("RAND()")->take(4)->get();
 		$data['imaji'] = Imaji::orderByRaw("RAND()")->take(4)->get();
 		
-		$link['client'] = URL::route('site.entertainer.client',array('lang'=> Request::segment(1)));
-		$link['customer'] = URL::route('site.entertainer.customer',array('lang'=> Request::segment(1)));
-		$link['work'] = URL::route('site.entertainer.work',array('lang'=> Request::segment(1)));
+		$link['client'] = URL::route('site.speaker.client',array('lang'=> Request::segment(1)));
+		$link['customer'] = URL::route('site.speaker.customer',array('lang'=> Request::segment(1)));
+		$link['work'] = URL::route('site.speaker.work',array('lang'=> Request::segment(1)));
 		$data['link'] = $link;
 		return View::make('pages.home',$data);
 	}
 	
 	public function getClient($lang = 'id')
 	{
-		$data['clients'] = Client::Entertainer()->get();
+		$data['clients'] = Client::Speaker()->get();
 		$testimony = Testimony::select('content_id as content','name','position','photo');
 		if($lang == 'en'){
 			$testimony = Testimony::select('content_en as content','name','position','photo');
 		}
-		$data['testimony'] = $testimony->Entertainer()->get();
+		$data['testimony'] = $testimony->Speaker()->get();
 		
 		return View::make('pages.client',$data);
 	}
@@ -47,7 +47,7 @@ class EntertainerController extends BaseSiteController {
 	public function getCustomer($lang = 'id')
 	{
 		$data['title'] = trans('menu.customer');
-		$content = GeneralInfo::Key('customer-entertainer')->first();
+		$content = GeneralInfo::Key('customer-speaker')->first();
 		$data['content'] = $content->value_id;
 		if($lang == 'en'){
 			$data['content'] = $content->value_en;
@@ -58,7 +58,7 @@ class EntertainerController extends BaseSiteController {
 	public function getWork($lang = 'id')
 	{
 		$data['title'] = trans('menu.work');
-		$content = GeneralInfo::Key('work-entertainer')->first();
+		$content = GeneralInfo::Key('work-speaker')->first();
 		$data['content'] = $content->value_id;
 		if($lang == 'en'){
 			$data['content'] = $content->value_en;
@@ -66,10 +66,10 @@ class EntertainerController extends BaseSiteController {
 		return View::make('pages.free',$data);
 	}
 	
-	public function getShow($lang = 'id')
+	public function getTraining($lang = 'id')
 	{
-		$data['title'] = trans('menu.work');
-		$content = GeneralInfo::Key('work-entertainer')->first();
+		$data['title'] = trans('menu.training');
+		$content = GeneralInfo::Key('speaker-training')->first();
 		$data['content'] = $content->value_id;
 		if($lang == 'en'){
 			$data['content'] = $content->value_en;

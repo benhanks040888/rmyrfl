@@ -50,8 +50,19 @@ if ( ! function_exists('uploads_path'))
 
     return public_path() . '/uploads/' . ltrim($upload, '/');
   }
+  
 }
 
+if(!function_exists('getHereWithLang'))
+{
+	function getHereWithLang($lang)
+	  {
+		$segments = Request::segments();
+		$segments[0] = $lang;
+
+		return implode('/', $segments);
+	  }
+}
 
 if ( ! function_exists('show_error_page'))
 {

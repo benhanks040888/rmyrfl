@@ -32,6 +32,10 @@ class GeneralInfo extends \Eloquent {
 		
 	);
 
+	public static function scopeKey($query,$key)
+	{
+		return $query->where('key','LIKE',$key);
+	}
 	//--------------------datatable---------------------------
         
 	public static function getDatatable($options)

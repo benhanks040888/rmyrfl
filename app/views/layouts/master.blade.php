@@ -28,7 +28,7 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    @include('_partials.header')
+    @include('_partials.header.index')
     
     @yield('content')
 

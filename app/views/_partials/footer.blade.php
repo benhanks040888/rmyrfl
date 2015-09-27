@@ -4,30 +4,30 @@
       <div class="col-sm-3">
         <h3 class="footer-menu-heading">Corporate Entertainer</h3>
         <ul class="footer-menu-list">
-          <li><a href="#">{{trans('menu.customer')}}</a></li>
-          <li><a href="#">{{trans('menu.service')}}</a></li>
+          <li><a href="{{URL::route('site.entertainer.customer',array('lang'=> Request::segment(1)))}}">{{trans('menu.customer')}}</a></li>
+          <li><a href="{{URL::route('site.entertainer.work',array('lang'=> Request::segment(1)))}}">{{trans('menu.service')}}</a></li>
           <li><a href="{{URL::route('site.entertainer.client',array('lang'=> Request::segment(1)))}}">{{trans('menu.client')}}</a></li>
-          <li><a href="#">Jenis show</a></li>
+          <li><a href="{{URL::route('site.entertainer.show',array('lang'=> Request::segment(1)))}}">{{trans('menu.show')}}</a></li>
         </ul>
       </div>
       <div class="col-sm-3">
         <h3 class="footer-menu-heading">Corporate Speaker</h3>
         <ul class="footer-menu-list">
-          <li><a href="#">{{trans('menu.customer')}}</a></li>
-          <li><a href="#">{{trans('menu.service')}}</a></li>
-          <li><a href="#">{{trans('menu.client')}}</a></li>
-          <li><a href="#">{{trans('menu.training')}}</a></li>
+          <li><a href="{{URL::route('site.speaker.customer',array('lang'=> Request::segment(1)))}}">{{trans('menu.customer')}}</a></li>
+          <li><a href="{{URL::route('site.speaker.work',array('lang'=> Request::segment(1)))}}">{{trans('menu.service')}}</a></li>
+          <li><a href="{{URL::route('site.speaker.client',array('lang'=> Request::segment(1)))}}">{{trans('menu.client')}}</a></li>
+          <li><a href="{{URL::route('site.speaker.training',array('lang'=> Request::segment(1)))}}">{{trans('menu.training')}}</a></li>
         </ul>
       </div>
       <div class="col-sm-3">
         <h3 class="footer-menu-heading">Certified Therapist</h3>
         <ul class="footer-menu-list">
-          <li><a href="#">{{trans('menu.customer')}}</a></li>
-          <li><a href="#">{{trans('menu.service')}}</a></li>
-          <li><a href="#">Jenis show</a></li>
-          <li><a href="#">Sesi Terapi Kelompok</a></li>
-          <li><a href="#">Sesi Terapi Perorangan</a></li>
-          <li><a href="#">Asosiasi Terapis Kami</a></li>
+          <li><a href="{{URL::route('site.therapist.customer',array('lang'=> Request::segment(1)))}}">{{trans('menu.customer')}}</a></li>
+          <li><a href="{{URL::route('site.therapist.work',array('lang'=> Request::segment(1)))}}">{{trans('menu.service')}}</a></li>
+          <li><a href="{{URL::route('site.therapist.training',array('lang'=> Request::segment(1)))}}">{{trans('menu.training')}}</a></li>
+          <li><a href="{{URL::route('site.therapist.group-therapy',array('lang'=> Request::segment(1)))}}">{{trans('menu.therapy-group')}}</a></li>
+          <li><a href="{{URL::route('site.therapist.personal-therapy',array('lang'=> Request::segment(1)))}}">{{trans('menu.therapy-personal')}}</a></li>
+          <li><a href="{{URL::route('site.therapist.association',array('lang'=> Request::segment(1)))}}">{{trans('menu.therapist-association')}}</a></li>
         </ul>
       </div>
       <div class="col-sm-3">
@@ -38,23 +38,18 @@
           <li>Email : <a href="#">info@romyrafael.net</a></li>
         </ul>
 
-        <div class="social-links">
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-youtube"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
+        @include('_partials.social')
       </div>
     </div>
 
     <div class="footer-menu-other">
       <a href="{{URL::route('site.about',array('lang'=> Request::segment(1)))}}">{{trans('menu.about')}} Romy Rafael</a>
       <span class="footer-menu-separator">|</span>
-      <a href="#">{{trans('menu.affirmation')}}</a>
+      <a href="{{URL::route('site.affirmation',array('lang'=> Request::segment(1)))}}">{{trans('menu.affirmation')}}</a>
       <span class="footer-menu-separator">|</span>
       <a href="{{URL::route('site.product',array('lang'=> Request::segment(1)))}}">{{trans('menu.product')}}</a>
       <span class="footer-menu-separator">|</span>
-      <a href="#">Lintas Imaji (NET)</a>
+      <a href="{{URL::route('site.imaji',array('lang'=> Request::segment(1)))}}">Lintas Imaji (NET)</a>
     </div>
   </div>
 </div>

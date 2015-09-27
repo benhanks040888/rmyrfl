@@ -7,12 +7,13 @@
 			<img src="{{assets_url('images/flags/id.png')}}" alt="Bahasa Indonesia"> ID <span class="caret"></span>
 		@endif
 		</button>
-        <ul class="dropdown-menu">
+		<ul class="dropdown-menu">
           <li>
-            <a href="{{URL::route(Route::currentRouteName(), array('id'))}}"><img src="{{assets_url('images/flags/id.png')}}" alt="Bahasa Indonesia"> ID</a>
+            <a href="{{URL::to(getHereWithLang('id'))}}"><img src="{{assets_url('images/flags/id.png')}}" alt="Bahasa Indonesia"> ID</a>
+            
           </li>
           <li>
-            <a href="{{URL::route(Route::currentRouteName(), array('en'))}}"><img src="{{assets_url('images/flags/en.png')}}" alt="English"> EN</a>
+            <a href="{{URL::to(getHereWithLang('en'))}}"><img src="{{assets_url('images/flags/en.png')}}" alt="English"> EN</a>
           </li>
         </ul>
     </div>
