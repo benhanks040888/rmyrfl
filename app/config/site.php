@@ -1,7 +1,7 @@
 <?php
 
 return array(
-  'title'         => 'Site Title',
-  'description'   => 'Site Description',
+  'title'         => 'Romy Rafael Hypnoteraphy',
+  'description'   => 'Romy Rafael Hypnoteraphy',
   'default_image' => ''
 );
