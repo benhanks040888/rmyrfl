@@ -20,6 +20,8 @@ return array(
     'App\\Controllers\\EntertainerController' => $baseDir . '/app/controllers/EntertainerController.php',
     'App\\Controllers\\HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'App\\Controllers\\ProductController' => $baseDir . '/app/controllers/ProductController.php',
+    'App\\Controllers\\SpeakerController' => $baseDir . '/app/controllers/SpeakerController.php',
+    'App\\Controllers\\TherapistController' => $baseDir . '/app/controllers/TherapistController.php',
     'App\\Models\\Client' => $baseDir . '/app/models/Client.php',
     'App\\Models\\GeneralInfo' => $baseDir . '/app/models/GeneralInfo.php',
     'App\\Models\\Imaji' => $baseDir . '/app/models/Imaji.php',
