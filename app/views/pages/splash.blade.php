@@ -5,19 +5,8 @@
   </head>
   <body>
     <div class="page--splash">
-		<header class="header simple-header">
-		  <div class="container-fluid">
-			<a href="#" class="logo"><img src="{{ assets_url('images/logo.png')}}" alt="Romy Rafael Hypnotheraphy"></a>
+      @include('_partials.header.simple')
 
-			<div class="pull-left">
-			  @include('_partials.social')
-			</div>
-			<div class="pull-right">
-			  @include('_partials.language')
-			  @include('_partials.contact-us')
-			</div>
-		  </div>
-		</header>
       <div class="clearfix splash-row">
         <a href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="splash-col">
           <div class="splash-overlay"></div>

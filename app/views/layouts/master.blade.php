@@ -1,33 +1,9 @@
 <!doctype html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
-        @include('_partials.head')
+    @include('_partials.head')
   </head>
   <body class="home">
-
-    <div id="fb-root"></div>
-
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId: '{{ Config::get("facebook.appId") }}',
-          status: true,
-          cookie: true,
-          xfbml: true,
-          oauth: true,
-          // version: 'v2.0'
-        });
-      };
-
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-
     @include('_partials.header.index')
     
     @yield('content')

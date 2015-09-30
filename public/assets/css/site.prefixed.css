@@ -3828,6 +3828,8 @@ select.form-control {
   }
   .navbar-nav .open .dropdown-menu > li > a {
     line-height: 52px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .navbar-nav .dropdown-menu {
     background: #3d3d3d;

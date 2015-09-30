@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header hidden-xs">
   <div class="header-menu-other">
     <div class="container-fluid">
       <div class="pull-left header-menu-other-links">
@@ -42,3 +42,5 @@
     </ul>
   </nav>
 </header>
+
+@include('_partials.header.mobile')
