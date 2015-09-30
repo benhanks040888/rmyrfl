@@ -14,7 +14,11 @@ html(class="no-js", lang="en")
     link(rel='stylesheet', href='../assets/css/site.prefixed.min.css')
 
   body(class='#{bodyClass}')
-    
+    include ../components/modules/header.html
+    include ../components/modules/header-mobile.html
+
     block content
+
+    include ../components/modules/footer.html
 
     include _includes/scripts
