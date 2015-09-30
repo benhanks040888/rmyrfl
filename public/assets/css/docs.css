@@ -3733,10 +3733,11 @@ select.form-control {
 
   .navbar-header {
     position: relative;
+    height: 52px;
   }
   .navbar-header .logo-mobile {
     position: absolute;
-    top: 4px;
+    top: 6px;
     left: 50%;
     margin-left: -55px;
     display: inline-block;
