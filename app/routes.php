@@ -57,6 +57,6 @@ Route::group(array('namespace' => 'App\Controllers'), function() {
 	});
 	
 	Route::get('/{other}', array('as' => 'site.other', 'uses' => 'HomeController@getOther'));
-	
+  
   });
 });

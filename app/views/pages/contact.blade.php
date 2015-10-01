@@ -9,7 +9,7 @@
 	
 	<div class="row">
 	  <div class="col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2">
-		<p><img src="{{assets_url('images/logo-big.png')}}" alt="Romy Rafael Hypnotheraphy"></p>
+		<p><img src="{{assets_url('images/logo-big.png')}}" alt="Romy Rafael hypnotheraphy"></p>
 		<div class="breather">
 		  <h4 class="tt-normal">Romy Rafael<br>Hypnotheraphy Center</h4>
 		  <p>Phone: 0818 399124, 0819 32433457<br>Email: <a href="#">info@romyrafael.net</a></p>

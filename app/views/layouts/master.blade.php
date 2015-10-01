@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
-        @include('_partials.head')
+    @include('_partials.head')
   </head>
   <body class="home">
 

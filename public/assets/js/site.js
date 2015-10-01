@@ -74,10 +74,6 @@ $(function() {
     type: 'iframe',
     fixedContentPos: false,
     mainClass: 'mfp-fade',
-    // disableOn: 700,
-    // removalDelay: 160,
-    // preloader: false,
-
   });
 
   $('.testimonial-slider').slick({
@@ -160,5 +156,23 @@ $(function() {
       // settings: "unslick"
       // instead of a settings object
     ]
+  });
+
+  // RESPONSIVE
+  $('.js-head-search-toggle').on('click', function(e) {
+    e.preventDefault();
+
+    var $this = $(this);
+
+    $this.toggleClass('active');
+    $this.next('.search-form').toggleClass('active');
+    $this.find('.fa').toggleClass('fa-search fa-times');
+  });
+
+  $(".dropdown-menu > li > a").click(function () {
+    var x = $(this).attr("href");
+    if(x == "#") {
+      return false;
+    }
   });
 });

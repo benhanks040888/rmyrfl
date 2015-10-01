@@ -163,6 +163,17 @@ html(class="no-js", lang="en")
 
     .container-fluid.docs-container
       section
+        h3 Header Mobile
+        .module-wrapper
+          include modules/header-mobile.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container-fluid.docs-container
+      section
         h3 Splash
         .module-wrapper
           include modules/splash.html

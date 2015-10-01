@@ -130,3 +130,207 @@
     }
   }
 }
+
+
+@include breakpoint(tablet-below) {
+  .navbar-romy-mobile {
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+
+    .navbar-toggle {
+      float: left;
+      margin-left: 15px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+
+      .icon-bar {
+        background: #b1b1b1;
+        height: 4px;
+      }
+    }
+  }
+
+  .navbar-header {
+    position: relative;
+    height: 52px;
+
+    .logo-mobile {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      margin-left: -55px;
+
+      display: inline-block;
+      @include hide-text();
+      background: url('../images/logo-mobile.png') no-repeat;
+      width: 83px;
+      height: 40px;
+    }
+
+    .lang-selector {
+      position: absolute;
+      top: 0;
+      right: 50px;
+      padding: 8px 0;
+    }
+
+    .head-search-toggle {
+      color: $accent-color;
+      font-size: rem(20);
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .search-form {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      background: #fff;
+      width: 100%;
+      height: 50px;
+      margin: 0;
+
+      &.active {
+        top: 50px;
+        z-index: 2;
+      }
+
+      .form-control {
+        height: 50px;
+        font-size: rem(16);
+        padding-right: 50px;
+      }
+
+      button[type="submit"],
+      input[type="submit"] {
+        margin-top: 0;
+        top: 0;
+        height: 50px;
+        width: 50px;
+        font-size: rem(16);
+      }
+    }
+  }
+
+  .navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+    background: $dark-gray;
+
+    > li {
+      > a {
+        padding: 0 15px;
+        line-height: 52px;
+        background: $dark-gray;
+        font-size: rem(14);
+        color: #fff;
+        position: relative;
+        border-bottom: 1px solid #444;
+
+        &:hover,
+        &:focus {
+          background: $accent-color;
+          color: $dark-gray;
+        }
+
+        &.contact {
+          background-color: $accent-color;
+          text-transform: uppercase;
+          color: $dark-gray;
+          box-shadow: inset 0 0 0 3px $dark-gray;
+        }
+
+        .dropdown-indicator {
+          position: absolute;
+          right: 15px;
+          top: 0;
+          height: 100%;
+          line-height: 46px;
+        }
+      }
+
+      &.active {
+        > a {
+          background: $accent-color;
+          color: $dark-gray;
+        }
+      }
+
+      &:last-child,
+      &.last-child {
+        border-bottom: none;
+      }
+    }
+
+    .open {
+      >a,
+      >a:hover,
+      >a:focus {
+        background: $accent-color;
+        border-color: #3d3d3d;
+      }
+
+      .dropdown-menu {
+        background: #3d3d3d;
+
+        > li > a {
+          line-height: 52px;
+          padding-top: 0;
+          padding-bottom: 0;
+        } 
+      }
+    }
+
+    .dropdown-menu {
+      background: #3d3d3d;
+      box-shadow: none;
+      border-radius: 0;
+      // border-top: 5px solid $accent-color;
+      padding: 0;
+      min-width: 100%;
+
+      > li {
+        > a {
+          border-bottom: 1px solid #444;
+          color: #fff;
+          line-height: 52px;
+          padding: 0 0 0 40px;
+          margin: 0;
+          border-left: 6px solid transparent;
+
+          &:hover,
+          &:focus,
+          &.active {
+            background: none;
+            border-left-color: $accent-color;
+          }
+        }
+
+        &.active {
+          > a {
+            &,
+            &:hover,
+            &:focus {
+              background: none;
+              border-left-color: $accent-color;
+            }
+          }
+        }
+
+        &:last-child {
+          > a {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
