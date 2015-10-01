@@ -9,7 +9,7 @@ class GeneralController extends BaseController {
 	public function getList()
 	{
 		$section = GeneralInfo::get();
-		$data['section'] = $section;
+		$data['section'] = $section->groupBy('section');
 		return View::make('admin.site.general',$data);
 	}
 	

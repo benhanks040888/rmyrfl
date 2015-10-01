@@ -27,6 +27,14 @@ Route::group(array('prefix' => 'admin-cms', 'namespace' => 'App\Controllers\Admi
 	Route::post('product/upload-image', array('as' => 'admin.product.create-image-ajax', 'uses' => 'ProductController@postWysiwygImage'));
 	Route::post('product/switch-active', array('as' => 'admin.product.switch-active', 'uses' => 'ProductController@postSwitchActive'));
 	
+	Route::get('product-order', array('as' => 'admin.product-order', 'uses' => 'ProductOrderController@getList'));
+    Route::get('product-order/list', array('as' => 'admin.product-order.list', 'uses' => 'ProductOrderController@postList'));
+	Route::post('product-order/detail', array('as' => 'admin.product-order.detail', 'uses' => 'ProductOrderController@postDetail'));
+	
+	Route::get('contact-us', array('as' => 'admin.contact-us', 'uses' => 'ContactUsController@getList'));
+    Route::get('contact-us/list', array('as' => 'admin.contact-us.list', 'uses' => 'ContactUsController@postList'));
+	Route::post('contact-us/detail', array('as' => 'admin.contact-us.detail', 'uses' => 'ContactUsController@postDetail'));
+	
 	Route::get('imaji', array('as' => 'admin.imaji', 'uses' => 'ImajiController@getList'));
     Route::get('imaji/list', array('as' => 'admin.imaji.list', 'uses' => 'ImajiController@postList'));
 	Route::get('imaji/add', array('as' => 'admin.imaji.add', 'uses' => 'ImajiController@getFormAdd'));

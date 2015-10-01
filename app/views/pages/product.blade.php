@@ -3,7 +3,10 @@
 @section('content')
 <section class="section section-light">
   <div class="container">
+	@include('_partials.notification')
+	
 	@include('_partials.product-header')
+	
 	<div class="row products-list">
 		@if(count($products) == 0)
 			<p>No products available</p>

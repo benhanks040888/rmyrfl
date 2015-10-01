@@ -6,21 +6,20 @@
       <h1 class="page-header">General Info </h1>
     </div>
   </div>
-  <hr/>
-	
+  
 	<div class="table-responsive">
+		@foreach($section as $section => $string)
 		<table class="table table-hover datatable">
 			<thead>
-				<tr>
-					<th>Section</th>
-				</tr>
+				<tr><th>{{$section}}</th></tr>
 			</thead>
 			<tbody>
-				@foreach($section as $string)
-				<tr><td><a href="{{URL::route('admin.general.edit',$string->key)}}">{{$string->title_id}}</a></td></tr>
+				@foreach($string as $string)
+				<tr><td><a href="{{URL::route('admin.general.edit',$string->key)}}">{{$string->title_id}} / {{$string->title_en}}</a></td></tr>
 				@endforeach
 			</tbody>
 		</table>
+		@endforeach
 	</div>
 @stop
 	

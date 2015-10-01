@@ -1,8 +1,9 @@
 <?php namespace App\Controllers;
 
 use BaseSiteController;
-use View, Input, Redirect, Route;
+use View, Input, Redirect, Route, Validator, Session;
 use App\Models\GeneralInfo;
+use App\Models\ContactUs;
 
 class HomeController extends BaseSiteController {
 
@@ -42,6 +43,54 @@ class HomeController extends BaseSiteController {
 	public function getContact()
 	{
 		return View::make('pages.contact');
+	}
+	
+	public function postContact($lang = 'id')
+	{
+		$validator = Validator::make(
+			array(
+				'Captcha' => Input::get('g-recaptcha-response'),
+				'Name' => Input::get('name'),
+				'Email' => Input::get('email'),
+				'Phone' => Input::get('phone'),
+				'Subject' => Input::get('subject'),
+				'Message' => Input::get('message')
+			),
+			array(
+				'Captcha' => 'required|captcha',
+				'Name' => 'required',
+				'Email' => 'required',
+				'Phone' => 'required',
+				'Subject' => 'required',
+				'Message' => 'required'
+			)
+		);
+		if ($validator->fails()){
+			return Redirect::route('site.contact',array('lang'=> $lang))->withErrors($validator->errors());
+		}
+			
+		$contact = new ContactUs;
+		$contact->name = Input::get('name');
+		$contact->email = Input::get('email');
+		$contact->phone = Input::get('phone');
+		$contact->address = Input::get('address');
+		$contact->subject = Input::get('subject');
+		$contact->message = Input::get('message');
+		$contact->save();
+			
+		if(!$contact->id){
+			$errorMessage = "Proses gagal, coba beberapa saat lagi";
+			if($lang == 'en'){
+				$errorMessage = "Process failed, please try again later";
+			}
+			return Redirect::route('site.contact',array('lang'=> $lang))->with('error_message',$errorMessage);
+		}
+		
+		$successMessage = "Pesan Anda telah terkirim";
+		if($lang == 'en'){
+			$successMessage = "Your message has been sent";
+		}
+		return Redirect::route('site.contact',array('lang'=> $lang))->with('success',$successMessage);
 	}
 	
 	public function getAffirmation($lang = 'id')

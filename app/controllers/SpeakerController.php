@@ -48,9 +48,11 @@ class SpeakerController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.customer');
 		$content = GeneralInfo::Key('customer-speaker')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -59,9 +61,11 @@ class SpeakerController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.work');
 		$content = GeneralInfo::Key('work-speaker')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -70,9 +74,11 @@ class SpeakerController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.training');
 		$content = GeneralInfo::Key('speaker-training')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}

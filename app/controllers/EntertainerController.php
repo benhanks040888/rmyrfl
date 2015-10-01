@@ -48,9 +48,11 @@ class EntertainerController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.customer');
 		$content = GeneralInfo::Key('customer-entertainer')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -59,20 +61,24 @@ class EntertainerController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.work');
 		$content = GeneralInfo::Key('work-entertainer')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
 	
 	public function getShow($lang = 'id')
 	{
-		$data['title'] = trans('menu.work');
-		$content = GeneralInfo::Key('work-entertainer')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		$data['title'] = trans('menu.show');
+		$content = GeneralInfo::Key('show')->first();
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}

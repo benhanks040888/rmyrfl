@@ -48,9 +48,11 @@ class TherapistController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.customer');
 		$content = GeneralInfo::Key('customer-therapist')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -59,9 +61,11 @@ class TherapistController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.work');
 		$content = GeneralInfo::Key('work-therapist')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -70,9 +74,11 @@ class TherapistController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.training');
 		$content = GeneralInfo::Key('therapist-training')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -81,9 +87,11 @@ class TherapistController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.therapy-group');
 		$content = GeneralInfo::Key('therapy-group')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -92,9 +100,11 @@ class TherapistController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.therapy-personal');
 		$content = GeneralInfo::Key('therapy-personal')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}
@@ -103,9 +113,11 @@ class TherapistController extends BaseSiteController {
 	{
 		$data['title'] = trans('menu.therapist-association');
 		$content = GeneralInfo::Key('therapist-association')->first();
-		$data['content'] = $content->value_id;
-		if($lang == 'en'){
-			$data['content'] = $content->value_en;
+		if($content){
+			$data['content'] = $content->value_id;
+			if($lang == 'en'){
+				$data['content'] = $content->value_en;
+			}
 		}
 		return View::make('pages.free',$data);
 	}

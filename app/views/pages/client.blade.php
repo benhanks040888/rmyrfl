@@ -3,7 +3,7 @@
 @section('content')
 <section class="section section-main">
   <div class="container">
-	<h1 class="section-heading">Klien Kami</h1>
+	<h1 class="section-heading">{{trans('client.our-client')}}</h1>
 	<div class="section-content">
 	  <div class="clients-list clients-slider js-clients-slider-alt">
 		@foreach($clients as $client)
@@ -15,7 +15,7 @@
 </section>
 <section class="section section-light">
   <div class="container">
-	<h2 class="section-heading">Apa Kata Mereka</h2>
+	<h2 class="section-heading">{{trans('client.say')}}</h2>
 	<div class="section-content">
 	  <div class="row">
 		@foreach($testimony as $test)

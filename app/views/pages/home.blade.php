@@ -37,7 +37,7 @@
                 <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
                 
               </div>
-            </div><a href="{{$link['customer']}}" class="btn btn-primary">Siapa yang kami layani</a>
+            </div><a href="{{$link['customer']}}" class="btn btn-primary">{{trans('home.customer')}}</a>
           </div>
         </div>
       </div>
@@ -47,24 +47,24 @@
         <h2 class="section-heading">{{trans('menu.work')}}</h2>
         <div class="section-content">
           {{$work}}
-        </div><a href="{{$link['work']}}" class="btn btn-primary">Lihat Layanan & Cara Kerja Kami</a>
+        </div><a href="{{$link['work']}}" class="btn btn-primary">{{trans('home.service')}}</a>
       </div>
     </section>
     <section class="section section-gray">
       <div class="container">
-        <h1 class="section-heading">Sebagian dari Klien Kami</h1>
+        <h1 class="section-heading">{{trans('home.part-client')}}</h1>
         <div class="section-content">
           <div class="clients-list clients-slider js-clients-list">
             @foreach($clients as $client)
 			<div class="client-cell"><div class="client-thumbnail"><img src="{{URL::to($client->logo)}}" alt="{{$client->name}}"></div></div>
             @endforeach
           </div>
-        </div><a href="{{$link['client']}}" class="btn btn-primary">Lihat Semua Klien dan Testimoni</a>
+        </div><a href="{{$link['client']}}" class="btn btn-primary">{{trans('home.all-client')}}</a>
       </div>
     </section>
     <section class="section">
       <div class="container">
-        <h1 class="section-heading tt-normal">Saksikan juga acara LINTAS IMAJI di NET TV</h1>
+        <h1 class="section-heading tt-normal">{{trans('home.show-imaji')}}</h1>
         <div class="section-content">
           <div class="row">
 			@foreach($imaji as $video)
@@ -75,7 +75,7 @@
             </div>
 			@endforeach
           </div>
-        </div><a href="{{URL::route('site.imaji',array('lang'=> Request::segment(1)))}}" class="btn btn-primary">Lihat semua episode</a>
+        </div><a href="{{URL::route('site.imaji',array('lang'=> Request::segment(1)))}}" class="btn btn-primary">{{trans('home.all-episode')}}</a>
       </div>
     </section>
 @stop

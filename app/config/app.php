@@ -126,6 +126,7 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
 
 	),
 

@@ -1,8 +1,9 @@
 <?php namespace App\Controllers;
 
 use BaseSiteController;
-use View, Input, Redirect, Route;
+use View, Input, Redirect, Route, Validator, Session;
 use App\Models\Product;
+use App\Models\ProductOrder;
 
 class ProductController extends BaseSiteController {
 
@@ -20,7 +21,65 @@ class ProductController extends BaseSiteController {
 	public function getBuy($lang = 'id', $slug)
 	{
 		$data['product'] = Product::Active()->where('slug','=',$slug)->first();
+		if(empty($slug) || !$data['product']){
+			return Redirect::route('site.product',array('lang'=> $lang));
+		}
 		return View::make('pages.buy',$data);
+	}
+	
+	public function postBuy($lang = 'id')
+	{
+		$product = Product::find(Input::get('product_id'));
+		if(!$product){
+			return Redirect::route('site.product',array('lang'=> $lang));
+		}
+		$validator = Validator::make(
+			array(
+				'Captcha' => Input::get('g-recaptcha-response'),
+				'Name' => Input::get('name'),
+				'Email' => Input::get('email'),
+				'Phone' => Input::get('phone'),
+				'Address' => Input::get('address')
+			),
+			array(
+				'Captcha' => 'required|captcha',
+				'Name' => 'required',
+				'Email' => 'required',
+				'Phone' => 'required',
+				'Address' => 'required'
+			)
+		);
+		if ($validator->fails()){
+			return Redirect::route('site.product.buy',array('lang'=> $lang, 'slug'=>$product->slug))->withErrors($validator->errors());
+		}
+			
+		$contact = new ProductOrder;
+		$contact->name = Input::get('name');
+		$contact->email = Input::get('email');
+		$contact->phone = Input::get('phone');
+		$contact->address = Input::get('address');
+		$contact->message = Input::get('message');
+		$contact->product_id = $product->id;
+		$contact->product_name = $product->name_id;
+		if($lang == 'en'){
+			$contact->product_name = $product->name_en;
+		}
+		$contact->price = $product->price;
+		$contact->save();
+			
+		if(!$contact->id){
+			$errorMessage = "Proses gagal, coba beberapa saat lagi";
+			if($lang == 'en'){
+				$errorMessage = "Process failed, please try again later";
+			}
+			return Redirect::route('site.product.buy',array('lang'=> $lang, 'slug'=>$product->slug))->with('error_message',$errorMessage);
+		}
+		
+		$successMessage = "Pesanan Anda telah kami terima, kami akan segera menghubungi anda untuk proses konfirmasi";
+		if($lang == 'en'){
+			$successMessage = "We have received your order, we will contact you soon for confirmation";
+		}
+		return Redirect::route('site.product',array('lang'=> $lang))->with('success',$successMessage);
 	}
 
 }

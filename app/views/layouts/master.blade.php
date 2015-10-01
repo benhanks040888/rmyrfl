@@ -6,7 +6,7 @@
   <body class="home">
 
     <div id="fb-root"></div>
-
+	
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -15,7 +15,7 @@
           cookie: true,
           xfbml: true,
           oauth: true,
-          // version: 'v2.0'
+          version: 'v2.0'
         });
       };
 

@@ -22,11 +22,17 @@
 			<li><a href="{{ URL::route('admin.testimony',array('url_category'=>'therapist')) }}"><i class="fa fa-commenting-o fa-fw"></i> Testimonials </a></li>
 		</ul>
 	  </li>
-	  <li><a href="{{ URL::route('admin.product') }}"><i class="fa fa-cubes fa-fw"></i> Product</a></li>
+	  <li><a href="javascript:void(0)"><i class="fa fa-cubes fa-fw"></i> Products <span class="fa arrow"></span></a>
+		<ul class="nav nav-second-level collapse in">
+			<li><a href="{{ URL::route('admin.product') }}"><i class="fa fa-cubes fa-fw"></i> Product List</a></li>
+			<li><a href="{{ URL::route('admin.magic-question') }}"><i class="fa fa-magic fa-fw"></i> Magic Question</a></li>
+			<li><a href="{{ URL::route('admin.product-order') }}"><i class="fa fa-file-text-o fa-fw"></i> Product Order</a></li>
+		</ul>
+	  </li>
 	  <li><a href="{{ URL::route('admin.imaji') }}"><i class="fa fa-youtube fa-fw"></i> Lintas Imaji</a></li>
-	  <li><a href="{{ URL::route('admin.magic-question') }}"><i class="fa fa-magic fa-fw"></i> Magic Question</a></li>
 	  <li><a href="{{ URL::route('admin.general') }}"><i class="fa fa-clipboard fa-fw"></i> General Info</a></li>
-    </ul>
+      <li><a href="{{ URL::route('admin.contact-us') }}"><i class="fa fa-file-text-o fa-fw"></i> Contact Us</a></li>
+	</ul>
 	
   </div>
 </div>

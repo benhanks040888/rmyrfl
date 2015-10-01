@@ -20,12 +20,14 @@ Route::group(array('namespace' => 'App\Controllers'), function() {
 	Route::get('/positive-affirmation', array('as' => 'site.affirmation', 'uses' => 'HomeController@getAffirmation'));
 	Route::get('/about', array('as' => 'site.about', 'uses' => 'HomeController@getAbout'));
 	Route::get('/contact', array('as' => 'site.contact', 'uses' => 'HomeController@getContact'));
+	Route::post('/contact', array('as' => 'site.contact.post', 'uses' => 'HomeController@postContact'));
 	Route::get('/lintas-imaji', array('as' => 'site.imaji', 'uses' => 'HomeController@getImaji'));
 	Route::get('/search', array('as' => 'site.search', 'uses' => 'HomeController@getSearch'));
 	
 	Route::get('/product', array('as' => 'site.product', 'uses' => 'ProductController@getIndex'));
 	Route::get('/secret-product', array('as' => 'site.product.secret', 'uses' => 'ProductController@getSecret'));
-	Route::get('/buy/{slug}', array('as' => 'site.product.buy', 'uses' => 'ProductController@getBuy'));
+	Route::get('/order-product/{slug}', array('as' => 'site.product.buy', 'uses' => 'ProductController@getBuy'));
+	Route::post('/order', array('as' => 'site.product.buy.post', 'uses' => 'ProductController@postBuy'));
 	
 	Route::group(array('prefix' => 'corporate-entertainer'), function() {
 		Route::get('/', array('as' => 'site.entertainer.home', 'uses' => 'EntertainerController@getIndex'));

@@ -32,12 +32,12 @@
   <nav class="sub-navbar">
     <a href="{{URL::route('site.home',array('lang'=> Request::segment(1)))}}" class="logo"><img src="{{ assets_url('images/logo.png')}}" alt="Romy Rafael Hypnotheraphy"></a>
     <ul class="nav sub-navbar-nav">
-	  @if(strtolower(Request::segment(2)) == 'corporate-entertainer')
-		@include('_partials.header.corporate-entertainer')
-	  @elseif(strtolower(Request::segment(2)) == 'corporate-speaker')
+	  @if(strtolower(Request::segment(2)) == 'corporate-speaker')
 	    @include('_partials.header.corporate-speaker')
 	  @elseif(strtolower(Request::segment(2)) == 'certified-therapist')
 	    @include('_partials.header.certified-therapist')
+	  @else
+	    @include('_partials.header.corporate-entertainer')
 	  @endif
     </ul>
   </nav>

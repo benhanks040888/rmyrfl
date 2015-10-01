@@ -3,9 +3,12 @@
 @section('content')
 <section class="section section-light">
   <div class="container">
-	<h1 class="section-heading tt-normal">UNTUK MEMBELI<br>
-	{{strtoupper($product->name_en)}}<br>
-	SILAHKAN ISI DATA BERIKUT INI:</h1>
+	<h1 class="section-heading tt-normal">{{trans('contact.buy-header1')}}<br>
+	{{Request::segment(1)=='en'?$product->name_en:$product->name_id}}<br>
+	{{trans('contact.buy-header2')}} :</h1>
+	
+	@include('_partials.notification')
+	
 	<div class="row">
 	  <div class="col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2">
 		<div class="product-item">
@@ -19,26 +22,34 @@
 		  </div>
 		</div>
 	  </div>
+	  
 	  <div class="col-sm-5">
-		<form>
-		  <div class="form-group">
-			<input type="text" class="form-control" placeholder="Nama Anda">
-		  </div>
-		  <div class="form-group">
-			<input type="email" class="form-control" placeholder="Email">
-		  </div>
-		  <div class="form-group">
-			<input type="tel" class="form-control" placeholder="Telepon">
-		  </div>
-		  <div class="form-group">
-			<input type="text" class="form-control" placeholder="Alamat Lengkap">
-		  </div>
-		  <div class="form-group">
-			<textarea class="form-control" placeholder="Pesan"></textarea>
-		  </div>
-		  <p><small>*Order hanya akan diproses bila sudah transfer pembayaran. Tunggu konfirmasi dari kami untuk  mengetahui biaya kirimnya.</small></p>
-		  <input type="submit" class="btn btn-primary" value="Kirim">
+		<form action="{{URL::route('site.product.buy.post',array('lang'=> Request::segment(1)))}}" method="POST">
+		  {{Form::token()}}
+		  <input type="hidden" name="product_id" value="{{$product->id}}"/>
 		  
+		  <div class="form-group">
+			<input type="text" name="name" required class="form-control" placeholder="{{trans('contact.name')}}">
+		  </div>
+		  <div class="form-group">
+			<input type="email" name="email" required class="form-control" placeholder="{{trans('contact.email')}}">
+		  </div>
+		  <div class="form-group">
+			<input type="tel" name="phone" required class="form-control" placeholder="{{trans('contact.phone')}}">
+		  </div>
+		  <div class="form-group">
+			<input type="text" name="address" required class="form-control" placeholder="{{trans('contact.address')}}">
+		  </div>
+		  <div class="form-group">
+			<textarea class="form-control" name="message" placeholder="{{trans('contact.message')}}"></textarea>
+		  </div>
+		  <p><small>*{{trans('contact.buy-info')}}</small></p>
+		  <div class="form-group">
+		  {{ Form::captcha() }}
+		   </div>
+		  <div class="form-group">
+		  <input type="submit" class="btn btn-primary" value="{{trans('contact.send')}}">
+		   </div>
 		  
 		</form>
 	  </div>
