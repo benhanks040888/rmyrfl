@@ -2402,6 +2402,15 @@ h3 {
   font-size: 1.25rem;
 }
 
+a {
+  color: #00aeef;
+  font-weight: 600;
+}
+a:hover {
+  color: #0089bc;
+  text-decoration: none;
+}
+
 .splash-tagline {
   font-size: 1.875rem;
   text-align: center;
@@ -2431,12 +2440,63 @@ h3 {
   color: #f5bf00;
 }
 
+.highlight {
+  color: #f5bf00;
+}
+
 .tt-normal {
   text-transform: none;
 }
 
 .tt-uppercase {
   text-transform: uppercase;
+}
+
+blockquote {
+  border-left: none;
+  font-size: 1.25rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  blockquote {
+    padding: 10px 15%;
+  }
+}
+blockquote footer {
+  position: relative;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+blockquote footer:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+  height: 2px;
+  background: #f5bf00;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  text-align: left;
+}
+table th {
+  background: #f3f3f3;
+  text-transform: uppercase;
+}
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
 }
 
 html {
@@ -3558,10 +3618,6 @@ select.form-control {
   font-size: 1.5rem;
 }
 
-.section-content {
-  margin: 30px 0;
-}
-
 .section-light {
   background: #fff;
 }
@@ -3585,6 +3641,66 @@ select.form-control {
   background: url(../images/about-image.jpg) no-repeat top center;
   background-size: cover;
   min-height: 430px;
+  margin-bottom: 30px;
+}
+
+.wysiwyg-content ul,
+.wysiwyg-content ol {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .wysiwyg-content ul,
+  .wysiwyg-content ol {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+.wysiwyg-content ul li,
+.wysiwyg-content ol li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+.wysiwyg-content ul li:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #999;
+  position: absolute;
+  top: 7px;
+  left: 15px;
+}
+.wysiwyg-content ol {
+  counter-reset: section;
+}
+.wysiwyg-content ol li:before {
+  counter-increment: section;
+  content: counter(section) ". ";
+  color: #323232;
+  font-weight: bold;
+  font-style: italic;
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+
+.section-meta {
+  color: #f5bf00;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+.section-meta .meta-separator {
+  margin: 0 10px;
+}
+
+.section-image {
+  margin-bottom: 15px;
+}
+.section-image img {
+  width: 100%;
 }
 
 .header .btn-tab {

@@ -19,6 +19,16 @@ h3 {
   font-size: rem(20);
 }
 
+a {
+  color: #00aeef;
+  font-weight: 600;
+  
+  &:hover {
+    color: darken(#00aeef, 10%);
+    text-decoration: none;
+  }
+}
+
 .splash-tagline {
   font-size: rem(30);
   text-align: center;
@@ -48,10 +58,65 @@ h3 {
   }
 }
 
+.highlight {
+  color: $accent-color;
+}
+
 .tt-normal {
   text-transform: none;
 }
 
 .tt-uppercase {
   text-transform: uppercase;
+}
+
+
+blockquote {
+  border-left: none;
+  font-size: rem(20);
+  font-family: $georgia;
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0;
+
+  @include breakpoint(small) {
+    padding: 10px 15%;
+  }
+
+  footer {
+    position: relative;
+    padding-top: 15px;
+    margin-top: 15px;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -40px;
+      width: 80px;
+      height: 2px;
+      background: $accent-color;
+    }
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  text-align: left;
+  
+  th {
+    background: #f3f3f3;
+    text-transform: uppercase;
+  }
+  
+  td,
+  th {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+  }
 }
