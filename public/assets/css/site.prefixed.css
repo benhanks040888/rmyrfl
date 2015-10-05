@@ -2402,15 +2402,6 @@ h3 {
   font-size: 1.25rem;
 }
 
-a {
-  color: #00aeef;
-  font-weight: 600;
-}
-a:hover {
-  color: #0089bc;
-  text-decoration: none;
-}
-
 .splash-tagline {
   font-size: 1.875rem;
   text-align: center;
@@ -3644,6 +3635,14 @@ select.form-control {
   margin-bottom: 30px;
 }
 
+.wysiwyg-content a {
+  color: #00aeef;
+  font-weight: 600;
+}
+.wysiwyg-content a:hover {
+  color: #0089bc;
+  text-decoration: none;
+}
 .wysiwyg-content ul,
 .wysiwyg-content ol {
   list-style: none;
@@ -3713,7 +3712,7 @@ select.form-control {
 .header .btn-tab:last-child {
   border-right: none;
 }
-.header .btn-tab:hover, .header .btn-tab:active, .header .btn-tab.active {
+.header .btn-tab:hover, .header .btn-tab:focus, .header .btn-tab:active, .header .btn-tab.active {
   color: #323232;
   background: #f5bf00;
 }
@@ -3734,6 +3733,9 @@ select.form-control {
 .navbar-button .btn {
   padding-top: 8px;
   padding-bottom: 8px;
+}
+.navbar-button .btn:hover {
+  background-color: #ffd029;
 }
 
 .navbar-nav > li > a.btn-outline {

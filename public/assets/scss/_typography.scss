@@ -19,16 +19,6 @@ h3 {
   font-size: rem(20);
 }
 
-a {
-  color: #00aeef;
-  font-weight: 600;
-  
-  &:hover {
-    color: darken(#00aeef, 10%);
-    text-decoration: none;
-  }
-}
-
 .splash-tagline {
   font-size: rem(30);
   text-align: center;

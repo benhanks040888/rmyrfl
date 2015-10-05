@@ -37,6 +37,16 @@
 }
 
 .wysiwyg-content {
+  a {
+    color: #00aeef;
+    font-weight: 600;
+    
+    &:hover {
+      color: darken(#00aeef, 10%);
+      text-decoration: none;
+    }
+  }
+
   ul,
   ol {
     list-style: none;

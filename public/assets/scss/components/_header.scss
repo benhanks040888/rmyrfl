@@ -11,6 +11,7 @@
     }
 
     &:hover,
+    &:focus,
     &:active,
     &.active {
       color: $dark-gray;
@@ -35,6 +36,10 @@
   .btn {
     padding-top: 8px;
     padding-bottom: 8px;
+    
+    &:hover {
+      background-color: $accent-color-lighter;
+    }
   }
 }
 
