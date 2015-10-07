@@ -29,6 +29,12 @@ class SpeakerController extends BaseSiteController {
 		$link['customer'] = URL::route('site.speaker.customer',array('lang'=> Request::segment(1)));
 		$link['work'] = URL::route('site.speaker.work',array('lang'=> Request::segment(1)));
 		$data['link'] = $link;
+		$data['pageTitle'] = "Corporate Speaker - Beranda";
+		$data['pageDescription'] = "Corporate Speaker - Beranda";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Speaker - Home";
+			$data['pageDescription'] = "Corporate Speaker - Home";
+		}
 		return View::make('pages.home',$data);
 	}
 	
@@ -40,7 +46,12 @@ class SpeakerController extends BaseSiteController {
 			$testimony = Testimony::select('content_en as content','name','position','photo');
 		}
 		$data['testimony'] = $testimony->Speaker()->get();
-		
+		$data['pageTitle'] = "Corporate Speaker - Klien";
+		$data['pageDescription'] = "Corporate Speaker - Klien";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Speaker - Client";
+			$data['pageDescription'] = "Corporate Speaker - Client";
+		}
 		return View::make('pages.client',$data);
 	}
 	
@@ -54,6 +65,13 @@ class SpeakerController extends BaseSiteController {
 				$data['content'] = $content->value_en;
 			}
 		}
+		$data['pageTitle'] = "Corporate Speaker - Pelanggan";
+		$data['pageDescription'] = "Corporate Speaker - Pelanggan";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Speaker - Customer";
+			$data['pageDescription'] = "Corporate Speaker - Customer";
+		}
+		
 		return View::make('pages.free',$data);
 	}
 
@@ -67,6 +85,13 @@ class SpeakerController extends BaseSiteController {
 				$data['content'] = $content->value_en;
 			}
 		}
+		$data['pageTitle'] = "Corporate Speaker - Cara Kerja Kami";
+		$data['pageDescription'] = "Corporate Speaker - Cara Kerja Kami";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Speaker - How We Work";
+			$data['pageDescription'] = "Corporate Speaker - How We Work";
+		}
+		
 		return View::make('pages.free',$data);
 	}
 	
@@ -79,6 +104,12 @@ class SpeakerController extends BaseSiteController {
 			if($lang == 'en'){
 				$data['content'] = $content->value_en;
 			}
+		}
+		$data['pageTitle'] = "Corporate Speaker - Program Training";
+		$data['pageDescription'] = "Corporate Speaker - Program Training";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Speaker - Training Program";
+			$data['pageDescription'] = "Corporate Speaker - Training Program";
 		}
 		return View::make('pages.free',$data);
 	}

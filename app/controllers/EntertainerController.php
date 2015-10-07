@@ -29,6 +29,13 @@ class EntertainerController extends BaseSiteController {
 		$link['customer'] = URL::route('site.entertainer.customer',array('lang'=> Request::segment(1)));
 		$link['work'] = URL::route('site.entertainer.work',array('lang'=> Request::segment(1)));
 		$data['link'] = $link;
+		
+		$data['pageTitle'] = "Corporate Entertainer - Beranda";
+		$data['pageDescription'] = "Corporate Entertainer - Beranda";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Entertainer - Home";
+			$data['pageDescription'] = "Corporate Entertainer - Home";
+		}
 		return View::make('pages.home',$data);
 	}
 	
@@ -41,6 +48,12 @@ class EntertainerController extends BaseSiteController {
 		}
 		$data['testimony'] = $testimony->Entertainer()->get();
 		
+		$data['pageTitle'] = "Corporate Entertainer - Klien";
+		$data['pageDescription'] = "Corporate Entertainer - Klien";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Entertainer - Client";
+			$data['pageDescription'] = "Corporate Entertainer - Client";
+		}
 		return View::make('pages.client',$data);
 	}
 	
@@ -53,6 +66,13 @@ class EntertainerController extends BaseSiteController {
 			if($lang == 'en'){
 				$data['content'] = $content->value_en;
 			}
+		}
+		
+		$data['pageTitle'] = "Corporate Entertainer - Pelanggan";
+		$data['pageDescription'] = "Corporate Entertainer - Pelanggan";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Entertainer - Customer";
+			$data['pageDescription'] = "Corporate Entertainer - Customer";
 		}
 		return View::make('pages.free',$data);
 	}
@@ -67,6 +87,13 @@ class EntertainerController extends BaseSiteController {
 				$data['content'] = $content->value_en;
 			}
 		}
+		
+		$data['pageTitle'] = "Corporate Entertainer - Cara Kerja Kami";
+		$data['pageDescription'] = "Corporate Entertainer - Cara Kerja Kami";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Entertainer - How We Work";
+			$data['pageDescription'] = "Corporate Entertainer - How We Work";
+		}
 		return View::make('pages.free',$data);
 	}
 	
@@ -79,6 +106,12 @@ class EntertainerController extends BaseSiteController {
 			if($lang == 'en'){
 				$data['content'] = $content->value_en;
 			}
+		}
+		$data['pageTitle'] = "Corporate Entertainer - Jenis Show";
+		$data['pageDescription'] = "Corporate Entertainer - Jenis Show";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Corporate Entertainer - Shows";
+			$data['pageDescription'] = "Corporate Entertainer - Shows";
 		}
 		return View::make('pages.free',$data);
 	}

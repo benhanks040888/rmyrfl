@@ -6,7 +6,7 @@
   <body>
     <div class="page--splash">
       @include('_partials.header.simple')
-
+		
       <div class="clearfix splash-row">
         <a href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="splash-col">
           <div class="splash-overlay"></div>

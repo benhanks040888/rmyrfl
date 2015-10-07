@@ -40,7 +40,7 @@ class Product extends \Eloquent {
 			$price = $this->attributes['price'];
 			$original = $this->attributes['masked_price'];
 			$discount = 100*($original-$price)/$original; 
-			return $discount;
+			return floor($discount);
 		}
 	}
 	

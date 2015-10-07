@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
 use BaseSiteController;
-use View, Input, Redirect, Route, Validator, Session;
+use View, Input, Redirect, Route, Validator, Session, Config;
 use App\Models\GeneralInfo;
 use App\Models\ContactUs;
 
@@ -37,12 +37,25 @@ class HomeController extends BaseSiteController {
 		
 		$data['romy'] = $romy;
 		$data['management'] = $management;
+		
+		$data['pageTitle'] = "Tentang";
+		$data['pageDescription'] = "Tentang";
+		if($lang == 'en'){
+			$data['pageTitle'] = "About";
+			$data['pageDescription'] = "About";
+		}
 		return View::make('pages.about',$data);
 	}
 	
-	public function getContact()
+	public function getContact($lang = 'id')
 	{
-		return View::make('pages.contact');
+		$data['pageTitle'] = "Hubungi Kami";
+		$data['pageDescription'] = "Hubungi Kami";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Contact Us";
+			$data['pageDescription'] = "Contact Us";
+		}
+		return View::make('pages.contact', $data);
 	}
 	
 	public function postContact($lang = 'id')
@@ -101,6 +114,12 @@ class HomeController extends BaseSiteController {
 		if($lang == 'en'){
 			$data['content'] = $content->value_en;
 		}
+		$data['pageTitle'] = "Afirmasi Positif";
+		$data['pageDescription'] = "Afirmasi Positif";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Positive Affirmation";
+			$data['pageDescription'] = "Positive Affirmation";
+		}
 		return View::make('pages.free',$data);
 	}
 	
@@ -108,6 +127,8 @@ class HomeController extends BaseSiteController {
 	{
 		$data['title'] = 'IMAJI';
 		$data['content'] = 'IMAJI';
+		$data['pageTitle'] = "Lintas Imaji";
+		$data['pageDescription'] = "Lintas Imaji";
 		return View::make('pages.imaji',$data);
 	}
 	
@@ -115,6 +136,12 @@ class HomeController extends BaseSiteController {
 	{
 		$data['title'] = 'Search Result';
 		$data['content'] = 'LALALA';
+		$data['pageTitle'] = "Hasil Pencarian";
+		$data['pageDescription'] = "Hasil Pencarian";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Search Result";
+			$data['pageDescription'] = "Search Result";
+		}
 		return View::make('pages.search',$data);
 	}
 	

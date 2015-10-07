@@ -10,12 +10,20 @@ class ProductController extends BaseSiteController {
 	public function getIndex($lang = 'id')
 	{
 		$data['products'] = Product::Active()->where('type','=','book')->orWhere('type','=','cd')->get();		
+		$data['pageTitle'] = "Produk";
+		$data['pageDescription'] = "Produk";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Product";
+			$data['pageDescription'] = "Product";
+		}
 		return View::make('pages.product',$data);
 	}
 	
-	public function getSecret()
+	public function getSecret($lang = 'id')
 	{
-		return View::make('pages.secret');
+		$data['pageTitle'] = "Secret Item";
+		$data['pageDescription'] = "Secret Item";
+		return View::make('pages.secret',$data);
 	}
 	
 	public function getBuy($lang = 'id', $slug)
@@ -23,6 +31,12 @@ class ProductController extends BaseSiteController {
 		$data['product'] = Product::Active()->where('slug','=',$slug)->first();
 		if(empty($slug) || !$data['product']){
 			return Redirect::route('site.product',array('lang'=> $lang));
+		}
+		$data['pageTitle'] = "Beli";
+		$data['pageDescription'] = "Beli";
+		if($lang == 'en'){
+			$data['pageTitle'] = "Buy";
+			$data['pageDescription'] = "Buy";
 		}
 		return View::make('pages.buy',$data);
 	}

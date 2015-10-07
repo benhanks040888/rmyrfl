@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
-<title>@yield('title', Config::get('site.title'))</title>
-<meta name="description" content="@yield('description', Config::get('site.description'))">
+<title>{{$pageTitle or 'Romy Rafael'}} | {{Config::get('site.title')}}</title>
+<meta name="description" content="{{$pageDescription or Config::get('site.description')}}">
 
 @section('twitter_meta')
 <meta name="twitter:card" content="summary" />
@@ -19,6 +19,8 @@
 @show
 
 <link rel="canonical" href="{{ URL::current() }}">
+<link rel="alternate" hreflang="en-US" href="{{URL::to(getHereWithLang('en'))}}" />
+<link rel="alternate" hreflang="id" href="{{URL::to(getHereWithLang('id'))}}" />
 
 <meta name="base_url" content="{{ URL::to('/') }}">
 <meta name="_token" content="{{ csrf_token() }}" />
