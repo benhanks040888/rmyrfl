@@ -3653,6 +3653,10 @@ select.form-control {
   margin-bottom: 30px;
 }
 
+.section-content {
+  margin: 30px 0;
+}
+
 .wysiwyg-content a {
   color: #00aeef;
   font-weight: 600;
