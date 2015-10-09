@@ -3812,7 +3812,7 @@ select.form-control {
   color: #323232;
   padding: 10px 10px 10px 0;
 }
-.sub-navbar-nav > li > a:hover, .sub-navbar-nav > li > a:focus {
+.sub-navbar-nav > li > a.active, .sub-navbar-nav > li > a:hover, .sub-navbar-nav > li > a:focus {
   background: transparent;
   border-bottom: 5px solid #f5bf00;
 }

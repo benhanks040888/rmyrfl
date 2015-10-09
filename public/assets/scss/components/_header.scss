@@ -103,6 +103,7 @@
       color: $dark-gray;
       padding: 10px 10px 10px 0;
       
+      &.active,
       &:hover,
       &:focus {
         background: transparent;
