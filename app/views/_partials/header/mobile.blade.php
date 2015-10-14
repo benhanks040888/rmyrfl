@@ -12,7 +12,7 @@
 
     @include('_partials.language')
 
-    <div class="head-search-container">
+    {{-- <div class="head-search-container">
       <a href="#" class="head-search-toggle js-head-search-toggle"><i class="fa fa-search"></i></a>
 
       <form action="{{ URL::route('site.search',array('lang'=> Request::segment(1))) }}" class="search-form">
@@ -23,7 +23,7 @@
           </button>
         </div>
       </form>
-    </div>
+    </div> --}}
   </div>
 
   <div class="collapse navbar-collapse" id="navbar">

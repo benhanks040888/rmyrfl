@@ -64,7 +64,14 @@
   line-height: 42px;
   
   .lang-selector {
-    margin-right: 25px;
+    // margin-right: 25px;
+  }
+}
+
+.lang-selector {
+  .dropdown-menu {
+    left: auto;
+    right: 0;
   }
 }
 
@@ -177,7 +184,8 @@
     .lang-selector {
       position: absolute;
       top: 0;
-      right: 50px;
+      // right: 50px;
+      right: 25px;
       padding: 8px 0;
     }
 

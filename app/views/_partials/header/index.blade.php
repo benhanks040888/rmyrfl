@@ -9,10 +9,10 @@
       </div>
       <div class="pull-right">
         @include('_partials.language')
-        <form action="{{URL::route('site.search',array('lang'=> Request::segment(1)))}}" class="search-form form-inline">
+        {{-- <form action="{{URL::route('site.search',array('lang'=> Request::segment(1)))}}" class="search-form form-inline">
           <input class="form-control" type="text" name="q" placeholder="{{trans('menu.search')}}">
           <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+        </form> --}}
       </div>
     </div>
   </div>

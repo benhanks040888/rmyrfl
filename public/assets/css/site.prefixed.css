@@ -3758,8 +3758,10 @@ select.form-control {
   background: #f5f5f5;
   line-height: 42px;
 }
-.header-menu-other .lang-selector {
-  margin-right: 25px;
+
+.lang-selector .dropdown-menu {
+  left: auto;
+  right: 0;
 }
 
 .header-menu-other-links a {
@@ -3859,7 +3861,7 @@ select.form-control {
   .navbar-header .lang-selector {
     position: absolute;
     top: 0;
-    right: 50px;
+    right: 25px;
     padding: 8px 0;
   }
   .navbar-header .head-search-toggle {
