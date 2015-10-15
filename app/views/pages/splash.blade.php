@@ -14,7 +14,7 @@
           <div class="splash-text">
             <div class="vcenter">
               <h1>Corporate Entertainer</h1>
-              <p>Let me help you to create a show you never imagine before</p>
+              <p>{{trans('splash.entertainer')}}</p>
         
               <span href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="btn btn-primary">See More</span>
             </div>
@@ -27,7 +27,7 @@
           <div class="splash-text">
             <div class="vcenter">
               <h1>Corporate Speaker</h1>
-              <p>Let me help you to create a show you never imagine before</p>
+              <p>{{trans('splash.speaker')}}</p>
         
               <span href="{{URL::route('site.speaker.home',array('lang'=> Request::segment(1)))}}" class="btn btn-primary">See More</span>
             </div>
@@ -40,7 +40,7 @@
           <div class="splash-text">
             <div class="vcenter">
               <h1>Certified Therapist</h1>
-              <p>Let me help you to create a show you never imagine before</p>
+              <p>{{trans('splash.therapist')}}</p>
         
               <span href="{{URL::route('site.therapist.home',array('lang'=> Request::segment(1)))}}" class="btn btn-primary">See More</span>
             </div>
