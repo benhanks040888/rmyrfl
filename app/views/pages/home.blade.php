@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<section class="section section-slider">
+<section class="section section-slider section-{{ $pageType }}-slider">
   <div class="container">
     <div class="testimonial-slider">
 	@foreach($testimony as $test)

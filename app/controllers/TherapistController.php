@@ -35,6 +35,9 @@ class TherapistController extends BaseSiteController {
 			$data['pageTitle'] = "Certified Therapist - Home";
 			$data['pageDescription'] = "Certified Therapist - Home";
 		}
+
+		$data['pageType'] = 'certified-therapist';
+
 		return View::make('pages.home',$data);
 	}
 	

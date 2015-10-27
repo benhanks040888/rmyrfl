@@ -36,6 +36,9 @@ class EntertainerController extends BaseSiteController {
 			$data['pageTitle'] = "Corporate Entertainer - Home";
 			$data['pageDescription'] = "Corporate Entertainer - Home";
 		}
+
+		$data['pageType'] = 'corporate-entertainer';
+
 		return View::make('pages.home',$data);
 	}
 	

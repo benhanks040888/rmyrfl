@@ -35,6 +35,9 @@ class SpeakerController extends BaseSiteController {
 			$data['pageTitle'] = "Corporate Speaker - Home";
 			$data['pageDescription'] = "Corporate Speaker - Home";
 		}
+
+		$data['pageType'] = 'corporate-speaker';
+
 		return View::make('pages.home',$data);
 	}
 	
