@@ -53,9 +53,9 @@ class GeneralController extends BaseController {
 		elseif(Input::get('_action') == 'editProcess'){
 			if(Input::has('id')){
 				$general = GeneralInfo::find(Input::get('id'));
-				if(!empty(Input::get('title_en')))
+				if(Input::get('title_en'))
 					$general->title_en = Input::get('title_en');
-				if(!empty(Input::get('title_id')))
+				if(Input::get('title_id'))
 					$general->title_id = Input::get('title_id');
 				$general->value_en = Input::get('content_en');
 				$general->value_id = Input::get('content_id');

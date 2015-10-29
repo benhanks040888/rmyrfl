@@ -3602,6 +3602,9 @@ select.form-control {
   padding: 40px 0;
   text-align: center;
 }
+.section iframe {
+  max-width: 100%;
+}
 
 .section-heading {
   margin-top: 0;
