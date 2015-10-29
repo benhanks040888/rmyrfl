@@ -1,9 +1,10 @@
 <?php namespace App\Controllers;
 
 use BaseSiteController;
-use View, Input, Redirect, Route, Validator, Session, Config;
+use View, Input, Redirect, Route, Validator, Session, Config, Log;
 use App\Models\GeneralInfo;
 use App\Models\ContactUs;
+use App\Models\Notification;
 
 class HomeController extends BaseSiteController {
 
@@ -12,7 +13,7 @@ class HomeController extends BaseSiteController {
 		return Redirect::route('site.home', array('lang'=> $lang));
 	}
 	
-	public function getIndex()
+	public function getIndex($lang = 'id')
 	{
 		return View::make('pages.splash');
 	}
@@ -49,11 +50,14 @@ class HomeController extends BaseSiteController {
 	
 	public function getContact($lang = 'id')
 	{
+		$contact_copy = GeneralInfo::where('key','=','contact-us')->first();
 		$data['pageTitle'] = "Hubungi Kami";
 		$data['pageDescription'] = "Hubungi Kami";
+		$data['contact_copy'] = $contact_copy->value_id;
 		if($lang == 'en'){
 			$data['pageTitle'] = "Contact Us";
 			$data['pageDescription'] = "Contact Us";
+			$data['contact_copy'] = $contact_copy->value_en;
 		}
 		return View::make('pages.contact', $data);
 	}
@@ -66,6 +70,7 @@ class HomeController extends BaseSiteController {
 				'Name' => Input::get('name'),
 				'Email' => Input::get('email'),
 				'Phone' => Input::get('phone'),
+				'Address' => Input::get('address'),
 				'Subject' => Input::get('subject'),
 				'Message' => Input::get('message')
 			),
@@ -74,6 +79,7 @@ class HomeController extends BaseSiteController {
 				'Name' => 'required',
 				'Email' => 'required',
 				'Phone' => 'required',
+				'Address' => 'required',
 				'Subject' => 'required',
 				'Message' => 'required'
 			)
@@ -97,6 +103,11 @@ class HomeController extends BaseSiteController {
 				$errorMessage = "Process failed, please try again later";
 			}
 			return Redirect::route('site.contact',array('lang'=> $lang))->with('error_message',$errorMessage);
+		}
+		
+		$email = Notification::sendEmailContactUs($contact);
+		if(!$email){
+			Log::error('Failed sending Contact Us email with reference ID : '.$contact->id);
 		}
 		
 		$successMessage = "Pesan Anda telah terkirim";

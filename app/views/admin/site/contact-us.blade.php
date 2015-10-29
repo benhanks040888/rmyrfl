@@ -3,7 +3,7 @@
 @section('content')
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Product Order List</h1>
+      <h1 class="page-header">Contact Us</h1>
     </div>
   </div>
 	<div id="list_table_holder">
@@ -65,19 +65,14 @@
 							<td id="lblAddress"></td>
 						</tr>
 						<tr>
+							<td>Subject</td>
+							<td>:</td>
+							<td id="lblSubject"></td>
+						</tr>
+						<tr>
 							<td>Message</td>
 							<td>:</td>
 							<td id="lblMessage"></td>
-						</tr>
-						<tr>
-							<td>Product Name</td>
-							<td>:</td>
-							<td id="lblProductName"></td>
-						</tr>
-						<tr>
-							<td>Price</td>
-							<td>:</td>
-							<td id="lblPrice"></td>
 						</tr>
 						<tr>
 							<td>Created Date</td>
@@ -104,9 +99,9 @@
 			});
 			var oTable = $(".datatable").dataTable({
 				"sPaginationType": "full_numbers",
-				"sAjaxSource" : "{{URL::route('admin.product-order.list')}}",
+				"sAjaxSource" : "{{URL::route('admin.contact-us.list')}}",
 				'iDisplayLength' : 25,
-				"aaSorting": [[ 5, "desc" ]],
+				"aaSorting": [[ 4, "desc" ]],
 				'aafilter':'yes',
 				"aoColumns":[
 						<?php 
@@ -126,7 +121,7 @@
 					{"bSortable": false}
 					],
 				"aoColumnDefs": [
-						{ "bSortable": false, "aTargets": [6] }
+						{ "bSortable": false, "aTargets": [5] }
 					],
 				'bServerSide': true,
 				"fnServerParams":function (aoData) {
@@ -135,13 +130,13 @@
 				"fnDrawCallback": function ( oSettings ) {
 					var text;
 					for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ){	
-						if(oSettings.aoData[i]._aData[6] == 1)
+						if(oSettings.aoData[i]._aData[5] == 1)
 							text = "Yes";
 						else
 							text = "No";
 							
 							text += "-- <a onclick='changeAccept("+oSettings.aoData[i]._aData[0]+");' href='javascript:void(0)'>Change</a>";
-						$('td:eq(5)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html(text); 	
+						$('td:eq(4)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html(text); 	
 						
 						$('td:eq(<?php echo $num_fields - $hidden_field ?>)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html("<table>"
 						+"<tr><td align=\"center\" colspan=\"2\"><a href=\"javascript:void(0)\" onclick=\"openView("+oSettings.aoData[i]._aData[0]+")\" class=\"btn btn-primary btn-sm\">VIEW</a></td></tr></table>");
@@ -163,7 +158,7 @@
 		
 		function openView(id){
 			$.ajax({
-					url: "{{URL::route('admin.product-order.detail')}}",  //Server script to process data
+					url: "{{URL::route('admin.contact-us.detail')}}",  //Server script to process data
 					type: 'POST',
 					dataType: 'json',
 					data: "id="+id,
@@ -175,8 +170,7 @@
 							$("#lblAddress").html(data.data.address);
 							$("#lblPhone").html(data.data.phone);
 							$("#lblMessage").html(data.data.message);
-							$("#lblProductName").html(data.data.product_name);
-							$("#lblPrice").html(data.data.price);
+							$("#lblSubject").html(data.data.subject);
 							$("#lblDate").html(data.data.created_at);
 							$("#modalView").modal('show');
 						}
@@ -190,7 +184,7 @@
 		
 		function changeAccept(id){
 			$.ajax({
-					url: "{{URL::route('admin.product-order.switch-active')}}",  //Server script to process data
+					url: "{{URL::route('admin.contact-us.switch-active')}}",  //Server script to process data
 					type: 'POST',
 					dataType: 'json',
 					//Ajax events

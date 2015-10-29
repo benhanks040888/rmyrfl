@@ -39,7 +39,13 @@
 
     <script src="{{ assets_url('js/vendors/bootstrap.min.js') }}"></script>
     <script src="{{ assets_url('js/site.min.js') }}?v={{ filemtime(public_path() . '/assets/js/site.min.js') }}"></script>
-
+	<script>
+		$.ajaxSetup({ headers: { 'X-CSRF-Token' : '{{ csrf_token() }}' } });
+	</script>
+	@if(!Session::has('RR-promo'))
+		@include('_partials.promo-popup')
+	@endif
+	
     @yield('scripts')
 
   </body>

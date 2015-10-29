@@ -174,3 +174,51 @@ if ( ! function_exists('getLang'))
     return Cookie::get('romy_lang') ?: 'id';
   }
 }
+
+if ( ! function_exists('getPromoPopupData'))
+{
+	function getPromoPopupData($lang = 'id')
+	{
+		if(Session::has('promo_popup'))
+			return false;
+		
+		$result = Cache::get('promo_popup_data_'.$lang, function() use ($lang){ 
+							$promo = App\Models\Promo::Active()->first();
+							if($promo)
+							{
+								$data['photo'] = $promo->picture;
+								if($lang == 'en'){
+									$data['title'] = $promo->title_en;
+									$data['content'] = $promo->content_en;
+								}
+								else{
+									$data['title'] = $promo->title_id;
+									$data['content'] = $promo->content_id;
+								}
+								Cache::add('promo_popup_data_'.$lang, $data, 1);
+								return $data;
+							}
+							return false;
+						});
+		return $result;
+		
+	}
+}
+
+if ( ! function_exists('restrictPromoPopup'))
+{
+	function restrictPromoPopup()
+	{
+		Session::put('RR-promo',0);
+		return true;
+	}
+}
+
+if ( ! function_exists('allowPromoPopup'))
+{
+	function allowPromoPopup()
+	{
+		Session::forget('RR-promo');
+		return true;
+	}
+}

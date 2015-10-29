@@ -4,6 +4,7 @@ use BaseSiteController;
 use View, Input, Redirect, Route, Validator, Session;
 use App\Models\Product;
 use App\Models\ProductOrder;
+use App\Models\Notification;
 
 class ProductController extends BaseSiteController {
 
@@ -81,6 +82,11 @@ class ProductController extends BaseSiteController {
 		$contact->price = $product->price;
 		$contact->save();
 			
+		$email = Notification::sendEmailBuyProduct($contact);
+		if(!$email){
+			Log::error('Failed sending Product Purchase email with reference ID : '.$contact->id);
+		}
+		
 		if(!$contact->id){
 			$errorMessage = "Proses gagal, coba beberapa saat lagi";
 			if($lang == 'en'){
@@ -95,5 +101,4 @@ class ProductController extends BaseSiteController {
 		}
 		return Redirect::route('site.product',array('lang'=> $lang))->with('success',$successMessage);
 	}
-
 }

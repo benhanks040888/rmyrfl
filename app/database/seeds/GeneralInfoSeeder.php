@@ -9,6 +9,7 @@ class GeneralInfoSeeder extends Seeder
     GeneralInfo::truncate();
     GeneralInfo::create(array('key' => 'romy','section'=>'General','title_en' => 'About Romy Rafael','title_id' => 'Tentang Romy Rafael','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
     GeneralInfo::create(array('key' => 'management','section'=>'General','title_en' => 'Management Team','title_id' => 'Tim Manajemen','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
+    GeneralInfo::create(array('key' => 'contact-us','section'=>'General','title_en' => 'Contact Us','title_id' => 'Hubungi Kami','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
     GeneralInfo::create(array('key' => 'work-entertainer','section'=>'Corporate Entertainer','title_en' => 'How We Work (Corporate Entertainer)','title_id' => 'Cara Kerja Kami (Corporate Entertainer)','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
     GeneralInfo::create(array('key' => 'work-speaker','section'=>'Corporate Speaker','title_en' => 'How We Work (Corporate Speaker)','title_id' => 'Cara Kerja Kami (Corporate Speaker)','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
     GeneralInfo::create(array('key' => 'work-therapist','section'=>'Certified Therapist','title_en' => 'How We Work (Certified Therapist)','title_id' => 'Cara Kerja Kami (Certified Therapist)','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
@@ -24,6 +25,9 @@ class GeneralInfoSeeder extends Seeder
 	GeneralInfo::create(array('key' => 'customer-entertainer','section'=>'Corporate Entertainer','title_en' => 'Customer (Corporate Entertainer)','title_id' => 'Pelanggan (Corporate Entertainer)','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
     GeneralInfo::create(array('key' => 'customer-speaker','section'=>'Corporate Speaker','title_en' => 'Customer (Corporate Speaker)','title_id' => 'Pelanggan (Corporate Speaker)','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
     GeneralInfo::create(array('key' => 'customer-therapist','section'=>'Certified Therapist','title_en' => 'Customer (Certified Therapist)','title_id' => 'Pelanggan (Certified Therapist)','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
+    GeneralInfo::create(array('key' => 'customer-entertainer-summary','section'=>'Corporate Entertainer','title_en' => 'Customer (Corporate Entertainer) [Summary]','title_id' => 'Pelanggan (Corporate Entertainer) [Summary]','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
+    GeneralInfo::create(array('key' => 'customer-speaker-summary','section'=>'Corporate Speaker','title_en' => 'Customer (Corporate Speaker) [Summary]','title_id' => 'Pelanggan (Corporate Speaker) [Summary]','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
+    GeneralInfo::create(array('key' => 'customer-therapist-summary','section'=>'Certified Therapist','title_en' => 'Customer (Certified Therapist) [Summary]','title_id' => 'Pelanggan (Certified Therapist) [Summary]','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
     GeneralInfo::create(array('key' => 'show','section'=>'Corporate Entertainer','title_en' => 'Shows','title_id' => 'Jenis Show','created_at' => date('Y-m-d H:i:s'),'updated_at' => date('Y-m-d H:i:s')));
 
   }

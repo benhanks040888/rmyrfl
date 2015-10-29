@@ -54,6 +54,14 @@ class ProductOrderController extends BaseController {
 				'type' => 'DATETIME',
 								'hidden' => false,
 								'unsearchable' => true
+			),            
+						
+						array(
+				'name' => 'active',
+				'alias' => 'Handled',
+				'type' => 'Boolean',
+								'hidden' => false,
+								'unsearchable' => true
 			)
 		);		
 	}
@@ -143,5 +151,15 @@ class ProductOrderController extends BaseController {
 			}
 		}
 		echo json_encode($return);
+	}
+	
+	public function postSwitchActive()
+	{
+		if(Input::has('id')){
+			echo ProductOrder::switchShow(Input::get('id'));
+		}
+		else{
+			echo "0";
+		}
 	}
 }

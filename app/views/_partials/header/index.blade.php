@@ -5,7 +5,7 @@
         <a href="{{URL::route('site.about',array('lang'=> Request::segment(1)))}}">{{trans('menu.about')}} Romy Rafael</a>
         <a href="{{URL::route('site.affirmation',array('lang'=> Request::segment(1)))}}">{{trans('menu.affirmation')}}</a>
         <a href="{{URL::route('site.product',array('lang'=> Request::segment(1)))}}">{{trans('menu.product')}}</a>
-        <a href="{{URL::route('site.imaji',array('lang'=> Request::segment(1)))}}">Lintas Imaji (NET)</a>
+        <a href="https://www.youtube.com/playlist?list=PLObURnEFJ80XKwv8eEgbhZCmfzVohEw35" target="_blank">Lintas Imaji (NET)</a>
       </div>
       <div class="pull-right">
         @include('_partials.language')
