@@ -91,7 +91,7 @@ class TestimonyController extends BaseController {
 		$data = array();
 		$input = Testimony::find($id);
 		if(is_null($input)){
-			return Redirect::route('admin.testimony');
+			return Redirect::route('admin.testimony',array('url_category'=>$url_cat));
 		}
 		$data['action'] = "Edit";
 		$data['input'] = Input::old();
@@ -180,7 +180,11 @@ class TestimonyController extends BaseController {
 		echo json_encode($return);
 	}
 	
-	public function postSubmit(){
+	public function postSubmit($url_cat){
+		$check = $this->checkUrlCategory($url_cat);
+		if(!$check)
+			return Redirect::route('admin.testimony',array('url_category'=>'entertainer'));
+		
 		if(Input::get('_action') == 'addProcess'){
 			$validator = Validator::make(
 				array(
@@ -193,7 +197,7 @@ class TestimonyController extends BaseController {
 				)
 			);
 			if ($validator->fails()){
-				return Redirect::route('admin.testimony.add')->withErrors($validator)->withInput();
+				return Redirect::route('admin.testimony.add',array('url_category'=>$url_cat))->withErrors($validator)->withInput();
 			}
 				
 			$testimony = new Testimony;
@@ -240,7 +244,7 @@ class TestimonyController extends BaseController {
 					)
 				);
 				if ($validator->fails()){
-					return Redirect::route('admin.testimony.edit',array('id' => Input::get('id')))->withErrors($validator)->withInput();
+					return Redirect::route('admin.testimony.edit',array('url_category'=>$url_cat,'id' => Input::get('id')))->withErrors($validator)->withInput();
 				}
 				
 				$testimony = Testimony::find(Input::get('id'));
@@ -273,7 +277,7 @@ class TestimonyController extends BaseController {
 				$this->clearCache();
 			}
 		}
-		return Redirect::route('admin.testimony');
+		return Redirect::route('admin.testimony',array('url_category'=>$url_cat));
 	}
 	
 	public function postSwitchFeatured()

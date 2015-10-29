@@ -2,54 +2,54 @@
 
 use BaseController;
 use DB, Str, View, Datatables, Input, Redirect, Image, File, Validator, Cache;
-use App\Models\MagicQuestion;
+use App\Models\Promo;
 
-class MagicQuestionController extends BaseController {
+class PromoController extends BaseController {
 
-	private $upload_path = 'uploads/magic-question/';
+	private $upload_path = 'uploads/promo/';
 	
 	public function getList()
 	{
-		$get = MagicQuestion::first();
+		$get = Promo::first();
 		$data['result'] = $get;
-		return View::make('admin.site.magicQuestion',$data);
+		return View::make('admin.site.promo',$data);
 	}
 	
 	public function getFormEdit()
 	{
 		$data = array();
-		$input = MagicQuestion::first();
+		$input = Promo::first();
 		$data['input'] = Input::old();
 		if($input){
 			if(!$data['input']){
 				$data['input'] = $input;
 			}
 		}
-		return View::make('admin.site.form.magicQuestion',$data);
+		return View::make('admin.site.form.promo',$data);
 	}
 	
 	public function postSubmit(){
 		$validator = Validator::make(
 			array(
-				'Question (EN)' => Input::get('question_en'),
-				'Question (ID)' => Input::get('question_id'),
+				'Title (EN)' => Input::get('title_en'),
+				'Title (ID)' => Input::get('title_id'),
 				'Photo' => Input::file('image')
 			),
 			array(
-				'Question (EN)' => 'required',
-				'Question (ID)' => 'required',
+				'Title (EN)' => 'required',
+				'Title (ID)' => 'required',
 				'Photo' => 'image|max:2048' //maximum image size of 2 MB
 			)
 		);
 		if ($validator->fails()){
-			return Redirect::route('admin.magic-question.edit')->withErrors($validator)->withInput();
+			return Redirect::route('admin.promo.edit')->withErrors($validator)->withInput();
 		}
 			
-		$magicQuestion = MagicQuestion::firstOrNew(array());
-		$magicQuestion->question_en = Input::get('question_en');
-		$magicQuestion->question_id = Input::get('question_id');
-		$magicQuestion->answer_id = Input::get('answer_id');
-		$magicQuestion->answer_en = Input::get('answer_en');
+		$promo = Promo::firstOrNew(array());
+		$promo->title_en = Input::get('title_en');
+		$promo->title_id = Input::get('title_id');
+		$promo->content_id = Input::get('content_id');
+		$promo->content_en = Input::get('content_en');
 		if(!file_exists($this->upload_path)) {
 			mkdir($this->upload_path, 0777, true);
 		}
@@ -58,8 +58,8 @@ class MagicQuestionController extends BaseController {
 			if(!is_null(Input::file('image'))){
 				$file = Input::file('image');
 				if($file->isValid()){
-					if(!empty($magicQuestion->picture)){
-						File::delete($magicQuestion->picture);
+					if(!empty($promo->picture)){
+						File::delete($promo->picture);
 					}
 					$extension = $file->getClientOriginalExtension();
 					$img = Image::make($file->getRealPath());
@@ -67,34 +67,54 @@ class MagicQuestionController extends BaseController {
 						$constraint->aspectRatio();
 					});
 					$img->interlace();
-					$name = 'magic-question_'.uniqid();
+					$name = 'promo_'.uniqid();
 					$fileName = $this->upload_path.Str::slug($name).'.'.$extension;
 					$img->save($fileName);
-					$magicQuestion->picture = $fileName;
+					$promo->picture = $fileName;
 				}
 			}
 		}
-		$magicQuestion->save();
+		$promo->save();
+		$this->clearCache();
 		
-		if(!$magicQuestion->id){
-			throw new \Exception('Magic Question insert error');
+		if(!$promo->id){
+			throw new \Exception('Promo insert error');
 		}
-		return Redirect::route('admin.magic-question');
+		return Redirect::route('admin.promo');
 	}
 	
 	public function postRemovePicture()
 	{
-		$record = MagicQuestion::first();
+		$record = Promo::first();
 		if($record){
 			if(!empty($record->picture)){
 				File::delete($record->picture);
 			}
 			$record->picture = "";
 			$record->save();
+			$this->clearCache();
 			echo "1";
 		}
 		else{
 			echo "0";
+		}
+	}
+	
+	public function postSwitchActive()
+	{
+		if(Input::has('id')){
+			echo Promo::switchShow(Input::get('id'));
+		}
+		else{
+			echo "0";
+		}
+	}
+	
+	private function clearCache(){
+		$cache = 'promo_popup_data';
+		if (Cache::has($cache))
+		{
+			Cache::forget($cache);
 		}
 	}
 }

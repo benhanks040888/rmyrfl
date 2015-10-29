@@ -7,7 +7,7 @@
           <li><a href="{{URL::route('site.entertainer.customer',array('lang'=> Request::segment(1)))}}">{{trans('menu.customer')}}</a></li>
           <li><a href="{{URL::route('site.entertainer.work',array('lang'=> Request::segment(1)))}}">{{trans('menu.service')}}</a></li>
           <li><a href="{{URL::route('site.entertainer.client',array('lang'=> Request::segment(1)))}}">{{trans('menu.client')}}</a></li>
-          <li><a href="{{URL::route('site.entertainer.show',array('lang'=> Request::segment(1)))}}">{{trans('menu.show')}}</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLObURnEFJ80XKwv8eEgbhZCmfzVohEw35" target="_blank">{{trans('menu.show')}}</a></li>
         </ul>
       </div>
       <div class="col-sm-3">
@@ -35,7 +35,7 @@
         <ul class="footer-menu-list">
           <li>Romy Rafael Hypnotherapy Center</li>
           <li>Contact : 0818 399124, 0819 32433457</li>
-          <li>Email : <a href="#">info@romyrafael.net</a></li>
+          <li>Email : <a href="mailto:info@romyrafael.net">info@romyrafael.net</a></li>
         </ul>
 
         @include('_partials.social')

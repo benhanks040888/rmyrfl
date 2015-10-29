@@ -20,7 +20,7 @@
   </li>
 
   <li>
-	<a {{ URL::current() == URL::route('site.entertainer.show',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.entertainer.show',array('lang'=> Request::segment(1)))}}">
+	<a href="https://www.youtube.com/playlist?list=PLObURnEFJ80XKwv8eEgbhZCmfzVohEw35" target="_blank">
 	  <p><strong>{{trans('menu.show')}}</strong></p>
 	  <small class="text-muted">{{trans('menu.show-description')}}</small>
 	</a>

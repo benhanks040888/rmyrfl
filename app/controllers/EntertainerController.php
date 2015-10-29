@@ -16,6 +16,13 @@ class EntertainerController extends BaseSiteController {
 		if($lang == 'en'){
 			$data['work'] = $work->value_en;
 		}
+		
+		$customer = GeneralInfo::Key('customer-entertainer-summary')->first();
+		$data['customer'] = $customer->value_id;
+		if($lang == 'en'){
+			$data['customer'] = $customer->value_en;
+		}
+		
 		$data['clients'] = Client::Entertainer()->orderByRaw("RAND()")->take(4)->get();
 		
 		$testimony = Testimony::select('content_id as content','name','position','photo');
@@ -36,7 +43,12 @@ class EntertainerController extends BaseSiteController {
 			$data['pageTitle'] = "Corporate Entertainer - Home";
 			$data['pageDescription'] = "Corporate Entertainer - Home";
 		}
-		return View::make('pages.home',$data);
+		
+		$main = View::make('pages.home',$data);
+		$promo_data = getPromoPopupData($lang);
+		if(!$promo_data)
+			return $main;
+		return $main->nest('popup_promo_view','_partials.promo-popup',$promo_data);
 	}
 	
 	public function getClient($lang = 'id')

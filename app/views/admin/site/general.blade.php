@@ -15,7 +15,7 @@
 			</thead>
 			<tbody>
 				@foreach($string as $string)
-				<tr><td><a href="{{URL::route('admin.general.edit',$string->key)}}">{{$string->title_id}} / {{$string->title_en}}</a></td></tr>
+				<tr><td><a href="{{URL::route('admin.general.edit',array('url_cat'=>$category,'id'=>$string->key))}}">{{$string->title_id}} / {{$string->title_en}}</a></td></tr>
 				@endforeach
 			</tbody>
 		</table>

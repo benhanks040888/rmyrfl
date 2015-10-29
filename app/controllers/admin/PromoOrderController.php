@@ -2,9 +2,11 @@
 
 use BaseController;
 use DB, Str, View, Datatables, Input, Redirect, Image, File, Validator, Cache;
-use App\Models\ContactUs;
+use App\Models\PromoOrder;
+use App\Models\Promo;
+use App\Models\PromoType;
 
-class ContactUsController extends BaseController {
+class PromoOrderController extends BaseController {
 
 	public function __construct()
 	{
@@ -31,15 +33,16 @@ class ContactUsController extends BaseController {
 								'unsearchable' => false
 			),
 						array(
-				'name' => 'subject',
-				'alias' => 'Subject',
+				'name' => 'promo_title',
+				'alias' => 'Promo Title',
 				'type' => 'TEXT',
 								'hidden' => false,
 								'unsearchable' => false
-			),
+			),            
+						
 						array(
 				'name' => 'created_at',
-				'alias' => 'Time',
+				'alias' => 'Date',
 				'type' => 'DATETIME',
 								'hidden' => false,
 								'unsearchable' => true
@@ -61,10 +64,10 @@ class ContactUsController extends BaseController {
 		$data['fields'] = $this->col;
 		$data['num_fields'] = count($this->col);
 	
-		$get = ContactUs::get();
+		$get = PromoOrder::get();
 		$data['result'] = $get;
 		$data['qtyParticipant'] = $get->count();
-		return View::make('admin.site.contact-us',$data);
+		return View::make('admin.site.promo-order',$data);
 	}
 	
 	public function postList()
@@ -99,7 +102,7 @@ class ContactUsController extends BaseController {
 				'filter' => Input::get('filter') //all, yes, or no
 		);
 		
-		$rowset = ContactUs::getDatatable($options);
+		$rowset = PromoOrder::getDatatable($options);
 		$aaData = array();
 		foreach($rowset['data'] as $row){
 			array_push($aaData, $row);
@@ -125,16 +128,17 @@ class ContactUsController extends BaseController {
 	{
 		$return['success'] = 0;
 		if(Input::has('id')){
-			$product = ContactUs::select('name','email','phone','message','address','subject','created_at as cdate')->find(Input::get('id'));
-			if($product !== null){
+			$promo = PromoOrder::select('name','email','phone','address','promo_name','message','price','created_at as cdate')->find(Input::get('id'));
+			if($promo !== null){
 				$return['success'] = 1;
-				$data['name'] = $product->name;
-				$data['email'] = $product->email;
-				$data['phone'] = $product->phone;
-				$data['address'] = $product->address;
-				$data['subject'] = $product->subject;
-				$data['message'] = $product->message;
-				$data['created_at'] = $product->cdate;
+				$data['name'] = $promo->name;
+				$data['email'] = $promo->email;
+				$data['phone'] = $promo->phone;
+				$data['address'] = $promo->address;
+				$data['promo_name'] = $promo->promo_name;
+				$data['price'] = $promo->price;
+				$data['message'] = $promo->message;
+				$data['created_at'] = $promo->cdate;
 				$return['data'] = $data;
 			}
 		}
@@ -144,7 +148,7 @@ class ContactUsController extends BaseController {
 	public function postSwitchActive()
 	{
 		if(Input::has('id')){
-			echo ContactUs::switchShow(Input::get('id'));
+			echo PromoOrder::switchShow(Input::get('id'));
 		}
 		else{
 			echo "0";

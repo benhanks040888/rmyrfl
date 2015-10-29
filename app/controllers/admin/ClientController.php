@@ -164,7 +164,11 @@ class ClientController extends BaseController {
 		echo json_encode($return);
 	}
 	
-	public function postSubmit(){
+	public function postSubmit($url_cat){
+		$check = $this->checkUrlCategory($url_cat);
+		if(!$check)
+			return Redirect::route('admin.client',array('url_category'=>'entertainer'));
+		
 		if(Input::get('_action') == 'addProcess'){
 			$validator = Validator::make(
 				array(
@@ -177,7 +181,7 @@ class ClientController extends BaseController {
 				)
 			);
 			if ($validator->fails()){
-				return Redirect::route('admin.client.add')->withErrors($validator)->withInput();
+				return Redirect::route('admin.client.add',array('url_category'=>$url_cat))->withErrors($validator)->withInput();
 			}
 				
 			$client = new Client;
@@ -221,7 +225,7 @@ class ClientController extends BaseController {
 					)
 				);
 				if ($validator->fails()){
-					return Redirect::route('admin.client.edit',array('id' => Input::get('id')))->withErrors($validator)->withInput();
+					return Redirect::route('admin.client.edit',array('url_category'=>$url_cat,'id' => Input::get('id')))->withErrors($validator)->withInput();
 				}
 				
 				$client = Client::find(Input::get('id'));
@@ -251,7 +255,7 @@ class ClientController extends BaseController {
 				$this->clearCache();
 			}
 		}
-		return Redirect::route('admin.client');
+		return Redirect::route('admin.client',array('url_category'=>$url_cat));
 	}
 	
 	public function postSwitchFeatured()

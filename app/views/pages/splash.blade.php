@@ -53,5 +53,11 @@
     <script>window.jQuery || document.write('<script src="{{assets_url('js/vendors/jquery-1.11.0.min.js')}}"><\/script>')</script>
     <script src="{{assets_url('js/vendors/bootstrap.min.js')}}"></script>
     <script src="{{assets_url('js/site.min.js')}}"></script>
+	<script>
+		$.ajaxSetup({ headers: { 'X-CSRF-Token' : '{{ csrf_token() }}' } });
+	</script>
+	@if(!Session::has('RR-promo'))
+		@include('_partials.promo-popup')
+	@endif
   </body>
 </html>

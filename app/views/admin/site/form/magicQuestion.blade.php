@@ -32,13 +32,13 @@
 	<div class="form-group">
 		<label for="inputQuestionEN" class="col-sm-2 control-label">Question (EN)</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="inputQuestionEN" name="question_en" placeholder="Question (ID)" value="{{$input['question_id'] or ''}}">
+			<input type="text" class="form-control" id="inputQuestionEN" name="question_en" placeholder="Question (EN)" value="{{$input['question_en'] or ''}}">
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="inputAnswerEN" class="col-sm-2 control-label">Answer (EN)</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="inputAnswerEN" name="answer_en" placeholder="Answer (ID)" value="{{$input['answer_id'] or ''}}">
+			<input type="text" class="form-control" id="inputAnswerEN" name="answer_en" placeholder="Answer (EN)" value="{{$input['answer_en'] or ''}}">
 		</div>
 	</div>
 	<div class="form-group">
@@ -56,7 +56,7 @@
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		<div class="col-sm-6">
-			<a href="{{URL::route('admin.general')}}"><button type="button" class="btn btn-default">Back</button></a>
+			<a href="{{URL::route('admin.magic-question')}}"><button type="button" class="btn btn-default">Back</button></a>
 		</div>
 	</div>
 	{{Form::close()}}

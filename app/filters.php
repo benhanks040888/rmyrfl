@@ -19,7 +19,15 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
-	//
+	
+});
+
+Route::filter('promo-popup',function($route, $request, $response){
+	//$response->getOriginalContent()->nest('test_nest','_partials.promo-popup');
+	//print_r($route);
+	$output = $response;
+	$popup = View::make('_partials.promo-popup');
+	//print( $output.$popup);
 });
 
 /*

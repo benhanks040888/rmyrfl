@@ -16,6 +16,13 @@ class SpeakerController extends BaseSiteController {
 		if($lang == 'en'){
 			$data['work'] = $work->value_en;
 		}
+		
+		$customer = GeneralInfo::Key('work-entertainer-summary')->first();
+		$data['customer'] = $customer->value_id;
+		if($lang == 'en'){
+			$data['customer'] = $customer->value_en;
+		}
+		
 		$data['clients'] = Client::Speaker()->orderByRaw("RAND()")->take(4)->get();
 		
 		$testimony = Testimony::select('content_id as content','name','position','photo');

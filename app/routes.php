@@ -13,7 +13,7 @@ include('admin_routes.php');
 |
 */
 
-Route::group(array('namespace' => 'App\Controllers'), function() {
+Route::group(array('namespace' => 'App\Controllers', 'after' => 'promo-popup'), function() {
   Route::get('/{lang?}', array('as' => 'home.default', 'uses' => 'HomeController@getDefault'));
   Route::group(array('prefix' => '{lang}'), function() {
 	Route::get('/home', array('as' => 'site.home', 'uses' => 'HomeController@getIndex'));
@@ -28,6 +28,9 @@ Route::group(array('namespace' => 'App\Controllers'), function() {
 	Route::get('/secret-product', array('as' => 'site.product.secret', 'uses' => 'ProductController@getSecret'));
 	Route::get('/order-product/{slug}', array('as' => 'site.product.buy', 'uses' => 'ProductController@getBuy'));
 	Route::post('/order', array('as' => 'site.product.buy.post', 'uses' => 'ProductController@postBuy'));
+	
+	Route::post('/promo/submit', array('as' => 'site.promo.submit', 'uses' => 'PromoController@postOrder'));
+	Route::post('/promo/dismiss', array('as' => 'site.promo.dismiss', 'uses' => 'PromoController@postDismissPopup'));
 	
 	Route::group(array('prefix' => 'corporate-entertainer'), function() {
 		Route::get('/', array('as' => 'site.entertainer.home', 'uses' => 'EntertainerController@getIndex'));

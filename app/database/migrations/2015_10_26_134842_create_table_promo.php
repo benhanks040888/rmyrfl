@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactUs extends Migration {
+class CreateTablePromo extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,14 @@ class CreateContactUs extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('contact_us', function(Blueprint $table)
+		Schema::create('promo', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
-			$table->string('email');
-			$table->string('phone');
-			$table->string('address');
-			$table->string('subject');
-			$table->text('message');
+			$table->string('title_en');
+			$table->string('title_id');
+			$table->text('content_en');
+			$table->text('content_id');
+			$table->string('picture');
 			$table->boolean('active')->default(0);
 			$table->timestamps();
 		});
@@ -33,7 +32,7 @@ class CreateContactUs extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('contact_us');
+		Schema::drop('promo');
 	}
 
 }

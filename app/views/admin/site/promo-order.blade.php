@@ -3,7 +3,7 @@
 @section('content')
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Product Order List</h1>
+      <h1 class="page-header">Promo Order List</h1>
     </div>
   </div>
 	<div id="list_table_holder">
@@ -104,7 +104,7 @@
 			});
 			var oTable = $(".datatable").dataTable({
 				"sPaginationType": "full_numbers",
-				"sAjaxSource" : "{{URL::route('admin.product-order.list')}}",
+				"sAjaxSource" : "{{URL::route('admin.promo-order.list')}}",
 				'iDisplayLength' : 25,
 				"aaSorting": [[ 5, "desc" ]],
 				'aafilter':'yes',
@@ -126,7 +126,7 @@
 					{"bSortable": false}
 					],
 				"aoColumnDefs": [
-						{ "bSortable": false, "aTargets": [6] }
+						{ "bSortable": false, "aTargets": [5] }
 					],
 				'bServerSide': true,
 				"fnServerParams":function (aoData) {
@@ -135,13 +135,13 @@
 				"fnDrawCallback": function ( oSettings ) {
 					var text;
 					for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ){	
-						if(oSettings.aoData[i]._aData[6] == 1)
+						if(oSettings.aoData[i]._aData[5] == 1)
 							text = "Yes";
 						else
 							text = "No";
 							
 							text += "-- <a onclick='changeAccept("+oSettings.aoData[i]._aData[0]+");' href='javascript:void(0)'>Change</a>";
-						$('td:eq(5)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html(text); 	
+						$('td:eq(4)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html(text); 	
 						
 						$('td:eq(<?php echo $num_fields - $hidden_field ?>)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html("<table>"
 						+"<tr><td align=\"center\" colspan=\"2\"><a href=\"javascript:void(0)\" onclick=\"openView("+oSettings.aoData[i]._aData[0]+")\" class=\"btn btn-primary btn-sm\">VIEW</a></td></tr></table>");
@@ -163,7 +163,7 @@
 		
 		function openView(id){
 			$.ajax({
-					url: "{{URL::route('admin.product-order.detail')}}",  //Server script to process data
+					url: "{{URL::route('admin.promo-order.detail')}}",  //Server script to process data
 					type: 'POST',
 					dataType: 'json',
 					data: "id="+id,
@@ -175,7 +175,7 @@
 							$("#lblAddress").html(data.data.address);
 							$("#lblPhone").html(data.data.phone);
 							$("#lblMessage").html(data.data.message);
-							$("#lblProductName").html(data.data.product_name);
+							$("#lblProductName").html(data.data.promo_name);
 							$("#lblPrice").html(data.data.price);
 							$("#lblDate").html(data.data.created_at);
 							$("#modalView").modal('show');
@@ -190,7 +190,7 @@
 		
 		function changeAccept(id){
 			$.ajax({
-					url: "{{URL::route('admin.product-order.switch-active')}}",  //Server script to process data
+					url: "{{URL::route('admin.promo-order.switch-active')}}",  //Server script to process data
 					type: 'POST',
 					dataType: 'json',
 					//Ajax events

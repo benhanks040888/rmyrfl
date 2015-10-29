@@ -2,7 +2,7 @@
 
 use DB,Str;
 
-class ContactUs extends \Eloquent {
+class PromoOrder extends \Eloquent {
 
 	/**
 	 * The database table used by the model.
@@ -10,9 +10,9 @@ class ContactUs extends \Eloquent {
 	 * @var string
 	 */
 	 
-	protected $table = 'contact_us';
+	protected $table = 'promo_order';
 	
-	private static $myTable = 'contact_us';
+	private static $myTable = 'promo_order';
 	
   /**
    * The attributes that are mass assignable.
@@ -38,7 +38,6 @@ class ContactUs extends \Eloquent {
 		DB::statement($query, array('id' => $id));
 		return 1;
 	}
-
 
 	//--------------------datatable---------------------------
         

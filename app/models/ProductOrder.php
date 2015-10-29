@@ -31,6 +31,13 @@ class ProductOrder extends \Eloquent {
 	protected $hidden = array(
 		
 	);
+	
+	public static function switchShow($id)
+	{
+		$query = "UPDATE ".self::$myTable." SET `active` = NOT `active` WHERE id = :id";
+		DB::statement($query, array('id' => $id));
+		return 1;
+	}
 
 	//--------------------datatable---------------------------
         
