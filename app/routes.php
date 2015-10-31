@@ -25,6 +25,7 @@ Route::group(array('namespace' => 'App\Controllers', 'after' => 'promo-popup'), 
 	Route::get('/search', array('as' => 'site.search', 'uses' => 'HomeController@getSearch'));
 	
 	Route::get('/product', array('as' => 'site.product', 'uses' => 'ProductController@getIndex'));
+	Route::post('/product/dismiss', array('as' => 'site.product.dismiss', 'uses' => 'ProductController@postDismissPopup'));
 	Route::get('/secret-product', array('as' => 'site.product.secret', 'uses' => 'ProductController@getSecret'));
 	Route::post('/secret-product', array('as' => 'site.secret.answer', 'uses' => 'ProductController@postSecretAnswer'));
 	Route::get('/order-product/{slug}', array('as' => 'site.product.buy', 'uses' => 'ProductController@getBuy'));

@@ -17,7 +17,7 @@
           <div class="col-sm-6">
 			<h3>{{$promoPopup['label'] or ''}}</h3>
             <p>{{$promoPopup['product']}}</p>
-			<a href="{{URL::route('site.product.buy',array('lang'=> Request::segment(1),'slug'=>$promoPopup['slug']))}}" class="btn btn-primary">{{trans('product.buy')}}</a>
+			<a id="promoBuy" href="{{URL::route('site.product.buy',array('lang'=> Request::segment(1),'slug'=>$promoPopup['slug']))}}" class="btn btn-primary">{{trans('product.buy')}}</a>
           </div>
         </div>
       </div>
@@ -27,8 +27,8 @@
 
 <script>
 	$('#promoModal').modal('show');
-	$('#js-promo-popup-close').click(function(){
-		$.post( "{{URL::route('site.promo.dismiss',array('lang'=> Request::segment(1)))}}", function( data ) {
+	$('#js-promo-popup-close,#promoBuy').click(function(){
+		$.post( "{{URL::route('site.product.dismiss',array('lang'=> Request::segment(1)))}}", function( data ) {
 		  return false;
 		});
 	});

@@ -166,4 +166,9 @@ class ProductController extends BaseSiteController {
 		}
 		return Redirect::route('site.product',array('lang'=> $lang))->with('success',$successMessage);
 	}
+	
+	public function postDismissPopup($lang = 'id')
+	{
+		restrictProductPopup();
+	}
 }
