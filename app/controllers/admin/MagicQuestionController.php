@@ -63,7 +63,7 @@ class MagicQuestionController extends BaseController {
 					}
 					$extension = $file->getClientOriginalExtension();
 					$img = Image::make($file->getRealPath());
-					$img->resize(null, 520, function($constraint){
+					$img->resize(240, 240, function($constraint){
 						$constraint->aspectRatio();
 					});
 					$img->interlace();

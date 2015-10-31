@@ -179,27 +179,24 @@ if ( ! function_exists('getPromoPopupData'))
 {
 	function getPromoPopupData($lang = 'id')
 	{
-		if(Session::has('promo_popup'))
-			return false;
-		
 		$result = Cache::get('promo_popup_data_'.$lang, function() use ($lang){ 
-							$promo = App\Models\Promo::Active()->first();
-							if($promo)
-							{
-								$data['photo'] = $promo->picture;
-								if($lang == 'en'){
-									$data['title'] = $promo->title_en;
-									$data['content'] = $promo->content_en;
-								}
-								else{
-									$data['title'] = $promo->title_id;
-									$data['content'] = $promo->content_id;
-								}
-								Cache::add('promo_popup_data_'.$lang, $data, 1);
-								return $data;
-							}
-							return false;
-						});
+					$promo = App\Models\Promo::Active()->first();
+					if($promo)
+					{
+						$data['photo'] = $promo->picture;
+						if($lang == 'en'){
+							$data['title'] = $promo->title_en;
+							$data['content'] = $promo->content_en;
+						}
+						else{
+							$data['title'] = $promo->title_id;
+							$data['content'] = $promo->content_id;
+						}
+						Cache::add('promo_popup_data_'.$lang, $data, 1);
+						return $data;
+					}
+					return false;
+				});
 		return $result;
 		
 	}
@@ -222,3 +219,50 @@ if ( ! function_exists('allowPromoPopup'))
 		return true;
 	}
 }
+
+if ( ! function_exists('getProductPopupData'))
+{
+	function getProductPopupData($lang = 'id')
+	{
+		$result = Cache::get('product_popup_data_'.$lang, function() use ($lang){ 
+					$promo = App\Models\Product::Active()->Promo()->first();
+					if($promo)
+					{
+						$data['photo'] = $promo->thumbnail;
+						$data['slug'] = $promo->slug;
+						if($lang == 'en'){
+							$data['product'] = $promo->name_en;
+							$data['label'] = $promo->promo_label_en;
+						}
+						else{
+							$data['product'] = $promo->name_id;
+							$data['label'] = $promo->promo_label_id;
+						}
+						Cache::add('product_popup_data_'.$lang, $data, 1);
+						return $data;
+					}
+					return false;
+				});
+		return $result;
+		
+	}
+}
+
+if ( ! function_exists('restrictProductPopup'))
+{
+	function restrictProductPopup()
+	{
+		Session::put('RR-product',0);
+		return true;
+	}
+}
+
+if ( ! function_exists('allowProductPopup'))
+{
+	function allowProductPopup()
+	{
+		Session::forget('RR-product');
+		return true;
+	}
+}
+

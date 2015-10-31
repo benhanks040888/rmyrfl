@@ -42,6 +42,9 @@ class SpeakerController extends BaseSiteController {
 			$data['pageTitle'] = "Corporate Speaker - Home";
 			$data['pageDescription'] = "Corporate Speaker - Home";
 		}
+		
+		$promo['promoPopup'] = getPromoPopupData($lang);
+		$data['promoPopup'] = $promo;
 		return View::make('pages.home',$data);
 	}
 	

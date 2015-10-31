@@ -5,12 +5,24 @@ use View, Input, Redirect, Route, Validator, Session;
 use App\Models\Product;
 use App\Models\ProductOrder;
 use App\Models\Notification;
+use App\Models\MagicQuestion;
 
 class ProductController extends BaseSiteController {
 
+	private $item_per_page = 2;
+	
 	public function getIndex($lang = 'id')
 	{
-		$data['products'] = Product::Active()->where('type','=','book')->orWhere('type','=','cd')->get();		
+		$sort = Input::get('sort');
+		$data['sortType'] = strtolower($sort);
+		if($data['sortType'] == 'high'){
+			$order = "DESC";
+		}
+		else{
+			$data['sortType'] = 'low';
+			$order = "ASC";
+		}
+		$data['products'] = Product::Active()->where('type','=','book')->orWhere('type','=','cd')->orderBy('price',$order)->paginate($this->item_per_page);		
 		$data['pageTitle'] = "Produk";
 		$data['pageDescription'] = "Produk";
 		if($lang == 'en'){
@@ -22,9 +34,62 @@ class ProductController extends BaseSiteController {
 	
 	public function getSecret($lang = 'id')
 	{
+		if(Session::has('RR-secret'))
+			return $this->viewSecretProduct($lang);
+		return $this->viewSecretQuestion($lang);
+	}
+	
+	private function viewSecretQuestion($lang = 'id')
+	{
+		$question = MagicQuestion::first();
+		
+		$data['question'] = $question->question_id;
+		if($lang == 'en'){
+			$data['question'] = $question->question_en;
+		}
+		
+		$data['picture'] = $question->picture;
 		$data['pageTitle'] = "Secret Item";
 		$data['pageDescription'] = "Secret Item";
 		return View::make('pages.secret',$data);
+	}
+	
+	private function viewSecretProduct($lang = 'id')
+	{
+		$sort = Input::get('sort');
+		$data['sortType'] = strtolower($sort);
+		if($data['sortType'] == 'high'){
+			$order = "DESC";
+		}
+		else{
+			$data['sortType'] = 'low';
+			$order = "ASC";
+		}
+		$data['products'] = Product::Active()->where('type','=','secret')->paginate($this->item_per_page);
+		$data['pageTitle'] = "Secret Item";
+		$data['pageDescription'] = "Secret Item";		
+		return View::make('pages.product',$data);
+	}
+	
+	public function postSecretAnswer($lang = 'id')
+	{
+		$answer = Input::get('answer');
+		
+		if($answer){
+			$question = MagicQuestion::first();
+			
+			$match = $question->answer_id;
+			if($lang == 'en'){
+				$match = $question->answer_en;
+			}
+			
+			if(strtolower(trim($answer)) == strtolower(trim($match))){
+				//correct answer
+				Session::put('RR-secret',0);
+			}
+		}
+		//wrong answer or invalid request
+		return Redirect::route('site.product.secret',array('lang'=> $lang));	
 	}
 	
 	public function getBuy($lang = 'id', $slug)

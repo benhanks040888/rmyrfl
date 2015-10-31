@@ -65,6 +65,11 @@ class Product extends \Eloquent {
 		return $query->where('active','=',1);
 	}
 	
+	public static function scopePromo($query)
+	{
+		return $query->where('is_promo','=',1);
+	}
+	
 	public static function scopeSlug($query,$slug)
 	{
 		return $query->where('slug','=',$slug);
@@ -74,6 +79,13 @@ class Product extends \Eloquent {
 	{
 		$query = "UPDATE ".self::$myTable." SET `active` = NOT `active` WHERE id = :id";
 		DB::statement($query, array('id' => $id));
+		return 1;
+	}
+	
+	public static function resetPromo()
+	{
+		$query = "UPDATE ".self::$myTable." SET `is_promo` = 0  WHERE `is_promo` = 1";
+		DB::statement($query);
 		return 1;
 	}
 	

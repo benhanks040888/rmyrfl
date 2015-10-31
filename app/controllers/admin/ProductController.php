@@ -153,7 +153,7 @@ class ProductController extends BaseController {
 	{
 		$return['success'] = 0;
 		if(Input::has('id')){
-			$product = Product::select('name_en','name_id','price','masked_price','image','type','created_at as cdate')->find(Input::get('id'));
+			$product = Product::select('name_en','name_id','price','masked_price','promo_label_en','promo_label_id','image','type','created_at as cdate')->find(Input::get('id'));
 			if($product !== null){
 				$return['success'] = 1;
 				$data['name_en'] = $product->name_en;
@@ -161,6 +161,8 @@ class ProductController extends BaseController {
 				$data['price'] = $product->price;
 				$data['image'] = $product->image;
 				$data['type'] = $product->type;
+				$data['promo_label_en'] = $product->promo_label_en;
+				$data['promo_label_id'] = $product->promo_label_id;
 				$data['masked_price'] = $product->masked_price;
 				$data['created_at'] = $product->cdate;
 				$return['data'] = $data;
@@ -188,6 +190,22 @@ class ProductController extends BaseController {
 			if ($validator->fails()){
 				return Redirect::route('admin.product.add')->withErrors($validator)->withInput();
 			}
+			
+			if(Input::has('is_promo')){
+				$validator = Validator::make(
+					array(
+						'Promo Label(EN)' => Input::get('promo_label_en'),
+						'Promo Label(ID)' => Input::get('promo_label_id')
+					),
+					array(
+						'Promo Label(EN)' => 'required',
+						'Promo Label(ID)' => 'required'
+					)
+				);
+				if ($validator->fails()){
+					return Redirect::route('admin.product.edit',array('id' => Input::get('id')))->withErrors($validator)->withInput();
+				}
+			}
 				
 			$product = new Product;
 			$product->name_en = Input::get('name_en');
@@ -196,6 +214,14 @@ class ProductController extends BaseController {
 			$product->masked_price = Input::get('masked_price');
 			$product->type = Input::get('type');
 			$product->slug = Input::get('name_id');
+			if(Input::has('is_promo')){
+				Product::resetPromo();
+				$product->is_promo = 1;
+				$this->clearCache();
+			}
+			$product->promo_label_en = Input::get('promo_label_en');
+			$product->promo_label_id = Input::get('promo_label_id');
+			
 			$product->active = 0;
 			if(!file_exists($this->upload_path)) {
 				mkdir($this->upload_path, 0777, true);
@@ -242,11 +268,27 @@ class ProductController extends BaseController {
 						'Name (EN)' => 'required',
 						'Name (ID)' => 'required',
 						'Price' => 'numeric',
-						'Image' => 'image|max:2048' //maximum image size of 2 MB
+						'Image' => 'image|max:2048'
 					)
 				);
 				if ($validator->fails()){
 					return Redirect::route('admin.product.edit',array('id' => Input::get('id')))->withErrors($validator)->withInput();
+				}
+				
+				if(Input::has('is_promo')){
+					$validator = Validator::make(
+						array(
+							'Promo Label(EN)' => Input::get('promo_label_en'),
+							'Promo Label(ID)' => Input::get('promo_label_id')
+						),
+						array(
+							'Promo Label(EN)' => 'required',
+							'Promo Label(ID)' => 'required'
+						)
+					);
+					if ($validator->fails()){
+						return Redirect::route('admin.product.edit',array('id' => Input::get('id')))->withErrors($validator)->withInput();
+					}
 				}
 				
 				$product = Product::find(Input::get('id'));
@@ -256,6 +298,13 @@ class ProductController extends BaseController {
 				$product->masked_price = Input::get('masked_price');
 				$product->type = Input::get('type');
 				$product->slug = Input::get('name_id');
+				if(Input::has('is_promo')){
+					Product::resetPromo();
+					$product->is_promo = 1;
+					$this->clearCache();
+				}
+				$product->promo_label_en = Input::get('promo_label_en');
+				$product->promo_label_id = Input::get('promo_label_id');
 				if(!file_exists($this->upload_path)) {
 					mkdir($this->upload_path, 0777, true);
 				}
@@ -297,6 +346,7 @@ class ProductController extends BaseController {
 	public function postSwitchActive()
 	{
 		if(Input::has('id')){
+			$this->clearCache();
 			echo Product::switchShow(Input::get('id'));
 		}
 		else{
@@ -322,6 +372,14 @@ class ProductController extends BaseController {
 		}
 		else{
 			echo "0";
+		}
+	}
+	
+	private function clearCache(){
+		$cache = 'product-popup-data';
+		if (Cache::has($cache))
+		{
+			Cache::forget($cache);
 		}
 	}
 }

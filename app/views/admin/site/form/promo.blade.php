@@ -52,6 +52,21 @@
 		</div>
 	</div>
 	<div class="form-group">
+		<label for="inputFileName" class="col-sm-2 control-label">File Note</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputFileName" name="file_name" placeholder="Input a short note about the file" value="{{$input['file_name'] or ''}}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputImage" class="col-sm-2 control-label">File</label>
+		<div class="col-sm-10">
+			@if(!empty($input['file_location']))
+				<a href="javascript:void(0)" id="delFile">Delete File</a>
+			@endif
+			<input type="file" name="file_location" id="inputFile">
+		</div>
+	</div>
+	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-2">
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
@@ -88,13 +103,33 @@
 	$("#delPicture").click(function(){
 		if(confirm("Are you sure you want to delete this picture?")){
 			$.ajax({
-				url: "{{URL::route('admin.magic-question.remove-picture')}}",  //Server script to process data
+				url: "{{URL::route('admin.promo.remove-picture')}}",  //Server script to process data
 				type: 'POST',
 				dataType: 'json',
 				cache: false,
 				success: function(data){
 					if(data == 1){
 						$("#delPicture").html('');
+					}
+					else{
+						alert('Bad request');
+					}
+				}
+			});
+		}
+		return false;
+	});
+	
+	$("#delFile").click(function(){
+		if(confirm("Are you sure you want to delete this file?")){
+			$.ajax({
+				url: "{{URL::route('admin.promo.remove-file')}}",  //Server script to process data
+				type: 'POST',
+				dataType: 'json',
+				cache: false,
+				success: function(data){
+					if(data == 1){
+						$("#delFile").html('');
 					}
 					else{
 						alert('Bad request');

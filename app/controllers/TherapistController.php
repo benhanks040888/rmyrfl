@@ -42,6 +42,8 @@ class TherapistController extends BaseSiteController {
 			$data['pageTitle'] = "Certified Therapist - Home";
 			$data['pageDescription'] = "Certified Therapist - Home";
 		}
+		$promo['promoPopup'] = getPromoPopupData($lang);
+		$data['promoPopup'] = $promo;
 		return View::make('pages.home',$data);
 	}
 	

@@ -5,11 +5,14 @@
   <div class="container">
 	@include('_partials.product-header')
 	  <div class="col-sm-4 col-sm-offset-4 text-center">
-		<h4>Siapa nama orang di bawah ini?</h4>
-		<div class="secret-question-image"><img src="assets/images/magician-image.jpg" class="thumbnail"></div>
-		<form>
+		<h4>{{$question}}</h4>
+		@if($picture)
+		<div class="secret-question-image"><img src="{{URL::to($picture)}}" class="thumbnail"></div>
+		@endif
+		<form action="{{URL::route('site.secret.answer',array('lang'=> Request::segment(1)))}}" method="POST">
+		  {{Form::token()}}
 		  <div class="form-group">
-			<input type="text" class="form-control" placeholder="Masukkan jawaban Anda">
+			<input type="text" name="answer" class="form-control" placeholder="Masukkan jawaban Anda">
 		  </div>
 		  <input type="submit" value="Submit" class="btn btn-primary">
 		  

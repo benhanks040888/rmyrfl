@@ -19,15 +19,17 @@
 			</div>
 			<h4 class="product-name">{{Request::segment(1)=='en'?$product->name_en:$product->name_id}}</h4>
 			<div class="product-price">
-			  <p class="old-price">@if($product->masked_price)Harga : Rp {{number_format ($product->masked_price)}} @endif</p>
+			  <p class="old-price">@if($product->masked_price){{trans('product.price')}} : Rp {{number_format ($product->masked_price)}} @endif</p>
 			  <p class="new-price">@if($product->masked_price)Promo @else Harga @endif: Rp {{number_format ($product->price)}} @if($product->masked_price)<span class="label-discount">{{$product->discount}}%</span>@endif</p>
 			</div>
-			<a href="{{URL::route('site.product.buy',array('lang'=> Request::segment(1),'slug'=>$product->slug))}}" class="btn btn-primary">Beli</a>
+			<a href="{{URL::route('site.product.buy',array('lang'=> Request::segment(1),'slug'=>$product->slug))}}" class="btn btn-primary">{{trans('product.buy')}}</a>
 		  </div>
 		</div>
 		@endforeach
 	</div>
 	<div class="text-right pagination-wrapper">
+	{{ $products->appends(array('sort' => $sortType))->links(); }}
+	<!--
 	<ul class="pagination">
 	  <li class="prev">
 		<a href="#" aria-label="Previous">
@@ -43,7 +45,7 @@
 		</a>
 	  </li>
 	</ul>
-
+	-->
 	</div>
 	</div>
 </div>
@@ -51,6 +53,14 @@
 @stop
 
 @section('scripts')
+<script>
+	$("#lstSort option[value={{$sortType}}]").prop('selected', true);
+	
+	$("#lstSort").change(function(){
+		var sort = $(this).val();
+		window.location.href = "{{URL::current()}}?sort="+sort;
+	});
+</script>
 @stop
 
 @section('styles')

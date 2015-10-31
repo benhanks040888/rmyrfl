@@ -14,8 +14,8 @@
 	</div>
 	<hr/>
 	@endif
-	
-	{{ Form::open(array('route' => 'admin.client.submit','class' => 'form-horizontal','files' => true)) }}
+	<form class="form-horizontal" action="{{URL::route('admin.client.submit',array('url_cat'=> $category))}}" enctype="multipart/form-data" method="POST">
+	{{Form::token()}}
 	<input type="hidden" name="_action" id="_action" value="{{$formProcess or 'addProcess'}}"/>
 	<input type="hidden" name="id" value="{{$input['id'] or 'addProcess'}}"/>
 	<input type="hidden" name="category" value="{{$category or 'entertainer'}}"/>

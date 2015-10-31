@@ -15,7 +15,10 @@ class HomeController extends BaseSiteController {
 	
 	public function getIndex($lang = 'id')
 	{
-		return View::make('pages.splash');
+		$promo['promoPopup'] = getProductPopupData($lang);
+		$data['promoPopup'] = $promo;
+		
+		return View::make('pages.splash',$data);
 	}
 	
 	public function getAbout($lang = 'id')

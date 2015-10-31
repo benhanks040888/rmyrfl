@@ -96,6 +96,9 @@
 							else
 								$("#txtActive").html("Yes");
 						}
+						else if(data == -1){
+							alert("Please provide the file for this promo");
+						}
 						else{
 							alert('Bad request');
 						}

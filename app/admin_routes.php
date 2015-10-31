@@ -80,6 +80,7 @@ Route::group(array('prefix' => 'admin-cms', 'namespace' => 'App\Controllers\Admi
 	Route::get('promo/edit', array('as' => 'admin.promo.edit', 'uses' => 'PromoController@getFormEdit'));
 	Route::post('promo/submit', array('as' => 'admin.promo.submit', 'uses' => 'PromoController@postSubmit'));
 	Route::post('promo/remove-picture', array('as' => 'admin.promo.remove-picture', 'uses' => 'PromoController@postRemovePicture'));
+	Route::post('promo/remove-file', array('as' => 'admin.promo.remove-file', 'uses' => 'PromoController@postRemoveFile'));
     Route::post('promo/switch-active', array('as' => 'admin.promo.switch-active', 'uses' => 'PromoController@postSwitchActive'));
   
 	Route::get('promo-order', array('as' => 'admin.promo-order', 'uses' => 'PromoOrderController@getList'));

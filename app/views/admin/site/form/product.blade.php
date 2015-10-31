@@ -59,6 +59,24 @@
 		</div>
 	</div>
 	<div class="form-group">
+		<label for="inputPromo" class="col-sm-2 control-label">Is a Promo?</label>
+		<div class="col-sm-10">
+			{{Form::checkbox('is_promo', 1, $input['is_promo'], array('id'=>'chkPromo'))}}
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPromoLabelEN" class="col-sm-2 control-label">Promo Label (EN)</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputPromoLabelEN" name="promo_label_en" placeholder="Promo Label (EN)" value="{{$input['promo_label_en'] or ''}}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="inputPromoLabelID" class="col-sm-2 control-label">Promo Label (ID)</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputPromoLabelID" name="promo_label_id" placeholder="Promo Label (ID)" value="{{$input['promo_label_id'] or ''}}">
+		</div>
+	</div>
+	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-2">
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
@@ -111,5 +129,19 @@
          }
        });
 	};
+	
+	$("#chkPromo").change(function(){
+		if($(this).prop('checked')){
+			$("#inputPromoLabelEN,#inputPromoLabelID").css({
+				'border': '2px solid red'
+			});
+			$("#inputPromoLabelEN").focus();
+		}
+		else{
+			$("#inputPromoLabelEN,#inputPromoLabelID").css({
+				'border': 'default'
+			});
+		}
+	});
 </script>
 @stop

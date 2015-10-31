@@ -44,11 +44,9 @@ class EntertainerController extends BaseSiteController {
 			$data['pageDescription'] = "Corporate Entertainer - Home";
 		}
 		
-		$main = View::make('pages.home',$data);
-		$promo_data = getPromoPopupData($lang);
-		if(!$promo_data)
-			return $main;
-		return $main->nest('popup_promo_view','_partials.promo-popup',$promo_data);
+		$promo['promoPopup'] = getPromoPopupData($lang);
+		$data['promoPopup'] = $promo;
+		return View::make('pages.home',$data);
 	}
 	
 	public function getClient($lang = 'id')

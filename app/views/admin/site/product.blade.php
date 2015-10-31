@@ -82,6 +82,16 @@
 							<td id="lblImage"></td>
 						</tr>
 						<tr>
+							<td>Promo Label (EN)</td>
+							<td>:</td>
+							<td id="lblPromoLabelEN"></td>
+						</tr>
+						<tr>
+							<td>Promo Label (ID)</td>
+							<td>:</td>
+							<td id="lblPromoLabelID"></td>
+						</tr>
+						<tr>
 							<td>Created Date</td>
 							<td>:</td>
 							<td id="lblDate"></td>
@@ -199,6 +209,8 @@
 							$("#lblPrice").html(data.data.price);
 							$("#lblType").html(data.data.type);
 							$("#lblMaskedPrice").html(data.data.masked_price);
+							$("#lblPromoLabelEN").html(data.data.promo_label_en);
+							$("#lblPromoLabelID").html(data.data.promo_label_id);
 							$("#lblDate").html(data.data.created_at);
 							if(data.data.image !== "")
 								$("#lblImage").html("<img width='100px' src='"+base_url+"/"+data.data.image+"'/>");
