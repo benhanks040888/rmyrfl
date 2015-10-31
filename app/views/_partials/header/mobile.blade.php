@@ -29,100 +29,100 @@
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="nav navbar-nav">
       <li><a href="{{ route('site.contact',array('lang'=> Request::segment(1))) }}" class="contact">{{ trans('menu.contact') }}</a></li>
-      <li class="dropdown">
+      <li class="dropdown {{ Request::is('*corporate-entertainer*') ? 'active open' : '' }}">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           Corporate Entertainer
           <i class="dropdown-indicator fa fa-chevron-down"></i>
         </a>
         <ul class="dropdown-menu" role="menu">
           <li>
-            <a href="{{ URL::route('site.entertainer.customer', array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.entertainer.customer',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{ URL::route('site.entertainer.customer', array('lang'=> Request::segment(1)))}}">
               {{trans('menu.customer')}}
             </a>
           </li>
           <li>
-            <a href="{{URL::route('site.entertainer.work',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.entertainer.work',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.entertainer.work',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.service')}}
             </a>
           </li>
           <li>
-            <a href="{{URL::route('site.entertainer.client',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.entertainer.client',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.entertainer.client',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.client')}}
             </a>
           </li>
           <li>
-            <a href="{{URL::route('site.entertainer.show',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.entertainer.show',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.entertainer.show',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.show')}}
             </a>
           </li>
         </ul>
       </li>
-      <li class="dropdown">
+      <li class="dropdown {{ Request::is('*corporate-speaker*') ? 'active open' : '' }}">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           Corporate Speaker
           <i class="dropdown-indicator fa fa-chevron-down"></i>
         </a>
         <ul class="dropdown-menu" role="menu">
           <li>
-            <a href="{{URL::route('site.speaker.customer',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.speaker.customer',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.speaker.customer',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.customer')}}
             </a>
             </li>
           <li>
-            <a href="{{URL::route('site.speaker.work',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.speaker.work',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.speaker.work',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.service')}}
             </a>
           </li>
           <li>
-            <a href="{{URL::route('site.speaker.client',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.speaker.client',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.speaker.client',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.client')}}
             </a>
           </li>
           <li>
-            <a href="{{URL::route('site.speaker.training',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.speaker.training',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.speaker.training',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.training')}}
             </a>
           </li>
         </ul>
       </li>
-      <li class="dropdown">
+      <li class="dropdown {{ Request::is('*certified-therapist*') ? 'active open' : '' }}">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           Certified Therapist
           <i class="dropdown-indicator fa fa-chevron-down"></i>
         </a>
         <ul class="dropdown-menu" role="menu">
           <li>
-            <a href="{{URL::route('site.therapist.customer',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.therapist.customer',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.customer',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.customer')}}
             </a>
           </li>
 
           <li>
-            <a href="{{URL::route('site.therapist.work',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.therapist.work',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.work',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.service')}}
             </a>
           </li>
 
           <li>
-            <a href="{{URL::route('site.therapist.training',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.therapist.training',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.training',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.training')}}
             </a>
           </li>
 
           <li>
-            <a href="{{URL::route('site.therapist.group-therapy',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.therapist.group-therapy',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.group-therapy',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.therapy-group')}}
             </a>
           </li>
 
           <li>
-            <a href="{{URL::route('site.therapist.personal-therapy',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.therapist.personal-therapy',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.personal-therapy',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.therapy-personal')}}
             </a>
           </li>
           
           <li>
-            <a href="{{URL::route('site.therapist.association',array('lang'=> Request::segment(1)))}}">
+            <a {{ URL::current() == URL::route('site.therapist.association',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.association',array('lang'=> Request::segment(1)))}}">
               {{trans('menu.therapist-association')}}
             </a>
           </li>

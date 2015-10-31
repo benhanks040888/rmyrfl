@@ -43,7 +43,8 @@ class EntertainerController extends BaseSiteController {
 			$data['pageTitle'] = "Corporate Entertainer - Home";
 			$data['pageDescription'] = "Corporate Entertainer - Home";
 		}
-		
+
+		$data['pageType'] = 'corporate-entertainer';
 		$promo['promoPopup'] = getPromoPopupData($lang);
 		$data['promoPopup'] = $promo;
 		return View::make('pages.home',$data);

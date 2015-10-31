@@ -2,6 +2,10 @@
   background: #f8f9f9;
   padding: 40px 0;
   text-align: center;
+  
+  iframe {
+    max-width: 100%;
+  }
 }
 
 .section-heading {
@@ -24,9 +28,21 @@
 }
 
 .section-slider {
-  background: url(../images/corporate-slide-bg.jpg) no-repeat top center;
+  background: url(../images/corporate-entertainer-slide-bg.jpg) no-repeat top center;
   background-size: cover;
   min-height: 430px;
+}
+
+.section-corporate-entertainer-slider {
+  background-image: url(../images/corporate-entertainer-slide-bg.jpg);
+}
+
+.section-corporate-speaker-slider {
+  background-image: url(../images/corporate-speaker-slide-bg.jpg);
+}
+
+.section-certified-therapist-slider {
+  background-image: url(../images/certified-therapist-slide-bg.jpg);
 }
 
 .section-about-cover {
