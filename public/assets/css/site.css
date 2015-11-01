@@ -3291,6 +3291,13 @@ select.form-control {
 .testimonial-item-slider .testimonial-content {
   margin-bottom: 20px;
   margin-top: 0;
+  line-height: 1.4;
+  font-family: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .testimonial-item-slider .testimonial-content {
+    font-size: 1.5rem;
+  }
 }
 
 .testimonial-person:after {
@@ -4269,14 +4276,24 @@ select.form-control {
 }
 
 .slick-prev {
-  left: -25px;
+  left: -5px;
+}
+@media (min-width: 768px) {
+  .slick-prev {
+    left: -25px;
+  }
 }
 .slick-prev:before {
   content: '\f053';
 }
 
 .slick-next {
-  right: -25px;
+  right: -5px;
+}
+@media (min-width: 768px) {
+  .slick-next {
+    right: -25px;
+  }
 }
 .slick-next:before {
   content: '\f054';
