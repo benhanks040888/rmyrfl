@@ -3260,6 +3260,20 @@ select.form-control {
   margin-bottom: 20px;
 }
 
+.testimonial-item-slider {
+  position: relative;
+  padding-left: 50px;
+}
+.testimonial-item-slider:before {
+  content: '“';
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  font-size: 7.5rem;
+  line-height: 1;
+  font-style: italic;
+  font-size: 7.5rem;
+}
 .testimonial-item-slider .testimonial-content {
   margin-bottom: 20px;
   margin-top: 0;

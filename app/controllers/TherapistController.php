@@ -23,7 +23,7 @@ class TherapistController extends BaseSiteController {
 			$data['customer'] = $customer->value_en;
 		}
 		
-		$data['clients'] = Client::Therapist()->orderByRaw("RAND()")->take(4)->get();
+		$data['clients'] = Client::Therapist()->orderByRaw("RAND()")->take(5)->get();
 		
 		$testimony = Testimony::select('content_id as content','name','position','photo');
 		if($lang == 'en'){
