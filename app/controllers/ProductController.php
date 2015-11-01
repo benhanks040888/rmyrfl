@@ -9,7 +9,7 @@ use App\Models\MagicQuestion;
 
 class ProductController extends BaseSiteController {
 
-	private $item_per_page = 2;
+	private $item_per_page = 8;
 	
 	public function getIndex($lang = 'id')
 	{

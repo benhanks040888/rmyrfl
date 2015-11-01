@@ -3436,6 +3436,7 @@ select.form-control {
 }
 .product-image img {
   max-width: 90%;
+  max-height: 80%;
   height: auto;
   position: absolute;
   top: 0;
@@ -3476,6 +3477,9 @@ select.form-control {
 
 .secret-question-image {
   margin: 20px 0;
+}
+.secret-question-image img {
+  max-width: 100%;
 }
 
 .pagination-wrapper {
