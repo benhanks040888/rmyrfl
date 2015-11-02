@@ -224,7 +224,7 @@ class ProductController extends BaseController {
 			
 			$product->active = 0;
 			if(!file_exists($this->upload_path)) {
-				mkdir($this->upload_path, 0777, true);
+				mkdir($this->upload_path, 0775, true);
 			}
 			if(!is_null(Input::file('image'))){
 				$file = Input::file('image');
@@ -306,7 +306,7 @@ class ProductController extends BaseController {
 				$product->promo_label_en = Input::get('promo_label_en');
 				$product->promo_label_id = Input::get('promo_label_id');
 				if(!file_exists($this->upload_path)) {
-					mkdir($this->upload_path, 0777, true);
+					mkdir($this->upload_path, 0775, true);
 				}
 				if(!is_null(Input::file('image'))){
 					$file = Input::file('image');

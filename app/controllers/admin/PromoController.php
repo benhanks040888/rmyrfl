@@ -54,7 +54,7 @@ class PromoController extends BaseController {
 		$promo->content_en = Input::get('content_en');
 		$promo->file_name = Input::get('file_name');
 		if(!file_exists($this->upload_path)) {
-			mkdir($this->upload_path, 0777, true);
+			mkdir($this->upload_path, 0775, true);
 		}
 		if(!is_null(Input::file('image'))){
 			$file = Input::file('image');

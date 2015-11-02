@@ -32,7 +32,7 @@
 				<img width="200" src="{{asset($input['logo'])}}"/>
 			@endif
 			<input type="file" name="image" id="inputImage">
-			<p><i>Suggested dimension : 480 x 480</i></p>
+			<p><i>Suggested dimension : (free) x 75</i></p>
 		</div>
 	</div>
 	

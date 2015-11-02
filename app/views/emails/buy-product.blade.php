@@ -4,13 +4,17 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<p>Product Buy</p>
-		<p>from</p>
-		<p>Name : {{$name}}</p>
+		<p>{{$name}} ingin membeli produk Anda.</p>
+		<br/>
+		
+		<p>Nama Produk : {{$product_name}}</p>
+		<p>Name Pembeli : {{$name}}</p>
 		<p>Email : {{$email}}</p>
-		<p>Address : {{$address}}</p>
 		<p>Phone : {{$phone}}</p>
-		<p>Product : {{$product_name}}</p>
-		<p>Message : {{$content}}</p>
+		<p>Alamat Lengkap : {{$address}}</p>
+		<p>Pesan : {{$content}}</p>
+		
+		<br/>
+		<p>Silahkan lakukan proses konfirmasi ke {{$email}} untuk melanjutkan proses penjualan.</p>
 	</body>
 </html>

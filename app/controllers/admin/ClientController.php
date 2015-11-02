@@ -188,14 +188,14 @@ class ClientController extends BaseController {
 			$client->name = Input::get('name');
 			$client->category = Input::get('category');
 			if(!file_exists($this->upload_path)) {
-				mkdir($this->upload_path, 0777, true);
+				mkdir($this->upload_path, 0775, true);
 			}
 			if(!is_null(Input::file('image'))){
 				$file = Input::file('image');
 				if($file->isValid()){
 					$extension = $file->getClientOriginalExtension();
 					$img = Image::make($file->getRealPath());
-					$img->resize(null, 520, function($constraint){
+					$img->resize(null, 75, function($constraint){
 						$constraint->aspectRatio();
 					});
 					$img->interlace();
@@ -231,7 +231,7 @@ class ClientController extends BaseController {
 				$client = Client::find(Input::get('id'));
 				$client->name = Input::get('name');
 				if(!file_exists($this->upload_path)) {
-					mkdir($this->upload_path, 0777, true);
+					mkdir($this->upload_path, 0775, true);
 				}
 				if(!is_null(Input::file('image'))){
 					$file = Input::file('image');
@@ -241,7 +241,7 @@ class ClientController extends BaseController {
 						}
 						$extension = $file->getClientOriginalExtension();
 						$img = Image::make($file->getRealPath());
-						$img->resize(null, 520, function($constraint){
+						$img->resize(null, 75, function($constraint){
 							$constraint->aspectRatio();
 						});
 						$img->interlace();

@@ -4,8 +4,8 @@ use Mail;
 
 class Notification extends \Eloquent {
 
-	private static $my_mail = "tad_emmanuel@yahoo.com";
-	private static $my_name = "Website Admin";
+	private static $my_mail = "info@romyrafael.net";
+	private static $my_name = "Romy Rafael";
 	
 	public static function sendEmailContactUs($data)
 	{
@@ -19,7 +19,7 @@ class Notification extends \Eloquent {
 		
 		$mail = Mail::send('emails.contact-us', $content, function($message) use($data)
 		{
-			$message->to(self::$my_mail, self::$my_name)->subject('Contact Us Form Notification : '.$data->subject);
+			$message->to(self::$my_mail, self::$my_name)->subject('Pesan dari '.$data->name);
 		});
 		$a = Mail::failures();
 		
@@ -40,7 +40,7 @@ class Notification extends \Eloquent {
 		
 		$mail = Mail::send('emails.buy-product', $content, function($message) use($data)
 		{
-			$message->to(self::$my_mail, self::$my_name)->subject('Product purchase');
+			$message->to(self::$my_mail, self::$my_name)->subject('Pembelian '.$data->product_name.' dari '.$data->name);
 		});
 		$a = Mail::failures();
 		

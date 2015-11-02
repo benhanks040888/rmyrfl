@@ -4,13 +4,15 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<p>Contact Us Notification</p>
-		<p>from</p>
+		<p>Anda mendapat pesan baru dari</p>
+		<br/>
 		<p>Name : {{$name}}</p>
 		<p>Email : {{$email}}</p>
-		<p>Address : {{$address}}</p>
-		<p>Phone : {{$phone}}</p>
+		<p>Telepon : {{$phone}}</p>
+		<p>Alamat : {{$address}}</p>
 		<p>Subject : {{$subject}}</p>
-		<p>Message : {{$content}}</p>
+		<p>Pesan : {{$content}}</p>
+		<br/>
+		<p>Silahkan balas pesan ini ke {{$email}} untuk merespons</p>
 	</body>
 </html>

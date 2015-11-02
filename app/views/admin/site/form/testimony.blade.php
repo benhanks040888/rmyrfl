@@ -39,7 +39,7 @@
 				<img width="200" src="{{asset($input['photo'])}}"/>
 			@endif
 			<input type="file" name="image" id="inputImage">
-			<p><i>Suggested dimension : 480 x 480</i></p>
+			<p><i>Suggested dimension : 120 x 120</i></p>
 		</div>
 	</div>
 	<div class="form-group">

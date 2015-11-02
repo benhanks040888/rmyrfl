@@ -207,14 +207,14 @@ class TestimonyController extends BaseController {
 			$testimony->content_en = Input::get('content_en');
 			$testimony->category = Input::get('category');
 			if(!file_exists($this->upload_path)) {
-				mkdir($this->upload_path, 0777, true);
+				mkdir($this->upload_path, 0775, true);
 			}
 			if(!is_null(Input::file('image'))){
 				$file = Input::file('image');
 				if($file->isValid()){
 					$extension = $file->getClientOriginalExtension();
 					$img = Image::make($file->getRealPath());
-					$img->resize(null, 520, function($constraint){
+					$img->resize(120, 120, function($constraint){
 						$constraint->aspectRatio();
 					});
 					$img->interlace();
@@ -253,7 +253,7 @@ class TestimonyController extends BaseController {
 				$testimony->content_id = Input::get('content_id');
 				$testimony->content_en = Input::get('content_en');			
 				if(!file_exists($this->upload_path)) {
-					mkdir($this->upload_path, 0777, true);
+					mkdir($this->upload_path, 0775, true);
 				}
 				if(!is_null(Input::file('image'))){
 					$file = Input::file('image');
@@ -263,7 +263,7 @@ class TestimonyController extends BaseController {
 						}
 						$extension = $file->getClientOriginalExtension();
 						$img = Image::make($file->getRealPath());
-						$img->resize(null, 520, function($constraint){
+						$img->resize(120, 120, function($constraint){
 							$constraint->aspectRatio();
 						});
 						$img->interlace();
