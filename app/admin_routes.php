@@ -77,15 +77,18 @@ Route::group(array('prefix' => 'admin-cms', 'namespace' => 'App\Controllers\Admi
 	Route::post('magic-question/remove-picture', array('as' => 'admin.magic-question.remove-picture', 'uses' => 'MagicQuestionController@postRemovePicture'));
 	
 	Route::get('promo', array('as' => 'admin.promo', 'uses' => 'PromoController@getList'));
-	Route::get('promo/edit', array('as' => 'admin.promo.edit', 'uses' => 'PromoController@getFormEdit'));
+	Route::get('promo/list', array('as' => 'admin.promo.list', 'uses' => 'PromoController@postList'));
+	Route::get('promo/add', array('as' => 'admin.promo.add', 'uses' => 'PromoController@getFormAdd'));
+    Route::get('promo/edit/{id}', array('as' => 'admin.promo.edit', 'uses' => 'PromoController@getFormEdit'));
+	Route::post('promo/detail', array('as' => 'admin.promo.detail', 'uses' => 'PromoController@postDetail'));
 	Route::post('promo/submit', array('as' => 'admin.promo.submit', 'uses' => 'PromoController@postSubmit'));
+	Route::post('promo/delete', array('as' => 'admin.promo.delete', 'uses' => 'PromoController@postDelete'));
 	Route::post('promo/remove-picture', array('as' => 'admin.promo.remove-picture', 'uses' => 'PromoController@postRemovePicture'));
 	Route::post('promo/remove-file', array('as' => 'admin.promo.remove-file', 'uses' => 'PromoController@postRemoveFile'));
     Route::post('promo/switch-active', array('as' => 'admin.promo.switch-active', 'uses' => 'PromoController@postSwitchActive'));
   
-	Route::get('promo-order', array('as' => 'admin.promo-order', 'uses' => 'PromoOrderController@getList'));
-    Route::get('promo-order/list', array('as' => 'admin.promo-order.list', 'uses' => 'PromoOrderController@postList'));
-	Route::post('promo-order/detail', array('as' => 'admin.promo-order.detail', 'uses' => 'PromoOrderController@postDetail'));
-	Route::post('promo-order/switch-active', array('as' => 'admin.promo-order.switch-active', 'uses' => 'PromoOrderController@postSwitchActive'));
+	Route::get('promo-order/{id}', array('as' => 'admin.promo-order', 'uses' => 'PromoOrderController@getList'));
+    Route::get('promo-order/{id}/list', array('as' => 'admin.promo-order.list', 'uses' => 'PromoOrderController@postList'));
+	Route::post('promo-order/{id}/detail', array('as' => 'admin.promo-order.detail', 'uses' => 'PromoOrderController@postDetail'));
   });
 });

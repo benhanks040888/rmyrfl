@@ -3,7 +3,7 @@
 @section('content')
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">Promo</h2>
+			<h2 class="page-header">Promo - {{$action or "Add"}}</h2>
 		</div>
 	</div>
 	@if($errors->first())
@@ -16,7 +16,8 @@
 	@endif
 	
 	{{ Form::open(array('route' => 'admin.promo.submit','class' => 'form-horizontal','files' => true)) }}
-	<input type="hidden" name="id" value="{{$input['id'] or ''}}"/>
+	<input type="hidden" name="_action" id="_action" value="{{$formProcess or 'addProcess'}}"/>
+	<input type="hidden" name="id" value="{{$input['id'] or 'addProcess'}}"/>
 	<div class="form-group">
 		<label for="inputTitleID" class="col-sm-2 control-label">Title (ID)</label>
 		<div class="col-sm-10">
@@ -102,9 +103,11 @@
 	 
 	$("#delPicture").click(function(){
 		if(confirm("Are you sure you want to delete this picture?")){
+			var id = "{{$input['id'] or ''}}";
 			$.ajax({
 				url: "{{URL::route('admin.promo.remove-picture')}}",  //Server script to process data
 				type: 'POST',
+				data:  "id="+id,
 				dataType: 'json',
 				cache: false,
 				success: function(data){
@@ -122,9 +125,11 @@
 	
 	$("#delFile").click(function(){
 		if(confirm("Are you sure you want to delete this file?")){
+			var id = "{{$input['id'] or ''}}";
 			$.ajax({
 				url: "{{URL::route('admin.promo.remove-file')}}",  //Server script to process data
 				type: 'POST',
+				data:  "id="+id,
 				dataType: 'json',
 				cache: false,
 				success: function(data){

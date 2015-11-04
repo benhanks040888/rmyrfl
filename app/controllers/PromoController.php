@@ -39,15 +39,10 @@ class PromoController extends BaseSiteController {
 		$contact = new PromoOrder;
 		$contact->name = Input::get('name');
 		$contact->email = Input::get('email');
-		$contact->promo_title = $promo->title_id;
-		$contact->promo_description = $promo->content_id;
-		if($lang == 'en'){
-			$contact->promo_title = $promo->title_en;
-			$contact->promo_description = $promo->content_en;
-		}
+		$contact->promo_id = Input::get('promo_id');
 		$contact->save();
 			
-		$email = Notification::sendEmailBuyPromo($contact);
+		$email = Notification::sendEmailGetPromo($contact);
 		if(!$email){
 			Log::error('Failed sending Promo Order email with reference ID : '.$contact->id);
 		}

@@ -32,13 +32,6 @@ class PromoOrder extends \Eloquent {
 		
 	);
 	
-	public static function switchShow($id)
-	{
-		$query = "UPDATE ".self::$myTable." SET `active` = NOT `active` WHERE id = :id";
-		DB::statement($query, array('id' => $id));
-		return 1;
-	}
-
 	//--------------------datatable---------------------------
         
 	public static function getDatatable($options)
@@ -49,6 +42,9 @@ class PromoOrder extends \Eloquent {
 		}
 		if(empty($select))$select = "*";
 		
+		$promo_id = $options['promo_id'];
+		if(!$promo_id)
+			return false;
 		if($options['isSearch']){
 			$i = 0;
 			foreach($options['sSearch'] as $key => $value){
@@ -64,6 +60,7 @@ class PromoOrder extends \Eloquent {
 			
 			$return['total_data'] = DB::table(self::$myTable)->whereRaw($search)->count();
 			$return['data'] = DB::table(self::$myTable)->select($select)
+				->where('promo_id','=',$promo_id)
 				->whereRaw($search)
 				->orderBy($options['columns'][($options['sort_column'])]['name'],$options['sort_direction'])
 				->skip($options['iDisplayStart'])
@@ -81,6 +78,7 @@ class PromoOrder extends \Eloquent {
 				$return['total_data'] = DB::table(self::$myTable)->count();
 				$return['data'] = DB::table(self::$myTable)
 					->select($select)
+					->where('promo_id','=',$promo_id)
 					->orderBy($options['columns'][($options['sort_column'])]['name'],$options['sort_direction'])
 					->skip($options['iDisplayStart'])
 					->take($options['iDisplayLength'])
@@ -90,6 +88,7 @@ class PromoOrder extends \Eloquent {
 				$return['total_data'] = DB::table(self::$myTable)->whereRaw($filter)->count();
 				$return['data'] = DB::table(self::$myTable)
 					->select($select)
+					->where('promo_id','=',$promo_id)
 					->whereRaw($filter)
 					->orderBy($options['columns'][($options['sort_column'])]['name'],$options['sort_direction'])
 					->skip($options['iDisplayStart'])

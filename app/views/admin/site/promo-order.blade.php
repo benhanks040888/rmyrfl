@@ -6,20 +6,11 @@
       <h1 class="page-header">Promo Order List</h1>
     </div>
   </div>
-	<div id="list_table_holder">
-		<p class="btn-group" data-toggle="buttons">
-			  <label class="btn btn-primary radio-1 active">
-				<input type="radio" name="options" id="option1" value="all"> All
-			  </label>
-			  <label class="btn btn-primary radio-1">
-				<input type="radio" name="options" id="option2" value="yes"> Handled
-			  </label>
-			  <label class="btn btn-primary radio-1">
-				<input type="radio" name="options" id="option3" value="no"> Unhandled
-			  </label>
-		</p>
-	</div>
-	
+  
+  <a href="{{URL::route('admin.promo')}}" class="btn badge btn-info">< Back</a>
+  
+  <hr/>
+  
 	<div class="table-responsive">
 		<table class="table table-hover datatable">
 			<thead>
@@ -55,31 +46,6 @@
 							<td id="lblEmail"></td>
 						</tr>
 						<tr>
-							<td>Phone</td>
-							<td>:</td>
-							<td id="lblPhone"></td>
-						</tr>
-						<tr>
-							<td>Address</td>
-							<td>:</td>
-							<td id="lblAddress"></td>
-						</tr>
-						<tr>
-							<td>Message</td>
-							<td>:</td>
-							<td id="lblMessage"></td>
-						</tr>
-						<tr>
-							<td>Product Name</td>
-							<td>:</td>
-							<td id="lblProductName"></td>
-						</tr>
-						<tr>
-							<td>Price</td>
-							<td>:</td>
-							<td id="lblPrice"></td>
-						</tr>
-						<tr>
 							<td>Created Date</td>
 							<td>:</td>
 							<td id="lblDate"></td>
@@ -106,7 +72,7 @@
 				"sPaginationType": "full_numbers",
 				"sAjaxSource" : "{{URL::route('admin.promo-order.list')}}",
 				'iDisplayLength' : 25,
-				"aaSorting": [[ 5, "desc" ]],
+				"aaSorting": [[ 3, "desc" ]],
 				'aafilter':'yes',
 				"aoColumns":[
 						<?php 
@@ -126,23 +92,16 @@
 					{"bSortable": false}
 					],
 				"aoColumnDefs": [
-						{ "bSortable": false, "aTargets": [5] }
+						{ "bSortable": false, "aTargets": [3] }
 					],
 				'bServerSide': true,
 				"fnServerParams":function (aoData) {
 					aoData.push({"name":"filter", "value":$('input[type="radio"]:checked').val() });
+					aoData.push({"name":"promo_id", "value":{{$promo_id}} });
 					},
 				"fnDrawCallback": function ( oSettings ) {
 					var text;
 					for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ){	
-						if(oSettings.aoData[i]._aData[5] == 1)
-							text = "Yes";
-						else
-							text = "No";
-							
-							text += "-- <a onclick='changeAccept("+oSettings.aoData[i]._aData[0]+");' href='javascript:void(0)'>Change</a>";
-						$('td:eq(4)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html(text); 	
-						
 						$('td:eq(<?php echo $num_fields - $hidden_field ?>)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html("<table>"
 						+"<tr><td align=\"center\" colspan=\"2\"><a href=\"javascript:void(0)\" onclick=\"openView("+oSettings.aoData[i]._aData[0]+")\" class=\"btn btn-primary btn-sm\">VIEW</a></td></tr></table>");
 					}
@@ -172,41 +131,11 @@
 						if(data.success == 1){
 							$("#lblName").html(data.data.name);
 							$("#lblEmail").html(data.data.email);
-							$("#lblAddress").html(data.data.address);
-							$("#lblPhone").html(data.data.phone);
-							$("#lblMessage").html(data.data.message);
-							$("#lblProductName").html(data.data.promo_name);
-							$("#lblPrice").html(data.data.price);
 							$("#lblDate").html(data.data.created_at);
 							$("#modalView").modal('show');
 						}
 						else{
 							alert('Data not found');
-						}
-					}
-				});
-			return false;
-		}
-		
-		function changeAccept(id){
-			$.ajax({
-					url: "{{URL::route('admin.promo-order.switch-active')}}",  //Server script to process data
-					type: 'POST',
-					dataType: 'json',
-					//Ajax events
-					//error: errorHandler,
-					// Form data
-					data: "id="+id,
-					//Options to tell jQuery not to process data or worry about content-type.
-					cache: false,
-					//contentType: false,
-					//processData: false,
-					success: function(data){
-						if(data == 1){
-							$(".datatable").dataTable().fnClearTable();
-						}
-						else{
-							alert('Bad request');
 						}
 					}
 				});

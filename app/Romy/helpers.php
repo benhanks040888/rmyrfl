@@ -184,6 +184,7 @@ if ( ! function_exists('getPromoPopupData'))
 					if($promo)
 					{
 						$data['photo'] = $promo->picture;
+						$data['id'] = $promo->id;
 						if($lang == 'en'){
 							$data['title'] = $promo->title_en;
 							$data['content'] = $promo->content_en;

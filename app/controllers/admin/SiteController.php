@@ -3,12 +3,15 @@
 use BaseController;
 
 use DB, View;
+use App\Models\Product;
 
 class SiteController extends BaseController {
 
   public function getIndex()
   {
-    return View::make('admin.site.index');
+	$data['product_count'] = Product::Active()->count();
+	
+    return View::make('admin.site.index',$data);
   }
 
 }

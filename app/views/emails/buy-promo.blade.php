@@ -4,11 +4,8 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<p>Product Buy</p>
-		<p>from</p>
-		<p>Name : {{$name}}</p>
-		<p>Email : {{$email}}</p>
-		<p>Title : {{$title}}</p>
-		<p>Content : {{$content}}</p>
+		<p>Hi, {{$name}}</p>
+		<p>Terima kasih atas minat Anda untuk mengunduh {{$file_name}}. Silahkan klik link di bawah ini untuk mengunduhnya</p>
+		<p><a href="{{$link}}" download>Download</a></p>
 	</body>
 </html>

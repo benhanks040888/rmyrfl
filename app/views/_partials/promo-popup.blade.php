@@ -24,6 +24,7 @@
             <form action="{{URL::route('site.promo.submit',array('lang'=> Request::segment(1)))}}" method="POST">
       			  {{Form::token()}}
 			        <input type="hidden" name="url_source" value="{{URL::current()}}"/>
+			        <input type="hidden" name="promo_id" value="{{$promoPopup['id']}}"/>
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Nama" required>
               </div>

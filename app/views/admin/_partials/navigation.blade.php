@@ -31,7 +31,6 @@
 			<li><a href="{{ URL::route('admin.magic-question') }}"><i class="fa fa-magic fa-fw"></i> Magic Question</a></li>
 			<li><a href="{{ URL::route('admin.product-order') }}"><i class="fa fa-file-text-o fa-fw"></i> Product Order</a></li>
 			<li><a href="{{ URL::route('admin.promo') }}"><i class="fa fa-gift fa-fw"></i> Popup Promo</a></li>
-			<li><a href="{{ URL::route('admin.promo-order') }}"><i class="fa fa-file-text-o fa-fw"></i> Promo Order</a></li>
 		</ul>
 	  </li>
 	  <li><a href="{{ URL::route('admin.imaji') }}"><i class="fa fa-youtube fa-fw"></i> Lintas Imaji</a></li>

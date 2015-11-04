@@ -31,13 +31,6 @@ class PromoOrderController extends BaseController {
 				'type' => 'TEXT',
 								'hidden' => false,
 								'unsearchable' => false
-			),
-						array(
-				'name' => 'promo_title',
-				'alias' => 'Promo Title',
-				'type' => 'TEXT',
-								'hidden' => false,
-								'unsearchable' => false
 			),            
 						
 						array(
@@ -46,27 +39,21 @@ class PromoOrderController extends BaseController {
 				'type' => 'DATETIME',
 								'hidden' => false,
 								'unsearchable' => true
-			),            
-						
-						array(
-				'name' => 'active',
-				'alias' => 'Handled',
-				'type' => 'Boolean',
-								'hidden' => false,
-								'unsearchable' => true
 			)
 		);		
 	}
 	
 	
-	public function getList()
+	public function getList($id = 0)
 	{
+		$order = Promo::find($id);
+		if(!$order)
+			return Redirect::route('admin.promo');
+		
 		$data['fields'] = $this->col;
 		$data['num_fields'] = count($this->col);
+		$data['promo_id'] = $id;
 	
-		$get = PromoOrder::get();
-		$data['result'] = $get;
-		$data['qtyParticipant'] = $get->count();
 		return View::make('admin.site.promo-order',$data);
 	}
 	
@@ -99,7 +86,8 @@ class PromoOrderController extends BaseController {
 				'columns' => $this->col,
 				'sSearch' => $search, 
 				'isSearch' => $is_search, //flag indicate a search
-				'filter' => Input::get('filter') //all, yes, or no
+				'filter' => Input::get('filter'), //all, yes, or no
+				'promo_id' => Input::get('promo_id') //promo_id
 		);
 		
 		$rowset = PromoOrder::getDatatable($options);
@@ -128,16 +116,11 @@ class PromoOrderController extends BaseController {
 	{
 		$return['success'] = 0;
 		if(Input::has('id')){
-			$promo = PromoOrder::select('name','email','phone','address','promo_name','message','price','created_at as cdate')->find(Input::get('id'));
+			$promo = PromoOrder::select('name','email','created_at as cdate')->find(Input::get('id'));
 			if($promo !== null){
 				$return['success'] = 1;
 				$data['name'] = $promo->name;
 				$data['email'] = $promo->email;
-				$data['phone'] = $promo->phone;
-				$data['address'] = $promo->address;
-				$data['promo_name'] = $promo->promo_name;
-				$data['price'] = $promo->price;
-				$data['message'] = $promo->message;
 				$data['created_at'] = $promo->cdate;
 				$return['data'] = $data;
 			}
