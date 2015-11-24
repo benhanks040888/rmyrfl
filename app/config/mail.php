@@ -54,8 +54,8 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
-
+	'from' => array('address' => getenv('MAILGUN_EMAIL'), 'name' => getenv('MAILGUN_NAME')),
+	
 	/*
 	|--------------------------------------------------------------------------
 	| E-Mail Encryption Protocol
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => getenv('SMTP_USERNAME'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => getenv('SMTP_PASSWORD'),
 
 	/*
 	|--------------------------------------------------------------------------
