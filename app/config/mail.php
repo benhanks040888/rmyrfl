@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => getenv('MAILGUN_EMAIL'), 'name' => getenv('MAILGUN_NAME')),
+	'from' => array('address' => 'noreply@romyrafael.net', 'name' => 'Romy Rafael'),
 	
 	/*
 	|--------------------------------------------------------------------------
