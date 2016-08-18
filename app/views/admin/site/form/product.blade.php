@@ -93,43 +93,7 @@
 
 @section('scripts')
 <script type="text/javascript" src="{{assets_url('admin/js/vendors/summernote.js')}}"></script>
-<script type="text/javascript">
-	$('.wysiwyg').summernote({
-       height: 200,
-       styleWithSpan: false,
-       onImageUpload: function(files, editor, welEditable) {
-         sendFile(files[0], editor, welEditable);
-       },
-       toolbar: [
-         ['style', ['bold', 'italic', 'underline', 'clear']],
-         ['font', ['strikethrough']],
-         ['fontsize', ['fontsize']],
-         ['color', ['color']],
-         ['para', ['ul', 'ol', 'paragraph']],
-         ['height', ['height']],
-         ['table', ['table']],
-         ['insert', ['link', 'picture', 'video']],
-         ['code', ['codeview', 'undo', 'redo', 'help']]
-       ]
-     });
-     
-     function sendFile(file, editor, welEditable) {
-       data = new FormData();
-       data.append('file', file);
-       $.ajax({
-         data:  data,
-         type: "POST",
-         url: "{{ URL::route('admin.product.create-image-ajax') }}",
-         cache: false,
-         contentType: false,
-         processData: false,
-         success: function(url) {
-           editor.insertImage(welEditable, url);
-           // window.alert(url);
-         }
-       });
-	};
-	
+<script type="text/javascript">	
 	$("#chkPromo").change(function(){
 		if($(this).prop('checked')){
 			$("#inputPromoLabelEN,#inputPromoLabelID").css({

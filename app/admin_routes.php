@@ -24,7 +24,6 @@ Route::group(array('prefix' => 'admin-cms', 'namespace' => 'App\Controllers\Admi
 	Route::post('product/detail', array('as' => 'admin.product.detail', 'uses' => 'ProductController@postDetail'));
 	Route::post('product/submit', array('as' => 'admin.product.submit', 'uses' => 'ProductController@postSubmit'));
 	Route::post('product/delete', array('as' => 'admin.product.delete', 'uses' => 'ProductController@postDelete'));
-	Route::post('product/upload-image', array('as' => 'admin.product.create-image-ajax', 'uses' => 'ProductController@postWysiwygImage'));
 	Route::post('product/switch-active', array('as' => 'admin.product.switch-active', 'uses' => 'ProductController@postSwitchActive'));
 	
 	Route::get('product-order', array('as' => 'admin.product-order', 'uses' => 'ProductOrderController@getList'));

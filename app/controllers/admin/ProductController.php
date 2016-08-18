@@ -71,6 +71,7 @@ class ProductController extends BaseController {
 		$data['category'] = $categories;
 		$data['input'] = Input::old();
 		$data['input']['type'] = '';
+		$data['input']['is_promo'] = 0;
 		return View::make('admin.site.form.product',$data);
 	}
 	
