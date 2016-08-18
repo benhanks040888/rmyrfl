@@ -12,7 +12,7 @@
 					<p><img src="{{assets_url('images/logo-big.png')}}" alt="Romy Rafael hypnotheraphy"></p>
 					<div class="breather">
 					  <h4 class="tt-normal">Romy Rafael<br>Hypnotheraphy Center</h4>
-					  <p>Phone: 0818 399124, 0819 32433457<br>Email: <a href="mailto:info@romyrafael.net">info@romyrafael.net</a></p>
+					  <p>Phone: +62.81.282.111.869, +62.87.882.330.696, +62.81.212.127.212<br>Email: <a href="mailto:info@romyrafael.com">info@romyrafael.com</a>, <a href="mailto:romyrafaelmind@gmail.com">romyrafaelmind@gmail.com</a></p>
 					</div>
 			  </div>
 			  <div class="col-sm-5">

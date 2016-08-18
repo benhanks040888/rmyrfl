@@ -34,8 +34,8 @@
         <h3 class="footer-menu-heading">Corporate Entertainer</h3>
         <ul class="footer-menu-list">
           <li>Romy Rafael Hypnotherapy Center</li>
-          <li>Contact : 0818 399124, 0819 32433457</li>
-          <li>Email : <a href="mailto:info@romyrafael.net">info@romyrafael.net</a></li>
+          <li>Contact : +62.81.282.111.869, +62.87.882.330.696, +62.81.212.127.212</li>
+          <li>Email : <a href="mailto:info@romyrafael.com">info@romyrafael.com</a>, <a href="mailto:romyrafaelmind@gmail.com">romyrafaelmind@gmail.com</a></li>
         </ul>
 
         @include('_partials.social')
