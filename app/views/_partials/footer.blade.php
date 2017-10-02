@@ -205,6 +205,6 @@
 </div>
 <footer class="footer">
   <div class="container">
-    Copyright © 2015 by Romy Rafael Hypnotherapy - All Rights Reserved
+    Copyright &copy; {{ date('Y') }} by Romy Rafael Hypnotherapy - All Rights Reserved
   </div>
 </footer>

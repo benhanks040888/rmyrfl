@@ -45,5 +45,6 @@
 	
     @yield('scripts')
 
+    @include('_partials.free-gift-modal')
   </body>
 </html>

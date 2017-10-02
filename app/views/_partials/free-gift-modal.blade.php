@@ -1,4 +1,4 @@
-<div class="modal modal-promo fade" id="promoModal" tabindex="-1" role="dialog" aria-labelledby="promoModalLabel">
+<div class="modal modal-promo fade" id="freeGiftModal" tabindex="-1" role="dialog" aria-labelledby="freeGiftModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -46,11 +46,10 @@
 
 <script>
   $(function() {
-  	$('#promoModal').modal('show');
-  	$('#js-promo-popup-close').click(function(){
-  		$.post( "{{URL::route('site.promo.dismiss',array('lang'=> Request::segment(1)))}}", function( data ) {
-  		  return false;
-  		});
-  	});
+    $('.js-toggle-free-gift-modal').on('click', function(e) {
+      e.preventDefault();
+
+      $('#freeGiftModal').modal('show');
+    });
   });
 </script>
