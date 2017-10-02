@@ -6,7 +6,7 @@
       <h1 class="page-header">General Info </h1>
     </div>
   </div>
-  
+
 	<div class="table-responsive">
 		@foreach($section as $section => $string)
 		<table class="table table-hover datatable">
@@ -22,6 +22,6 @@
 		@endforeach
 	</div>
 @stop
-	
+
 @section('scripts')
 @stop

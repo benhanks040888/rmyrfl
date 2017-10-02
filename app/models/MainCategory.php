@@ -7,19 +7,19 @@ class MainCategory extends \Eloquent {
 	 *
 	 * @var string
 	 */
-	 
+
 	//protected $table = 'article';
-	
+
 	//private static $myTable = 'article';
-	
-  /**
-   * The attributes that are mass assignable.
-   *
-   * @var array
-   */
-  protected $guarded = array(
-  
-  );
+
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $guarded = array(
+
+	);
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -27,15 +27,14 @@ class MainCategory extends \Eloquent {
 	 * @var array
 	 */
 	protected $hidden = array(
-		
+
 	);
-	
-	public static function get()
-	{
+
+	public static function get() {
 		$category = array(
 			'entertainer' => 'Corporate Entertainer',
 			'speaker' => 'Corporate Speaker',
-			'therapist' => 'Certified Therapist'
+			'one-on-one' => 'One on One Coaching & Mentoring',
 		);
 		return $category;
 	}

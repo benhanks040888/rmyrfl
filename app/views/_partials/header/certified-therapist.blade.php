@@ -1,41 +1,82 @@
-  <li>
+@foreach ($modelsCt as $slug)
+@if ($slug == "customer")
+<li>
 	<a {{ URL::current() == URL::route('site.therapist.customer',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.customer',array('lang'=> Request::segment(1)))}}">
 	  <p><strong>{{trans('menu.customer')}}</strong></p>
-	  <small class="text-muted">{{trans('menu.customer-needs')}}</small>
 	</a>
-  </li>
+</li>
+@endif
 
-  <li>
-	<a {{ URL::current() == URL::route('site.therapist.work',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.work',array('lang'=> Request::segment(1)))}}">
+@if ($slug == "layanan")
+<li>
+	<a {{ URL::current() == URL::route('site.therapist.service',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.service',array('lang'=> Request::segment(1)))}}">
 	  <p><strong>{{trans('menu.service')}}</strong></p>
-	  <small class="text-muted">{{trans('menu.work')}}</small>
 	</a>
-  </li>
+</li>
+@endif
 
-  <li>
+@if ($slug == "cara-kerja-kami")
+<li>
 	<a {{ URL::current() == URL::route('site.therapist.training',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.training',array('lang'=> Request::segment(1)))}}">
-	  <p><strong>{{trans('menu.training')}}</strong></p>
-	  <small class="text-muted">{{trans('menu.training-description')}}</small>
+	  <p><strong>{{trans('menu.one-how-we-work')}}</strong></p>
 	</a>
-  </li>
+</li>
+@endif
 
-  <li>
+@if ($slug == "therapy-case-study")
+<li>
 	<a {{ URL::current() == URL::route('site.therapist.group-therapy',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.group-therapy',array('lang'=> Request::segment(1)))}}">
 	  <p><strong>{{trans('menu.therapy-group')}}</strong></p>
-	  <small class="text-muted">{{trans('menu.therapy-group-description')}}</small>
 	</a>
-  </li>
+</li>
+@endif
 
-  <li>
+@if ($slug == "personal-therapy")
+<li>
 	<a {{ URL::current() == URL::route('site.therapist.personal-therapy',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.personal-therapy',array('lang'=> Request::segment(1)))}}">
 	  <p><strong>{{trans('menu.therapy-personal')}}</strong></p>
-	  <small class="text-muted">{{trans('menu.therapy-personal-description')}}</small>
 	</a>
-  </li>
-  
-  <li>
+</li>
+@endif
+
+@if ($slug == "association")
+<li>
 	<a {{ URL::current() == URL::route('site.therapist.association',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.association',array('lang'=> Request::segment(1)))}}">
 	  <p><strong>{{trans('menu.therapist-association')}}</strong></p>
-	  <small class="text-muted">{{trans('menu.therapist-association-description')}}</small>
 	</a>
-  </li>
+</li>
+@endif
+
+@if ($slug == "sesi-grup-kecil")
+<li>
+	<a {{ URL::current() == URL::route('site.therapist.group',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.group',array('lang'=> Request::segment(1)))}}">
+	  <p><strong>{{trans('menu.menu-group')}}</strong></p>
+	</a>
+</li>
+@endif
+
+@if ($slug == "produk")
+<li>
+	<a {{ URL::current() == URL::route('site.therapist.product',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.product',array('lang'=> Request::segment(1)))}}">
+	  <p><strong>{{trans('menu.menu-product')}}</strong></p>
+	</a>
+</li>
+@endif
+
+@if ($slug == "free-gift")
+<li>
+	<a {{ URL::current() == URL::route('site.therapist.gift',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.gift',array('lang'=> Request::segment(1)))}}">
+	  <p><strong>{{trans('menu.menu-gift')}}</strong></p>
+	</a>
+</li>
+@endif
+
+@if ($slug == "associate-coach-and-team")
+<li>
+	<a {{ URL::current() == URL::route('site.therapist.associationcoach',array('lang'=> Request::segment(1))) ? 'class="active"' : '' }} href="{{URL::route('site.therapist.associationcoach',array('lang'=> Request::segment(1)))}}">
+	  <p><strong>{{trans('menu.menu-association')}}</strong></p>
+	</a>
+</li>
+@endif
+
+@endforeach

@@ -18,11 +18,11 @@
 			<li><a href="{{ URL::route('admin.general',array('url_category'=>'speaker')) }}"><i class="fa fa-clipboard fa-fw"></i> General Info</a></li>
 		</ul>
 	  </li>
-	  <li><a href="javascript:void(0)"><i class="fa fa-certificate fa-fw"></i> Certified Therapist <span class="fa arrow"></span></a>
+	  <li><a href="javascript:void(0)"><i class="fa fa-certificate fa-fw"></i> One on One Coaching & Mentoring <span class="fa arrow"></span></a>
 		<ul class="nav nav-second-level collapse in">
-			<li><a href="{{ URL::route('admin.client',array('url_category'=>'therapist')) }}"><i class="fa fa-users fa-fw"></i> Clients </a></li>
-			<li><a href="{{ URL::route('admin.testimony',array('url_category'=>'therapist')) }}"><i class="fa fa-commenting-o fa-fw"></i> Testimonials </a></li>
-			<li><a href="{{ URL::route('admin.general',array('url_category'=>'therapist')) }}"><i class="fa fa-clipboard fa-fw"></i> General Info</a></li>
+			<li><a href="{{ URL::route('admin.client',array('url_category'=>'one-on-one')) }}"><i class="fa fa-users fa-fw"></i> Clients </a></li>
+			<li><a href="{{ URL::route('admin.testimony',array('url_category'=>'one-on-one')) }}"><i class="fa fa-commenting-o fa-fw"></i> Testimonials </a></li>
+			<li><a href="{{ URL::route('admin.general',array('url_category'=>'one-on-one')) }}"><i class="fa fa-clipboard fa-fw"></i> General Info</a></li>
 		</ul>
 	  </li>
 	  <li><a href="javascript:void(0)"><i class="fa fa-cubes fa-fw"></i> Products <span class="fa arrow"></span></a>

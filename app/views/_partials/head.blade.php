@@ -27,6 +27,7 @@
 
 <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
+<!-- 
 <link rel="apple-touch-icon" sizes="57x57" href="{{ assets_url('images/favicons/apple-touch-icon-57x57.png') }}">
 <link rel="apple-touch-icon" sizes="60x60" href="{{ assets_url('images/favicons/apple-touch-icon-60x60.png') }}">
 <link rel="apple-touch-icon" sizes="72x72" href="{{ assets_url('images/favicons/apple-touch-icon-72x72.png') }}">
@@ -36,6 +37,7 @@
 <link rel="icon" type="image/png" href="{{ assets_url('images/favicons/favicon-32x32.png') }}" sizes="32x32">
 <link rel="icon" type="image/png" href="{{ assets_url('images/favicons/favicon-96x96.png') }}" sizes="96x96">
 <link rel="icon" type="image/png" href="{{ assets_url('images/favicons/favicon-16x16.png') }}" sizes="16x16">
+ -->
 
 <link rel="stylesheet" href="{{ assets_url('css/vendors/bootstrap/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ assets_url('css/site.prefixed.min.css') }}?v={{ filemtime(public_path() . '/assets/css/site.prefixed.min.css') }}">

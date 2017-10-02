@@ -14,7 +14,7 @@
 	</div>
 	<hr/>
 	@endif
-	
+
 	<form class="form-horizontal" accept-charset="UTF-8" action="{{URL::route('admin.general.submit',array('url_category'=>$category))}}" method="POST">
 	<input type="hidden" value="{{csrf_token()}}" name="_token">
 	<input type="hidden" name="_action" id="_action" value="{{$formProcess or 'addProcess'}}"/>
@@ -53,9 +53,6 @@
 	$('.wysiwyg').summernote({
        height: 200,
        styleWithSpan: false,
-       onImageUpload: function(files, editor, welEditable) {
-         sendFile(files[0], editor, welEditable);
-       },
        toolbar: [
          ['style', ['bold', 'italic', 'underline', 'clear']],
          ['font', ['strikethrough']],
@@ -68,23 +65,6 @@
          ['code', ['codeview', 'undo', 'redo', 'help']]
        ]
      });
-     
-     function sendFile(file, editor, welEditable) {
-       data = new FormData();
-       data.append('file', file);
-       $.ajax({
-         data:  data,
-         type: "POST",
-         url: "{{ URL::route('admin.product.create-image-ajax') }}",
-         cache: false,
-         contentType: false,
-         processData: false,
-         success: function(url) {
-           editor.insertImage(welEditable, url);
-           // window.alert(url);
-         }
-       });
-	};
 </script>
 
 @stop

@@ -35,7 +35,7 @@
             <!--
 			<div class="section-content">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>    
+                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/4iEOCG37fq0"></iframe>
               </div>
             </div>
 			-->
@@ -80,13 +80,13 @@
         </div><a href="https://www.youtube.com/playlist?list=PLObURnEFJ80XKwv8eEgbhZCmfzVohEw35" target="_blank" class="btn btn-primary">{{trans('home.all-episode')}}</a>
       </div>
     </section>
-	
+
 @stop
 
 @section('scripts')
 	@if(!Session::has('RR-promo'))
 		@if($promoPopup['promoPopup'])
-		@include('_partials.promo-popup',$promoPopup)
+		  @include('_partials.promo-popup',$promoPopup)
 		@endif
 	@endif
 @stop

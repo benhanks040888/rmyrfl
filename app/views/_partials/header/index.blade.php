@@ -21,7 +21,7 @@
     <ul class="nav navbar-nav">
       <li><a href="{{URL::route('site.entertainer.home',array('lang'=> Request::segment(1)))}}" class="btn btn-tab @if(strtolower(Request::segment(2)) == 'corporate-entertainer') active @endif">Corporate Entertainer</a></li>
       <li><a href="{{URL::route('site.speaker.home',array('lang'=> Request::segment(1)))}}" class="btn btn-tab @if(strtolower(Request::segment(2)) == 'corporate-speaker') active @endif">Corporate Speaker</a></li>
-      <li><a href="{{URL::route('site.therapist.home',array('lang'=> Request::segment(1)))}}" class="btn btn-tab @if(strtolower(Request::segment(2)) == 'certified-therapist') active @endif">Certified Therapist</a></li>
+      <li><a href="{{URL::route('site.therapist.home',array('lang'=> Request::segment(1)))}}" class="btn btn-tab @if(strtolower(Request::segment(2)) == 'one-on-one') active @endif">ONE ON ONE COACHING & MENTORING</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-button">
@@ -34,7 +34,7 @@
     <ul class="nav sub-navbar-nav">
 	  @if(strtolower(Request::segment(2)) == 'corporate-speaker')
 	    @include('_partials.header.corporate-speaker')
-	  @elseif(strtolower(Request::segment(2)) == 'certified-therapist')
+	  @elseif(strtolower(Request::segment(2)) == 'one-on-one')
 	    @include('_partials.header.certified-therapist')
 	  @else
 	    @include('_partials.header.corporate-entertainer')
